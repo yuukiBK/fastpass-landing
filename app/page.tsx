@@ -273,7 +273,7 @@ export default function Home() {
             {/* Card 3 */}
             <div className="bg-white rounded-3xl p-6 md:p-8 lg:p-10 shadow-sm hover:shadow-md transition-shadow">
               <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-4 md:mb-6 text-center" style={{ color: '#1C252E' }}>
-                有名・難関企業との<br />「早期特別選考」につながる
+                有名・難関企業の<br />「選考免除」に直結
               </h3>
 
               <div className="flex justify-center mb-6">
