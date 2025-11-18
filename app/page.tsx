@@ -947,7 +947,7 @@ export default function Home() {
                               </div>
                               <p className="text-sm font-bold text-gray-900 mb-2">戦略コンサルタント早期特別選考のご案内</p>
                               <p className="text-xs text-gray-700 leading-relaxed mb-2">
-                                山田太郎さんAI面接の回答を拝見し、コンサルタントとしてのポテンシャルを強く感じました。ぜひ弊社の「戦略コンサルタント 28卒向け早期特別選考」にご招待したく、ご連絡差し上げました。
+                                山田太郎さん<br />AI面接の回答を拝見し、コンサルタントとしてのポテンシャルを強く感じました。ぜひ弊社の「戦略コンサルタント 28卒向け早期特別選考」にご招待したく、ご連絡差し上げました。
                               </p>
                               <p className="text-xs text-gray-500">2時間前</p>
                             </div>
