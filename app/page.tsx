@@ -477,10 +477,10 @@ export default function Home() {
               <div className="text-center mb-4 md:mb-6">
                 <p className="text-xs md:text-sm text-gray-500 mb-2">Feature 2</p>
                 <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4" style={{ color: '#4D5CEC' }}>
-                  早期特別選考
+                  選考免除オファー
                 </h3>
                 <p className="text-sm md:text-base lg:text-lg text-gray-800 mt-3 md:mt-4 leading-relaxed">
-                  AI面接で蓄積されたスコアや価値観データにもとづき、相性の良い外資・難関企業の限定イベントや、選考免除付きの人事面談などの早期特別選考に招待されます。
+                  AI面接で蓄積されたスコアや価値観データにもとづき、相性の良い外資・難関企業の限定イベントや、選考免除付きの人事面談などの選考免除オファーに招待されます。
                 </p>
               </div>
               <div className="rounded-2xl overflow-hidden bg-white border-2 border-gray-100 shadow-sm">
