@@ -10,17 +10,17 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "FastPass - 難関企業の面接で、選ばれる力を就活早期から。",
+  title: "FastPass（ファストパス）| 難関企業特化のAI面接で、他の就活生に差を付けろ。",
   description: "外資・メガベン・日系大手の対策を早期から始めて、選考免除をゲット",
   openGraph: {
-    title: "FastPass - 難関企業の面接で、選ばれる力を就活早期から。",
+    title: "FastPass（ファストパス）| 難関企業特化のAI面接で、他の就活生に差を付けろ。",
     description: "外資・メガベン・日系大手の対策を早期から始めて、選考免除をゲット",
     images: ["/FastPassOGP画像.png"],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "FastPass - 難関企業の面接で、選ばれる力を就活早期から。",
+    title: "FastPass（ファストパス）| 難関企業特化のAI面接で、他の就活生に差を付けろ。",
     description: "外資・メガベン・日系大手の対策を早期から始めて、選考免除をゲット",
     images: ["/FastPassOGP画像.png"],
   },
