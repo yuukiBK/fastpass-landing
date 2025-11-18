@@ -963,8 +963,7 @@ export default function Home() {
             {/* Card 4 - 興味点など志望点の分析 */}
             <div className="bg-white rounded-3xl p-8 md:p-10 border border-gray-200 shadow-sm">
               <h3 className="text-2xl md:text-3xl font-bold mb-4 text-center" style={{ color: '#4D5CEC' }}>
-                就活早期から"ここだ"と<br />
-                思える数社に集中
+                複数難関企業を一気に比較検討
               </h3>
 
               <p className="text-base text-gray-900 text-center mb-6 leading-relaxed">
