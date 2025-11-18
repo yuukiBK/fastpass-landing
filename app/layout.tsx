@@ -15,14 +15,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "FastPass - 難関企業の面接で、選ばれる力を就活早期から。",
     description: "AI面接練習と早期特別選考で、外資・メガベン・日系大手への就職を有利に進めよう",
-    images: ["/OGP画像.png"],
+    images: ["/FastPassOGP画像.png"],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "FastPass - 難関企業の面接で、選ばれる力を就活早期から。",
     description: "AI面接練習と早期特別選考で、外資・メガベン・日系大手への就職を有利に進めよう",
-    images: ["/OGP画像.png"],
+    images: ["/FastPassOGP画像.png"],
   },
 };
 
