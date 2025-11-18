@@ -754,10 +754,10 @@ export default function Home() {
 
               {/* Q1 Section with larger graph */}
               <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-6 mb-4">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex-1">
+                <div className="flex items-start gap-6 mb-4">
+                  <div className="flex-shrink-0" style={{ width: '260px' }}>
                     <div className="flex items-center gap-2 mb-3">
-                      <div className="w-8 h-8 rounded-full bg-[#4D5CEC] flex items-center justify-center text-white font-bold text-sm">Q1</div>
+                      <div className="w-8 h-8 rounded-full bg-[#4D5CEC] flex items-center justify-center text-white font-bold text-sm flex-shrink-0">Q1</div>
                       <h4 className="text-base font-bold text-gray-900">学生時代に最も力を入れた経験について教えてください。</h4>
                     </div>
                     <div className="bg-white rounded-xl p-4 mb-3">
@@ -769,7 +769,7 @@ export default function Home() {
                         <span>152文字</span>
                       </div>
                     </div>
-                    <div className="flex items-center gap-3">
+                    <div className="flex flex-wrap items-center gap-3">
                       <div className="flex items-center gap-2 bg-green-50 px-3 py-1.5 rounded-lg">
                         <div className="w-2 h-2 rounded-full bg-green-500 flex-shrink-0"></div>
                         <span className="text-xs text-gray-600 whitespace-nowrap">強み</span>
@@ -782,7 +782,7 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                  <div className="ml-6 flex flex-col items-center">
+                  <div className="flex flex-col items-center flex-shrink-0">
                     <div className="relative">
                       <svg className="w-32 h-32 transform -rotate-90">
                         <circle cx="64" cy="64" r="56" stroke="#E5E7EB" strokeWidth="8" fill="none" />
