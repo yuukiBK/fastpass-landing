@@ -973,7 +973,7 @@ export default function Home() {
               </h3>
 
               <p className="text-sm md:text-base text-gray-900 text-center mb-4 md:mb-6 leading-relaxed">
-                AI面接の結果をもとに、少人数制の座談会にご招待。
+                AI面接の結果をもとに、少人数制の座談会に選考免除でご招待。
                 FastPassだけの早期特別選考ルートをゲットできるチャンスです。
               </p>
 
