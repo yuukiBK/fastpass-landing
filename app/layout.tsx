@@ -9,8 +9,8 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "CaseMatch - 証明された実力を、企業は放っておけない。",
-  description: "累計企業数5,000社 実力認定数5万人突破",
+  title: "FastPass - 難関企業の面接で、選ばれる力を就活早期から。",
+  description: "AI面接練習と早期特別選考で、外資・メガベン・日系大手への就職を有利に進めよう",
 };
 
 export default function RootLayout({
