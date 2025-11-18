@@ -967,8 +967,8 @@ export default function Home() {
               </h3>
 
               <p className="text-base text-gray-900 text-center mb-6 leading-relaxed">
-                自分と相性の良い外資・難関企業との早期特別選考があるから、<br />
-                エントリーを増やし過ぎず、少数の候補に集中して挑めます。
+                AI面接の結果をもとに、少人数制の座談会にご招待。<br />
+                FastPassだけの早期特別選考ルートをゲットできるチャンスです。
               </p>
 
               {/* Large Job Card Example */}
