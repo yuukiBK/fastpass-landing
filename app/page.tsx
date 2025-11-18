@@ -313,8 +313,8 @@ export default function Home() {
 
             {/* Main Heading */}
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-              <span style={{ color: '#4D5CEC' }}>難関企業に特化したAI面接で、面接力を徹底強化。</span><br />
-              <span style={{ color: '#1C252E' }}>積み上げた結果から、選考免除オファーが届くことも</span>
+              <span style={{ color: '#4D5CEC' }}>難関企業特化のAI面接で、徹底対策</span><br />
+              <span style={{ color: '#1C252E' }}>積み上げた結果から、選考免除オファーも届く</span>
             </h2>
           </div>
         </div>
