@@ -820,8 +820,8 @@ export default function Home() {
               </h3>
 
               <p className="text-base text-gray-900 text-center mb-6 leading-relaxed">
-                AI面接の結果から、あなたの志向性やスキルにマッチした企業だけから<br />
-                パーソナライズされたスカウトが届きます。
+                AI面接の結果から、あなたの志向性やスキルにマッチした<br />
+                企業だけからパーソナライズされたスカウトが届きます。
               </p>
 
               {/* Scout Interface */}
