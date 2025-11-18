@@ -153,6 +153,12 @@ export default function Home() {
 
         <div className="relative max-w-[1400px] mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-20 lg:py-24">
           <div className="text-center lg:text-left">
+            {/* Main Heading */}
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6 md:mb-8 text-center lg:text-left">
+              <span style={{ color: '#1C252E' }}>難関企業特化のAI面接で、</span><br />
+              <span style={{ color: '#1C252E' }}>他の就活生に差を付けろ。</span>
+            </h1>
+
             {/* Stats */}
             <div className="flex justify-center lg:justify-start gap-3 md:gap-4 lg:gap-6 mb-6 md:mb-8">
               <div className="bg-white rounded-2xl px-4 md:px-6 lg:px-8 py-3 md:py-4 lg:py-5 shadow-sm text-center flex-1 max-w-[180px] md:max-w-none">
@@ -170,12 +176,6 @@ export default function Home() {
                 <div className="text-xs md:text-sm text-gray-600 mt-1">専門家監修</div>
               </div>
             </div>
-
-            {/* Main Heading */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6 md:mb-8 text-center lg:text-left">
-              <span style={{ color: '#1C252E' }}>難関企業特化のAI面接で、</span><br />
-              <span style={{ color: '#1C252E' }}>他の就活生に差を付けろ。</span>
-            </h1>
           </div>
 
           {/* Video Section */}
