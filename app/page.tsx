@@ -734,7 +734,7 @@ export default function Home() {
               {/* Screenshot */}
               <div className="rounded-2xl overflow-hidden mb-4">
                 <img
-                  src="/小見出しを追加 (1487 x 1080 px) (1).jpg"
+                  src="/企業リスト.jpg"
                   alt="難関企業ごとに特化した面接対策"
                   className="w-full h-auto"
                 />
@@ -754,8 +754,8 @@ export default function Home() {
 
               {/* Q1 Section with larger graph */}
               <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-6 mb-4">
-                <div className="flex items-start gap-6 mb-4">
-                  <div className="flex-shrink-0" style={{ width: '260px' }}>
+                <div className="flex flex-col lg:flex-row items-start gap-6 mb-4">
+                  <div className="flex-1 min-w-0 max-w-[680px]">
                     <div className="flex items-center gap-2 mb-3">
                       <div className="w-8 h-8 rounded-full bg-[#4D5CEC] flex items-center justify-center text-white font-bold text-sm flex-shrink-0">Q1</div>
                       <h4 className="text-base font-bold text-gray-900">学生時代に最も力を入れた経験について教えてください。</h4>
