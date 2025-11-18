@@ -152,25 +152,26 @@ export default function Home() {
         />
 
         <div className="relative max-w-[1400px] mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-20 lg:py-24">
-          <div className="text-center lg:text-left">
-            {/* Main Heading */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6 md:mb-8 text-center lg:text-left">
+          {/* Mobile: Title first, then stats */}
+          <div className="lg:hidden text-center mb-6 md:mb-8">
+            {/* Main Heading - Mobile */}
+            <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-6 md:mb-8">
               <span style={{ color: '#1C252E' }}>難関企業特化のAI面接で、</span><br />
               <span style={{ color: '#1C252E' }}>他の就活生に差を付けろ。</span>
             </h1>
 
-            {/* Stats */}
-            <div className="flex justify-center lg:justify-start gap-3 md:gap-4 lg:gap-6 mb-6 md:mb-8">
-              <div className="bg-white rounded-2xl px-4 md:px-6 lg:px-8 py-3 md:py-4 lg:py-5 shadow-sm text-center flex-1 max-w-[180px] md:max-w-none">
+            {/* Stats - Mobile */}
+            <div className="flex justify-center gap-3 md:gap-4 mb-6 md:mb-8">
+              <div className="bg-white rounded-2xl px-4 md:px-6 py-3 md:py-4 shadow-sm text-center flex-1 max-w-[180px]">
                 <div className="text-xs md:text-sm text-gray-600 mb-1 md:mb-2 font-medium">外資・メガベン・日経大手</div>
-                <div className="text-2xl md:text-3xl lg:text-4xl font-bold" style={{ color: '#4D5CEC' }}>
-                  50<span className="text-lg md:text-xl lg:text-2xl">社</span>
+                <div className="text-2xl md:text-3xl font-bold" style={{ color: '#4D5CEC' }}>
+                  50<span className="text-lg md:text-xl">社</span>
                 </div>
                 <div className="text-xs md:text-sm text-gray-600 mt-1">分の面接に対応</div>
               </div>
-              <div className="bg-white rounded-2xl px-4 md:px-6 lg:px-8 py-3 md:py-4 lg:py-5 shadow-sm text-center flex-1 max-w-[180px] md:max-w-none">
+              <div className="bg-white rounded-2xl px-4 md:px-6 py-3 md:py-4 shadow-sm text-center flex-1 max-w-[180px]">
                 <div className="text-xs md:text-sm text-gray-600 mb-1 md:mb-2 font-medium">AI×就活領域</div>
-                <div className="text-2xl md:text-3xl lg:text-4xl font-bold" style={{ color: '#4D5CEC' }}>
+                <div className="text-2xl md:text-3xl font-bold" style={{ color: '#4D5CEC' }}>
                   業界No.1
                 </div>
                 <div className="text-xs md:text-sm text-gray-600 mt-1">専門家監修</div>
@@ -178,8 +179,77 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Video Section */}
-          <div className="relative mb-6 md:mb-8">
+          {/* Desktop: 2 column layout */}
+          <div className="hidden lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Left Content - Desktop */}
+            <div className="text-left">
+              {/* Stats - Desktop */}
+              <div className="flex justify-start gap-6 mb-8">
+                <div className="bg-white rounded-2xl px-8 py-5 shadow-sm text-center">
+                  <div className="text-sm text-gray-600 mb-2 font-medium">外資・メガベン・日経大手</div>
+                  <div className="text-4xl font-bold" style={{ color: '#4D5CEC' }}>
+                    50<span className="text-2xl">社</span>
+                  </div>
+                  <div className="text-sm text-gray-600 mt-1">分の面接に対応</div>
+                </div>
+                <div className="bg-white rounded-2xl px-8 py-5 shadow-sm text-center">
+                  <div className="text-sm text-gray-600 mb-2 font-medium">AI×就活領域</div>
+                  <div className="text-4xl font-bold" style={{ color: '#4D5CEC' }}>
+                    業界No.1
+                  </div>
+                  <div className="text-sm text-gray-600 mt-1">専門家監修</div>
+                </div>
+              </div>
+
+              {/* Main Heading - Desktop */}
+              <h1 className="text-5xl font-bold leading-tight mb-8">
+                <span style={{ color: '#1C252E' }}>難関企業特化のAI面接で、</span><br />
+                <span style={{ color: '#1C252E' }}>他の就活生に差を付けろ。</span>
+              </h1>
+
+              {/* CTA Buttons - Desktop */}
+              <div className="flex gap-4">
+                <a
+                  href="#"
+                  className="px-8 py-4 rounded-lg font-bold text-base text-white transition-all duration-250 hover:opacity-90 text-center"
+                  style={{
+                    background: 'linear-gradient(90deg, #7f4dec 0%, #395be5 100%)',
+                  }}
+                >
+                  無料で始める
+                </a>
+                <a
+                  href="#"
+                  className="px-8 py-4 rounded-lg font-bold text-base border-2 transition-all duration-250 hover:bg-gray-50 text-center"
+                  style={{
+                    borderColor: '#4D5CEC',
+                    color: '#4D5CEC',
+                  }}
+                >
+                  ログイン
+                </a>
+              </div>
+            </div>
+
+            {/* Right Content - Video - Desktop */}
+            <div className="relative">
+              <div className="rounded-2xl aspect-video relative overflow-hidden shadow-2xl">
+                <video
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
+                  <source src="/AI面接動画.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+
+          {/* Video Section - Mobile */}
+          <div className="lg:hidden relative mb-6 md:mb-8">
             <div className="rounded-2xl aspect-video relative overflow-hidden shadow-2xl">
               <video
                 className="w-full h-full object-cover"
@@ -194,8 +264,8 @@ export default function Home() {
             </div>
           </div>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start">
+          {/* CTA Buttons - Mobile */}
+          <div className="lg:hidden flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
             <a
               href="#"
               className="px-6 md:px-8 py-3 md:py-4 rounded-lg font-bold text-sm md:text-base text-white transition-all duration-250 hover:opacity-90 text-center"
