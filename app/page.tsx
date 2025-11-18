@@ -229,7 +229,7 @@ export default function Home() {
             {/* Card 1 */}
             <div className="bg-white rounded-3xl p-6 md:p-8 lg:p-10 shadow-sm hover:shadow-md transition-shadow">
               <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-4 md:mb-6 text-center" style={{ color: '#1C252E' }}>
-                難関企業レベルの面接練習を、いつでも
+                難関企業に特化した面接練習が<br />24時間可能
               </h3>
 
               <div className="flex justify-center mb-6">
