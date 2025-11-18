@@ -213,7 +213,7 @@ export default function Home() {
                   muted
                   playsInline
                 >
-                  <source src="/FirstPass.mp4" type="video/mp4" />
+                  <source src="/AI面接動画.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
@@ -345,7 +345,7 @@ export default function Home() {
                     muted
                     playsInline
                   >
-                    <source src="/FirstPass.mp4" type="video/mp4" />
+                    <source src="/AI面接動画.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                 </div>
@@ -1285,7 +1285,7 @@ export default function Home() {
                     muted
                     playsInline
                   >
-                    <source src="/FirstPass.mp4" type="video/mp4" />
+                    <source src="/AI面接動画.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                 </div>
