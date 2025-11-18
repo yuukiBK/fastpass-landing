@@ -225,7 +225,7 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">
+      <section className="pt-8 pb-16 md:pt-12 md:pb-24 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
             {/* Card 1 */}
@@ -549,11 +549,13 @@ export default function Home() {
 
                     {/* Right Column - Description and Image */}
                     <div className="flex-1">
-                      <h5 className="text-base font-bold text-gray-900 mb-3">スカウト内容</h5>
-                      <p className="text-sm text-gray-700 leading-relaxed mb-4">
-                        AI面接をもとに書類選考・一次面接が免除され、パートナー／マネージャーとの少人数オンライン面談からスタートします。<br />
-                        新規事業立ち上げに関わり、若いうちから経営視点で成長したい方を歓迎します。
-                      </p>
+                      <div className="rounded-xl overflow-hidden mb-4">
+                        <img
+                          src="/コンサル.jpg"
+                          alt="スカウト内容"
+                          className="w-full h-auto"
+                        />
+                      </div>
 
                     </div>
                   </div>
@@ -732,7 +734,7 @@ export default function Home() {
               {/* Screenshot */}
               <div className="rounded-2xl overflow-hidden mb-4">
                 <img
-                  src="/小見出しを追加 (1487 x 1080 px) (1487 x 868 px).jpg"
+                  src="/小見出しを追加 (1487 x 1080 px) (1).jpg"
                   alt="難関企業ごとに特化した面接対策"
                   className="w-full h-auto"
                 />
@@ -767,20 +769,16 @@ export default function Home() {
                         <span>152文字</span>
                       </div>
                     </div>
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-2">
-                        <div className="flex items-center gap-1">
-                          <div className="w-2 h-2 rounded-full bg-green-500"></div>
-                          <span className="text-xs text-gray-600">強み</span>
-                        </div>
-                        <span className="text-xs bg-green-50 text-green-700 px-2 py-0.5 rounded">リーダーシップ (88点)</span>
+                    <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-2 bg-green-50 px-3 py-1.5 rounded-lg">
+                        <div className="w-2 h-2 rounded-full bg-green-500 flex-shrink-0"></div>
+                        <span className="text-xs text-gray-600 whitespace-nowrap">強み</span>
+                        <span className="text-xs text-green-700 font-medium whitespace-nowrap">リーダーシップ (88点)</span>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <div className="flex items-center gap-1">
-                          <div className="w-2 h-2 rounded-full bg-yellow-500"></div>
-                          <span className="text-xs text-gray-600">改善点</span>
-                        </div>
-                        <span className="text-xs bg-yellow-50 text-yellow-700 px-2 py-0.5 rounded">具体的な数値を追加 (45点)</span>
+                      <div className="flex items-center gap-2 bg-yellow-50 px-3 py-1.5 rounded-lg">
+                        <div className="w-2 h-2 rounded-full bg-yellow-500 flex-shrink-0"></div>
+                        <span className="text-xs text-gray-600 whitespace-nowrap">改善点</span>
+                        <span className="text-xs text-yellow-700 font-medium whitespace-nowrap">具体的な数値を追加 (45点)</span>
                       </div>
                     </div>
                   </div>
@@ -808,6 +806,24 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="text-xs text-gray-500 mt-2">平均: 53.0</div>
+                  </div>
+                </div>
+
+                {/* Other Users' Answers Section */}
+                <div className="mt-6">
+                  <h5 className="text-sm font-bold text-gray-900 mb-3">他のユーザーの優秀回答を見る</h5>
+                  <div className="space-y-2">
+                    {/* Answer Card 1 */}
+                    <div className="bg-white border border-gray-200 rounded-lg p-3 hover:border-[#4D5CEC] transition-colors cursor-pointer">
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center gap-2">
+                          <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-xs font-bold text-blue-600">A</div>
+                          <span className="text-xs text-gray-600">早稲田大学 3年</span>
+                        </div>
+                        <span className="text-sm font-bold text-[#4D5CEC]">95点</span>
+                      </div>
+                      <p className="text-xs text-gray-700 line-clamp-2">私はテニスサークルの部長として、部員数を50人から120人に増やした経験があります。具体的には、SNS戦略の見直しと新入生向けイベントの刷新を...</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -947,7 +963,7 @@ export default function Home() {
                               </div>
                               <p className="text-sm font-bold text-gray-900 mb-2">戦略コンサルタント早期特別選考のご案内</p>
                               <p className="text-xs text-gray-700 leading-relaxed mb-2">
-                                山田太郎さん<br />AI面接の回答を拝見し、コンサルタントとしてのポテンシャルを強く感じました。ぜひ弊社の「戦略コンサルタント 28卒向け早期特別選考」にご招待したく、ご連絡差し上げました。
+                                山田太郎さん<br />AI面接の回答を拝見し、ぜひ弊社の「戦略コンサルタント 28卒向け早期特別選考」にご招待したく、ご連絡差し上げました。
                               </p>
                               <p className="text-xs text-gray-500">2時間前</p>
                             </div>
@@ -971,17 +987,17 @@ export default function Home() {
                 FastPassだけの早期特別選考ルートをゲットできるチャンスです。
               </p>
 
-              {/* Large Job Card Example */}
+              {/* Large Event Card Example */}
               <div className="rounded-2xl overflow-hidden bg-white border-2 border-gray-100 shadow-sm mb-8">
                 {/* Blue Header Banner */}
                 <div className="bg-[#4D5CEC] px-6 py-4 flex items-center justify-between">
                   <div>
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="bg-white text-[#4D5CEC] text-xs font-medium px-3 py-1 rounded-full">新卒・中途</span>
+                      <span className="bg-white text-[#4D5CEC] text-xs font-medium px-3 py-1 rounded-full">28卒向け</span>
                       <span className="text-white text-xs">Posted 3日前</span>
                     </div>
                     <h3 className="text-white text-xl font-bold">
-                      のぞみの丘 上野丘 コンサルタント候補早期選考
+                      28卒向け｜複数難関企業 少人数制座談会
                     </h3>
                   </div>
                   <a href="#" className="bg-white text-[#4D5CEC] px-6 py-2 rounded-lg font-bold text-sm hover:bg-gray-50 transition-colors whitespace-nowrap inline-block text-center">
@@ -990,68 +1006,45 @@ export default function Home() {
                 </div>
 
                 {/* Content Area */}
-                <div className="p-6">
-                  <div className="flex gap-6">
-                    {/* Left Column - Company Info */}
-                    <div className="flex-shrink-0" style={{ width: '280px' }}>
-                      {/* Company Logo and Name */}
-                      <div className="mb-6">
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">
-                            A
-                          </div>
-                          <h4 className="text-xl font-bold text-gray-900">アクエス</h4>
-                        </div>
-                        <p className="text-sm text-gray-600 mb-1">〒150-0001 東京都</p>
-                      </div>
+                <div className="p-4">
+                  <div className="flex gap-4">
+                    {/* Left Column - Event Info */}
+                    <div className="flex-shrink-0" style={{ width: '240px' }}>
+                      <h5 className="text-base font-bold text-gray-900 mb-4">イベント概要</h5>
 
-                      {/* Job Details */}
-                      <div className="space-y-4 text-sm">
+                      {/* Event Details */}
+                      <div className="space-y-3 text-sm">
                         <div>
-                          <div className="text-gray-500 text-xs mb-1">募集職種</div>
-                          <div className="font-medium text-gray-900">戦略コンサルタント（新規事業立ち上げを含むアドバイザリー業務等）</div>
+                          <div className="text-gray-500 text-xs mb-1">開催形式</div>
+                          <div className="font-medium text-gray-900">対面／少人数制座談会</div>
                         </div>
 
                         <div>
-                          <div className="text-gray-500 text-xs mb-1">給与</div>
-                          <div className="font-medium text-gray-900">500万円〜1500万円（経験・スキルに応じて決定）／賞与年2回（業績による）</div>
+                          <div className="text-gray-500 text-xs mb-1">会場</div>
+                          <div className="font-medium text-gray-900">都内オフィス</div>
                         </div>
 
                         <div>
-                          <div className="text-gray-500 text-xs mb-1">福利厚生</div>
-                          <div className="font-medium text-gray-900">各種社会保険完備、交通費支給、リモートワーク可、書籍購入支援、資格取得支援など</div>
+                          <div className="text-gray-500 text-xs mb-1">参加企業例</div>
+                          <div className="font-medium text-gray-900">コンサルティング／ITメガベンチャー／日系大手事業会社 など</div>
                         </div>
 
                         <div>
-                          <div className="text-gray-500 text-xs mb-1">休日休暇</div>
-                          <div className="font-medium text-gray-900">完全週休2日制（土日）、祝日、年末年始休暇、夏季休暇、有給休暇</div>
+                          <div className="text-gray-500 text-xs mb-1">特典</div>
+                          <div className="font-medium text-gray-900">早期特別選考ルートをご案内</div>
                         </div>
-                      </div>
-
-                      <div className="mt-6 pt-6 border-t border-gray-200">
-                        <h5 className="font-bold text-gray-900 mb-2">エージェント</h5>
-                        <p className="text-xs text-gray-600">株式会社アズール</p>
                       </div>
                     </div>
 
-                    {/* Right Column - Description and Image */}
+                    {/* Right Column - Event Image */}
                     <div className="flex-1">
-                      <h5 className="text-base font-bold text-gray-900 mb-3">仕事内容</h5>
-                      <p className="text-sm text-gray-700 leading-relaxed mb-6">
-                        ＜仕事内容のポイント＞全社戦略立案から実行支援までワンストップで行います。リサーチ、分析、仮説構築といった戦略コンサルタントとしての基本スキルを磨きながら、クライアントとの関係構築やプロジェクトマネジメントまで幅広く経験できます。新規事業の立ち上げから成長戦略の策定、組織変革まで、経営に直結する重要なテーマに若手のうちから携わることができる環境です。
-                      </p>
-
                       <div className="rounded-xl overflow-hidden mb-4">
                         <img
-                          src="/スクリーンショット 2025-11-18 12.25.51.png"
-                          alt="オフィス風景"
+                          src="/少人数制座談会.jpeg"
+                          alt="少人数制座談会"
                           className="w-full h-auto"
                         />
                       </div>
-
-                      <p className="text-xs text-gray-500 leading-relaxed">
-                        ※プロジェクトの性質上、クライアント先での業務やリモートワークを柔軟に組み合わせて働くことができます。週3日程度のリモートワークも可能で、ワークライフバランスを保ちながらキャリアを築けます。
-                      </p>
                     </div>
                   </div>
                 </div>
