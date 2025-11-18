@@ -38,6 +38,20 @@ export default function RootLayout({
       >
         {children}
 
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-QC8V94HZCE"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-QC8V94HZCE');
+          `}
+        </Script>
+
         {/* Microsoft Clarity */}
         <Script id="clarity-script" strategy="afterInteractive">
           {`
