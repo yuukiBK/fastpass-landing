@@ -977,11 +977,11 @@ export default function Home() {
                 <div className="bg-[#4D5CEC] px-6 py-4 flex items-center justify-between">
                   <div>
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="bg-white text-[#4D5CEC] text-xs font-medium px-3 py-1 rounded-full">28卒向け</span>
+                      <span className="bg-white text-[#4D5CEC] text-xs font-medium px-3 py-1 rounded-full">新卒・中途</span>
                       <span className="text-white text-xs">Posted 3日前</span>
                     </div>
                     <h3 className="text-white text-xl font-bold">
-                      28卒向け｜一次面接免除付き 戦略コンサルタント早期特別選考
+                      のぞみの丘 上野丘 コンサルタント候補早期選考
                     </h3>
                   </div>
                   <a href="#" className="bg-white text-[#4D5CEC] px-6 py-2 rounded-lg font-bold text-sm hover:bg-gray-50 transition-colors whitespace-nowrap inline-block text-center">
@@ -990,49 +990,68 @@ export default function Home() {
                 </div>
 
                 {/* Content Area */}
-                <div className="p-4">
-                  <div className="flex gap-4">
+                <div className="p-6">
+                  <div className="flex gap-6">
                     {/* Left Column - Company Info */}
-                    <div className="flex-shrink-0" style={{ width: '240px' }}>
+                    <div className="flex-shrink-0" style={{ width: '280px' }}>
                       {/* Company Logo and Name */}
                       <div className="mb-6">
-                        <h4 className="text-xl font-bold text-gray-900 mb-1">ブルーアロー・<br />コンサルティング株式会社</h4>
+                        <div className="flex items-center gap-3 mb-4">
+                          <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                            A
+                          </div>
+                          <h4 className="text-xl font-bold text-gray-900">アクエス</h4>
+                        </div>
+                        <p className="text-sm text-gray-600 mb-1">〒150-0001 東京都</p>
                       </div>
 
                       {/* Job Details */}
-                      <div className="space-y-3 text-sm">
-                        <div className="flex items-start gap-2">
-                          <svg className="w-4 h-4 text-gray-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
-                          </svg>
-                          <div>
-                            <div className="text-gray-500 text-xs mb-1">想定年収</div>
-                            <div className="font-medium text-gray-900">550万円〜750万円＋業績賞与</div>
-                          </div>
+                      <div className="space-y-4 text-sm">
+                        <div>
+                          <div className="text-gray-500 text-xs mb-1">募集職種</div>
+                          <div className="font-medium text-gray-900">戦略コンサルタント（新規事業立ち上げを含むアドバイザリー業務等）</div>
                         </div>
 
-                        <div className="flex items-start gap-2">
-                          <svg className="w-4 h-4 text-gray-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                          </svg>
-                          <div>
-                            <div className="text-gray-500 text-xs mb-1">勤務地</div>
-                            <div className="font-medium text-gray-900">東京（丸の内）／リモート一部可</div>
-                          </div>
+                        <div>
+                          <div className="text-gray-500 text-xs mb-1">給与</div>
+                          <div className="font-medium text-gray-900">500万円〜1500万円（経験・スキルに応じて決定）／賞与年2回（業績による）</div>
                         </div>
 
+                        <div>
+                          <div className="text-gray-500 text-xs mb-1">福利厚生</div>
+                          <div className="font-medium text-gray-900">各種社会保険完備、交通費支給、リモートワーク可、書籍購入支援、資格取得支援など</div>
+                        </div>
+
+                        <div>
+                          <div className="text-gray-500 text-xs mb-1">休日休暇</div>
+                          <div className="font-medium text-gray-900">完全週休2日制（土日）、祝日、年末年始休暇、夏季休暇、有給休暇</div>
+                        </div>
+                      </div>
+
+                      <div className="mt-6 pt-6 border-t border-gray-200">
+                        <h5 className="font-bold text-gray-900 mb-2">エージェント</h5>
+                        <p className="text-xs text-gray-600">株式会社アズール</p>
                       </div>
                     </div>
 
                     {/* Right Column - Description and Image */}
                     <div className="flex-1">
-                      <h5 className="text-base font-bold text-gray-900 mb-3">スカウト内容</h5>
-                      <p className="text-sm text-gray-700 leading-relaxed mb-4">
-                        AI面接をもとに書類選考・一次面接が免除され、パートナー／マネージャーとの少人数オンライン面談からスタートします。<br />
-                        新規事業立ち上げに関わり、若いうちから経営視点で成長したい方を歓迎します。
+                      <h5 className="text-base font-bold text-gray-900 mb-3">仕事内容</h5>
+                      <p className="text-sm text-gray-700 leading-relaxed mb-6">
+                        ＜仕事内容のポイント＞全社戦略立案から実行支援までワンストップで行います。リサーチ、分析、仮説構築といった戦略コンサルタントとしての基本スキルを磨きながら、クライアントとの関係構築やプロジェクトマネジメントまで幅広く経験できます。新規事業の立ち上げから成長戦略の策定、組織変革まで、経営に直結する重要なテーマに若手のうちから携わることができる環境です。
                       </p>
 
+                      <div className="rounded-xl overflow-hidden mb-4">
+                        <img
+                          src="/スクリーンショット 2025-11-18 12.25.51.png"
+                          alt="オフィス風景"
+                          className="w-full h-auto"
+                        />
+                      </div>
+
+                      <p className="text-xs text-gray-500 leading-relaxed">
+                        ※プロジェクトの性質上、クライアント先での業務やリモートワークを柔軟に組み合わせて働くことができます。週3日程度のリモートワークも可能で、ワークライフバランスを保ちながらキャリアを築けます。
+                      </p>
                     </div>
                   </div>
                 </div>
