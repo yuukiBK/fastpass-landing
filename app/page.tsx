@@ -156,20 +156,20 @@ export default function Home() {
             {/* Left Content */}
             <div className="text-center lg:text-left">
               {/* Stats */}
-              <div className="flex flex-wrap justify-center lg:justify-start gap-4 md:gap-6 mb-6 md:mb-8">
-                <div className="bg-white rounded-2xl px-6 md:px-8 py-4 md:py-5 shadow-sm text-center">
-                  <div className="text-sm text-gray-600 mb-2 font-medium">外資・メガベン・日経大手</div>
-                  <div className="text-3xl md:text-4xl font-bold" style={{ color: '#4D5CEC' }}>
-                    50<span className="text-xl md:text-2xl">社</span>
+              <div className="flex justify-center lg:justify-start gap-3 md:gap-4 lg:gap-6 mb-6 md:mb-8">
+                <div className="bg-white rounded-2xl px-4 md:px-6 lg:px-8 py-3 md:py-4 lg:py-5 shadow-sm text-center flex-1 max-w-[180px] md:max-w-none">
+                  <div className="text-xs md:text-sm text-gray-600 mb-1 md:mb-2 font-medium">外資・メガベン・日経大手</div>
+                  <div className="text-2xl md:text-3xl lg:text-4xl font-bold" style={{ color: '#4D5CEC' }}>
+                    50<span className="text-lg md:text-xl lg:text-2xl">社</span>
                   </div>
-                  <div className="text-sm text-gray-600 mt-1">分の面接に対応</div>
+                  <div className="text-xs md:text-sm text-gray-600 mt-1">分の面接に対応</div>
                 </div>
-                <div className="bg-white rounded-2xl px-6 md:px-8 py-4 md:py-5 shadow-sm text-center">
-                  <div className="text-sm text-gray-600 mb-2 font-medium">AI×就活領域</div>
-                  <div className="text-3xl md:text-4xl font-bold" style={{ color: '#4D5CEC' }}>
+                <div className="bg-white rounded-2xl px-4 md:px-6 lg:px-8 py-3 md:py-4 lg:py-5 shadow-sm text-center flex-1 max-w-[180px] md:max-w-none">
+                  <div className="text-xs md:text-sm text-gray-600 mb-1 md:mb-2 font-medium">AI×就活領域</div>
+                  <div className="text-2xl md:text-3xl lg:text-4xl font-bold" style={{ color: '#4D5CEC' }}>
                     業界No.1
                   </div>
-                  <div className="text-sm text-gray-600 mt-1">専門家監修</div>
+                  <div className="text-xs md:text-sm text-gray-600 mt-1">専門家監修</div>
                 </div>
               </div>
 
@@ -180,10 +180,10 @@ export default function Home() {
               </h1>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-6">
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start mb-6">
                 <a
                   href="#"
-                  className="px-8 py-4 rounded-lg font-bold text-base text-white transition-all duration-250 hover:opacity-90 text-center"
+                  className="px-6 md:px-8 py-3 md:py-4 rounded-lg font-bold text-sm md:text-base text-white transition-all duration-250 hover:opacity-90 text-center"
                   style={{
                     background: 'linear-gradient(90deg, #7f4dec 0%, #395be5 100%)',
                   }}
@@ -192,7 +192,7 @@ export default function Home() {
                 </a>
                 <a
                   href="#"
-                  className="px-8 py-4 rounded-lg font-bold text-base border-2 transition-all duration-250 hover:bg-gray-50 text-center"
+                  className="px-6 md:px-8 py-3 md:py-4 rounded-lg font-bold text-sm md:text-base border-2 transition-all duration-250 hover:bg-gray-50 text-center"
                   style={{
                     borderColor: '#4D5CEC',
                     color: '#4D5CEC',
@@ -205,19 +205,17 @@ export default function Home() {
 
             {/* Right Content - Screenshot/Visual */}
             <div className="relative">
-              <div className="bg-white rounded-3xl shadow-2xl p-6 md:p-8">
-                <div className="rounded-2xl aspect-video relative overflow-hidden">
-                  <video
-                    className="w-full h-full object-cover"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                  >
-                    <source src="/FirstPass.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
+              <div className="rounded-2xl aspect-video relative overflow-hidden shadow-2xl">
+                <video
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
+                  <source src="/FirstPass.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
             </div>
           </div>
@@ -229,13 +227,13 @@ export default function Home() {
         <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
             {/* Card 1 */}
-            <div className="bg-white rounded-3xl p-8 md:p-10 shadow-sm hover:shadow-md transition-shadow">
-              <h3 className="text-xl md:text-2xl font-bold mb-6 text-center" style={{ color: '#1C252E' }}>
+            <div className="bg-white rounded-3xl p-6 md:p-8 lg:p-10 shadow-sm hover:shadow-md transition-shadow">
+              <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-4 md:mb-6 text-center" style={{ color: '#1C252E' }}>
                 難関企業レベルの面接練習を、いつでも
               </h3>
 
               <div className="flex justify-center mb-6">
-                <div className="w-64 h-64 rounded-2xl overflow-hidden">
+                <div className="w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden">
                   <img
                     src="/面接練習.png"
                     alt="面接練習"
@@ -245,21 +243,19 @@ export default function Home() {
               </div>
 
               <p className="text-sm text-gray-700 leading-relaxed text-center">
-                外資・メガベン・日系大手のレベルに合わせた<br />
-                AI面接に、24時間いつでも挑戦可能。<br />
-                自分と経験が近い高スコア回答を参考にしながら、<br />
-                AIのフィードバック→改善のループを回せます。
+                外資・メガベン・日系大手のレベルに合わせたAI面接に、24時間いつでも挑戦可能。
+                自分と経験が近い高スコア回答を参考にしながら、AIのフィードバック→改善のループを回せます。
               </p>
             </div>
 
             {/* Card 2 */}
-            <div className="bg-white rounded-3xl p-8 md:p-10 shadow-sm hover:shadow-md transition-shadow">
-              <h3 className="text-xl md:text-2xl font-bold mb-6 text-center" style={{ color: '#1C252E' }}>
+            <div className="bg-white rounded-3xl p-6 md:p-8 lg:p-10 shadow-sm hover:shadow-md transition-shadow">
+              <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-4 md:mb-6 text-center" style={{ color: '#1C252E' }}>
                 AI面接練習が、そのまま<br />自己分析とESづくりに
               </h3>
 
               <div className="flex justify-center mb-6">
-                <div className="w-64 h-64 rounded-2xl overflow-hidden">
+                <div className="w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden">
                   <img
                     src="/自己分析.png"
                     alt="自己分析"
@@ -269,21 +265,19 @@ export default function Home() {
               </div>
 
               <p className="text-sm text-gray-700 leading-relaxed text-center">
-                AIが「なぜ？」まで深掘りしてくれるので、<br />
-                練習を重ねるほど自分が大事にしている価値観や<br />
-                向いている業界・働き方を明確化。<br />
+                AIが「なぜ？」まで深掘りしてくれるので、練習を重ねるほど自分が大事にしている価値観や向いている業界・働き方を明確化。
                 どの選考でも使える"ESづくり"の型が固まります。
               </p>
             </div>
 
             {/* Card 3 */}
-            <div className="bg-white rounded-3xl p-8 md:p-10 shadow-sm hover:shadow-md transition-shadow">
-              <h3 className="text-xl md:text-2xl font-bold mb-6 text-center" style={{ color: '#1C252E' }}>
+            <div className="bg-white rounded-3xl p-6 md:p-8 lg:p-10 shadow-sm hover:shadow-md transition-shadow">
+              <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-4 md:mb-6 text-center" style={{ color: '#1C252E' }}>
                 有名・難関企業との<br />「早期特別選考」につながる
               </h3>
 
               <div className="flex justify-center mb-6">
-                <div className="w-64 h-64 rounded-2xl overflow-hidden">
+                <div className="w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden">
                   <img
                     src="/早期特別選考.png"
                     alt="早期特別選考"
@@ -293,9 +287,7 @@ export default function Home() {
               </div>
 
               <p className="text-sm text-gray-700 leading-relaxed text-center">
-                AI面接のスコアや志向性データをもとに、<br />
-                相性の良い外資・難関企業の限定イベントや<br />
-                選考免除付きの人事面談に招待。<br />
+                AI面接のスコアや志向性データをもとに、相性の良い外資・難関企業の限定イベントや選考免除付きの人事面談に招待。
                 就活早期から理想の企業との出会いを実現します。
               </p>
             </div>
@@ -331,18 +323,17 @@ export default function Home() {
       {/* Features Detail Section */}
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             {/* Feature 1 - AI Interview */}
-            <div className="bg-gray-50 rounded-3xl p-8 md:p-10">
-              <div className="text-center mb-6">
-                <p className="text-sm text-gray-500 mb-2">Feature 1</p>
-                <h3 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: '#4D5CEC' }}>
+            <div className="bg-gray-50 rounded-3xl p-6 md:p-8 lg:p-10">
+              <div className="text-center mb-4 md:mb-6">
+                <p className="text-xs md:text-sm text-gray-500 mb-2">Feature 1</p>
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4" style={{ color: '#4D5CEC' }}>
                   AI面接
                 </h3>
-                <p className="text-base md:text-lg text-gray-800 mt-4 leading-relaxed">
-                  AI面接官と本番さながらの面接練習を、何度でも行えます。<br />
-                  蓄積されたスコアとフィードバックが、<br />
-                  自己分析とESづくりの土台にもなります。
+                <p className="text-sm md:text-base lg:text-lg text-gray-800 mt-3 md:mt-4 leading-relaxed">
+                  AI面接官と本番さながらの面接練習を、何度でも行えます。
+                  蓄積されたスコアとフィードバックが、自己分析とESづくりの土台にもなります。
                 </p>
               </div>
               <div className="rounded-2xl overflow-hidden bg-gradient-to-br from-purple-100 to-blue-100 p-4">
@@ -361,24 +352,24 @@ export default function Home() {
               </div>
 
               {/* AI Interview Challenge Section */}
-              <div className="mt-8">
-                <div className="flex items-center justify-between mb-6">
+              <div className="mt-6 md:mt-8">
+                <div className="flex items-center justify-between mb-4 md:mb-6">
                   <div className="flex items-center gap-2">
-                    <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 md:w-5 md:h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                     </svg>
-                    <h4 className="text-lg font-bold text-gray-900">AI面接に挑戦する</h4>
+                    <h4 className="text-base md:text-lg font-bold text-gray-900">AI面接に挑戦する</h4>
                   </div>
-                  <span className="text-[#4D5CEC] text-sm font-medium inline-flex items-center gap-1 hover:opacity-80 transition-opacity cursor-default">
+                  <span className="text-[#4D5CEC] text-xs md:text-sm font-medium inline-flex items-center gap-1 hover:opacity-80 transition-opacity cursor-default">
                     すべて見る→
                   </span>
                 </div>
 
                 {/* Interview Cards Grid */}
-                <div className="overflow-x-auto pb-4 mb-8">
-                  <div className="flex gap-4 min-w-max">
+                <div className="overflow-x-auto pb-4 mb-6 md:mb-8">
+                  <div className="flex gap-3 md:gap-4">
                   {/* McKinsey & Company Card */}
-                  <div className="bg-white rounded-xl p-5 border border-gray-200 hover:border-blue-300 transition-colors flex-shrink-0 flex flex-col" style={{ width: '350px' }}>
+                  <div className="bg-white rounded-xl p-4 md:p-5 border border-gray-200 hover:border-blue-300 transition-colors flex-shrink-0 flex flex-col w-[calc(100vw-3rem)] sm:w-[280px] md:w-[350px]">
                     <span className="inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded mb-3">
                       McKinsey & Company
                     </span>
@@ -398,7 +389,7 @@ export default function Home() {
                   </div>
 
                   {/* 三菱UFJ銀行 Card */}
-                  <div className="bg-white rounded-xl p-5 border border-gray-200 hover:border-blue-300 transition-colors flex-shrink-0 flex flex-col" style={{ width: '350px' }}>
+                  <div className="bg-white rounded-xl p-4 md:p-5 border border-gray-200 hover:border-blue-300 transition-colors flex-shrink-0 flex flex-col w-[calc(100vw-3rem)] sm:w-[280px] md:w-[350px]">
                     <span className="inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded mb-3">
                       三菱UFJ銀行
                     </span>
@@ -418,7 +409,7 @@ export default function Home() {
                   </div>
 
                   {/* Google Card */}
-                  <div className="bg-white rounded-xl p-5 border border-gray-200 hover:border-blue-300 transition-colors flex-shrink-0 flex flex-col" style={{ width: '350px' }}>
+                  <div className="bg-white rounded-xl p-4 md:p-5 border border-gray-200 hover:border-blue-300 transition-colors flex-shrink-0 flex flex-col w-[calc(100vw-3rem)] sm:w-[280px] md:w-[350px]">
                     <span className="inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded mb-3">
                       Google
                     </span>
@@ -438,7 +429,7 @@ export default function Home() {
                   </div>
 
                   {/* Recruit Card */}
-                  <div className="bg-white rounded-xl p-5 border border-gray-200 hover:border-blue-300 transition-colors flex-shrink-0 flex flex-col" style={{ width: '350px' }}>
+                  <div className="bg-white rounded-xl p-4 md:p-5 border border-gray-200 hover:border-blue-300 transition-colors flex-shrink-0 flex flex-col w-[calc(100vw-3rem)] sm:w-[280px] md:w-[350px]">
                     <span className="inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded mb-3">
                       Recruit
                     </span>
@@ -458,7 +449,7 @@ export default function Home() {
                   </div>
 
                   {/* Mercari Card */}
-                  <div className="bg-white rounded-xl p-5 border border-gray-200 hover:border-blue-300 transition-colors flex-shrink-0 flex flex-col" style={{ width: '350px' }}>
+                  <div className="bg-white rounded-xl p-4 md:p-5 border border-gray-200 hover:border-blue-300 transition-colors flex-shrink-0 flex flex-col w-[calc(100vw-3rem)] sm:w-[280px] md:w-[350px]">
                     <span className="inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded mb-3">
                       Mercari
                     </span>
@@ -482,16 +473,14 @@ export default function Home() {
             </div>
 
             {/* Feature 2 - Early Special Selection */}
-            <div className="bg-gray-50 rounded-3xl p-8 md:p-10">
-              <div className="text-center mb-6">
-                <p className="text-sm text-gray-500 mb-2">Feature 2</p>
-                <h3 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: '#4D5CEC' }}>
+            <div className="bg-gray-50 rounded-3xl p-6 md:p-8 lg:p-10">
+              <div className="text-center mb-4 md:mb-6">
+                <p className="text-xs md:text-sm text-gray-500 mb-2">Feature 2</p>
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4" style={{ color: '#4D5CEC' }}>
                   早期特別選考
                 </h3>
-                <p className="text-base md:text-lg text-gray-800 mt-4 leading-relaxed">
-                  AI面接で蓄積されたスコアや価値観データにもとづき、<br />
-                  相性の良い外資・難関企業の限定イベントや、<br />
-                  選考免除付きの人事面談などの早期特別選考に招待されます。
+                <p className="text-sm md:text-base lg:text-lg text-gray-800 mt-3 md:mt-4 leading-relaxed">
+                  AI面接で蓄積されたスコアや価値観データにもとづき、相性の良い外資・難関企業の限定イベントや、選考免除付きの人事面談などの早期特別選考に招待されます。
                 </p>
               </div>
               <div className="rounded-2xl overflow-hidden bg-white border-2 border-gray-100 shadow-sm">
@@ -721,14 +710,13 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-8 md:gap-12">
             {/* Left Card - 難関企業ごとに特化した面接対策 */}
-            <div className="bg-white rounded-3xl p-8 md:p-10 border border-gray-200 shadow-sm">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-center" style={{ color: '#4D5CEC' }}>
+            <div className="bg-white rounded-3xl p-4 md:p-8 lg:p-10 border border-gray-200 shadow-sm">
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 text-center" style={{ color: '#4D5CEC' }}>
                 難関企業ごとに特化した面接対策
               </h3>
 
-              <p className="text-base text-gray-900 text-center mb-6 leading-relaxed">
-                実際の面接データをもとに、志望する難関企業ごとの<br />
-                本番さながらの質問で練習できます。
+              <p className="text-sm md:text-base text-gray-900 text-center mb-4 md:mb-6 leading-relaxed">
+                実際の面接データをもとに、志望する難関企業ごとの本番さながらの質問で練習できます。
               </p>
 
               {/* Screenshot */}
@@ -742,26 +730,25 @@ export default function Home() {
             </div>
 
             {/* Right Card - 優秀者の回答を参考に改善 */}
-            <div className="bg-white rounded-3xl p-8 md:p-10 border border-gray-200 shadow-sm">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-center" style={{ color: '#4D5CEC' }}>
+            <div className="bg-white rounded-3xl p-4 md:p-8 lg:p-10 border border-gray-200 shadow-sm">
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 text-center" style={{ color: '#4D5CEC' }}>
                 優秀者の回答を参考に改善
               </h3>
 
-              <p className="text-base text-gray-900 text-center mb-6 leading-relaxed">
-                各質問で高得点を獲得した優秀者の実際の回答を確認し、<br />
-                自分の回答をブラッシュアップできます。
+              <p className="text-sm md:text-base text-gray-900 text-center mb-4 md:mb-6 leading-relaxed">
+                各質問で高得点を獲得した優秀者の実際の回答を確認し、自分の回答をブラッシュアップできます。
               </p>
 
               {/* Q1 Section with larger graph */}
-              <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-6 mb-4">
-                <div className="flex flex-col lg:flex-row items-start gap-6 mb-4">
-                  <div className="flex-1 min-w-0 max-w-[680px]">
+              <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-4 md:p-6 mb-4">
+                <div className="flex flex-col lg:flex-row items-start gap-4 lg:gap-6 mb-4">
+                  <div className="w-full lg:flex-1 lg:min-w-0 lg:max-w-[680px]">
                     <div className="flex items-center gap-2 mb-3">
-                      <div className="w-8 h-8 rounded-full bg-[#4D5CEC] flex items-center justify-center text-white font-bold text-sm flex-shrink-0">Q1</div>
-                      <h4 className="text-base font-bold text-gray-900">学生時代に最も力を入れた経験について教えてください。</h4>
+                      <div className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-[#4D5CEC] flex items-center justify-center text-white font-bold text-xs md:text-sm flex-shrink-0">Q1</div>
+                      <h4 className="text-sm md:text-base font-bold text-gray-900">学生時代に最も力を入れた経験について教えてください。</h4>
                     </div>
-                    <div className="bg-white rounded-xl p-4 mb-3">
-                      <p className="text-sm text-gray-700 leading-relaxed mb-3">
+                    <div className="bg-white rounded-xl p-3 md:p-4 mb-3">
+                      <p className="text-xs md:text-sm text-gray-700 leading-relaxed mb-3">
                         私が学生時代に最も力を入れたのは、大学のテニスサークルで部長を務め、部員数を2倍に増やしたことです...
                       </p>
                       <div className="flex items-center justify-between text-xs text-gray-500">
@@ -769,23 +756,25 @@ export default function Home() {
                         <span>152文字</span>
                       </div>
                     </div>
-                    <div className="flex flex-wrap items-center gap-3">
-                      <div className="flex items-center gap-2 bg-green-50 px-3 py-1.5 rounded-lg">
+                    <div className="flex flex-wrap items-center gap-2 md:gap-3">
+                      <div className="flex items-center gap-1.5 md:gap-2 bg-green-50 px-2 md:px-3 py-1 md:py-1.5 rounded-lg">
                         <div className="w-2 h-2 rounded-full bg-green-500 flex-shrink-0"></div>
                         <span className="text-xs text-gray-600 whitespace-nowrap">強み</span>
                         <span className="text-xs text-green-700 font-medium whitespace-nowrap">リーダーシップ (88点)</span>
                       </div>
-                      <div className="flex items-center gap-2 bg-yellow-50 px-3 py-1.5 rounded-lg">
+                      <div className="flex items-center gap-1.5 md:gap-2 bg-yellow-50 px-2 md:px-3 py-1 md:py-1.5 rounded-lg">
                         <div className="w-2 h-2 rounded-full bg-yellow-500 flex-shrink-0"></div>
                         <span className="text-xs text-gray-600 whitespace-nowrap">改善点</span>
                         <span className="text-xs text-yellow-700 font-medium whitespace-nowrap">具体的な数値を追加 (45点)</span>
                       </div>
                     </div>
                   </div>
-                  <div className="flex flex-col items-center flex-shrink-0">
+                  <div className="flex flex-col items-center flex-shrink-0 w-full lg:w-auto">
                     <div className="relative">
-                      <svg className="w-32 h-32 transform -rotate-90">
-                        <circle cx="64" cy="64" r="56" stroke="#E5E7EB" strokeWidth="8" fill="none" />
+                      <svg className="w-24 h-24 md:w-32 md:h-32 transform -rotate-90">
+                        <circle cx="48" cy="48" r="42" stroke="#E5E7EB" strokeWidth="6" fill="none" className="md:hidden" />
+                        <circle cx="48" cy="48" r="42" stroke="#4D5CEC" strokeWidth="6" fill="none" strokeDasharray="263.89" strokeDashoffset="95.25" strokeLinecap="round" className="md:hidden" />
+                        <circle cx="64" cy="64" r="56" stroke="#E5E7EB" strokeWidth="8" fill="none" className="hidden md:block" />
                         <circle
                           cx="64"
                           cy="64"
@@ -796,11 +785,12 @@ export default function Home() {
                           strokeDasharray="351.858"
                           strokeDashoffset="127"
                           strokeLinecap="round"
+                          className="hidden md:block"
                         />
                       </svg>
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="text-center">
-                          <div className="text-4xl font-bold text-[#4D5CEC]">62</div>
+                          <div className="text-3xl md:text-4xl font-bold text-[#4D5CEC]">62</div>
                           <div className="text-xs text-gray-500">点</div>
                         </div>
                       </div>
@@ -830,23 +820,23 @@ export default function Home() {
             </div>
 
             {/* Card 3 - 相性の良い企業からだけ届くスカウト */}
-            <div className="bg-white rounded-3xl p-8 md:p-10 border border-gray-200 shadow-sm">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-center" style={{ color: '#4D5CEC' }}>
+            <div className="bg-white rounded-3xl p-4 md:p-8 lg:p-10 border border-gray-200 shadow-sm">
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 text-center" style={{ color: '#4D5CEC' }}>
                 相性の良い企業からだけ届くスカウト
               </h3>
 
-              <p className="text-base text-gray-900 text-center mb-6 leading-relaxed">
-                AI面接の結果から、あなたの志向性やスキルにマッチした<br />
+              <p className="text-sm md:text-base text-gray-900 text-center mb-4 md:mb-6 leading-relaxed">
+                AI面接の結果から、あなたの志向性やスキルにマッチした<br className="hidden md:block" />
                 企業だけからパーソナライズされたスカウトが届きます。
               </p>
 
               {/* Scout Interface */}
               <div className="rounded-2xl overflow-hidden bg-white border-2 border-gray-100 shadow-sm">
-                <div className="grid grid-cols-[3fr_7fr] h-[380px]">
+                <div className="grid grid-cols-1 md:grid-cols-[3fr_7fr] h-auto md:h-[380px]">
                   {/* Left Panel - Scout List */}
-                  <div className="bg-gray-50 border-r border-gray-200 flex flex-col">
+                  <div className="bg-gray-50 md:border-r border-b md:border-b-0 border-gray-200 flex flex-col min-h-[200px] md:min-h-0">
                     {/* Header */}
-                    <div className="p-3 border-b border-gray-200 bg-white">
+                    <div className="p-2 md:p-3 border-b border-gray-200 bg-white">
                       <div className="flex items-center gap-2 mb-3">
                         <span className="font-semibold text-sm text-gray-900">FastPass</span>
                       </div>
@@ -915,7 +905,7 @@ export default function Home() {
                   </div>
 
                   {/* Right Panel - Scout Cards Stack */}
-                  <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-8 flex items-start justify-center relative pt-12">
+                  <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-4 md:p-8 flex items-start justify-center relative pt-8 md:pt-12 min-h-[300px] md:min-h-0">
                     <div className="relative w-full max-w-sm">
                       {/* Card 3 - Background */}
                       <div className="absolute top-8 left-4 right-4 bg-white rounded-xl shadow-lg p-4 transform rotate-2 opacity-40">
@@ -977,39 +967,39 @@ export default function Home() {
             </div>
 
             {/* Card 4 - 興味点など志望点の分析 */}
-            <div className="bg-white rounded-3xl p-8 md:p-10 border border-gray-200 shadow-sm">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-center" style={{ color: '#4D5CEC' }}>
+            <div className="bg-white rounded-3xl p-4 md:p-8 lg:p-10 border border-gray-200 shadow-sm">
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 text-center" style={{ color: '#4D5CEC' }}>
                 複数の難関企業を一気に比較検討
               </h3>
 
-              <p className="text-base text-gray-900 text-center mb-6 leading-relaxed">
-                AI面接の結果をもとに、少人数制の座談会にご招待。<br />
+              <p className="text-sm md:text-base text-gray-900 text-center mb-4 md:mb-6 leading-relaxed">
+                AI面接の結果をもとに、少人数制の座談会にご招待。
                 FastPassだけの早期特別選考ルートをゲットできるチャンスです。
               </p>
 
               {/* Large Event Card Example */}
-              <div className="rounded-2xl overflow-hidden bg-white border-2 border-gray-100 shadow-sm mb-8">
+              <div className="rounded-2xl overflow-hidden bg-white border-2 border-gray-100 shadow-sm mb-6 md:mb-8">
                 {/* Blue Header Banner */}
-                <div className="bg-[#4D5CEC] px-6 py-4 flex items-center justify-between">
-                  <div>
+                <div className="bg-[#4D5CEC] px-4 md:px-6 py-3 md:py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                  <div className="flex-1">
                     <div className="flex items-center gap-2 mb-2">
                       <span className="bg-white text-[#4D5CEC] text-xs font-medium px-3 py-1 rounded-full">28卒向け</span>
                       <span className="text-white text-xs">Posted 3日前</span>
                     </div>
-                    <h3 className="text-white text-xl font-bold">
+                    <h3 className="text-white text-lg md:text-xl font-bold">
                       28卒向け｜複数難関企業 少人数制座談会
                     </h3>
                   </div>
-                  <a href="#" className="bg-white text-[#4D5CEC] px-6 py-2 rounded-lg font-bold text-sm hover:bg-gray-50 transition-colors whitespace-nowrap inline-block text-center">
+                  <a href="#" className="bg-white text-[#4D5CEC] px-4 md:px-6 py-2 rounded-lg font-bold text-sm hover:bg-gray-50 transition-colors whitespace-nowrap inline-block text-center w-full sm:w-auto">
                     応募する
                   </a>
                 </div>
 
                 {/* Content Area */}
                 <div className="p-4">
-                  <div className="flex gap-4">
+                  <div className="flex flex-col md:flex-row gap-4">
                     {/* Left Column - Event Info */}
-                    <div className="flex-shrink-0" style={{ width: '240px' }}>
+                    <div className="flex-shrink-0 md:w-[240px]">
                       <h5 className="text-base font-bold text-gray-900 mb-4">イベント概要</h5>
 
                       {/* Event Details */}
@@ -1055,9 +1045,9 @@ export default function Home() {
       </section>
 
       {/* Useful Information Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-purple-50 to-blue-50">
+      <section className="py-12 md:py-16 lg:py-24 bg-gradient-to-b from-purple-50 to-blue-50">
         <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16" style={{ color: '#1C252E' }}>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 md:mb-12 lg:mb-16" style={{ color: '#1C252E' }}>
             お役立ち情報
           </h2>
 
@@ -1141,9 +1131,9 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-12 md:py-16 lg:py-24 bg-white">
         <div className="max-w-[1000px] mx-auto px-4 md:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16" style={{ color: '#1C252E' }}>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 md:mb-12 lg:mb-16" style={{ color: '#1C252E' }}>
             よくある質問
           </h2>
 
@@ -1287,35 +1277,33 @@ export default function Home() {
             <div className="flex-1 relative flex items-center justify-center">
               <div className="relative w-full max-w-md">
                 {/* Video showcase */}
-                <div className="relative z-10 bg-white rounded-3xl shadow-2xl p-6 md:p-8">
-                  <div className="rounded-2xl aspect-video relative overflow-hidden">
-                    <video
-                      className="w-full h-full object-cover"
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                    >
-                      <source src="/FirstPass.mp4" type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
-                  </div>
+                <div className="relative z-10 rounded-2xl aspect-video overflow-hidden shadow-2xl">
+                  <video
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  >
+                    <source src="/FirstPass.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
               </div>
             </div>
 
             {/* Right side - CTA content */}
             <div className="flex-1 text-center md:text-left">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 md:mb-8 leading-tight">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 md:mb-6 lg:mb-8 leading-tight">
                 AI面接をして就活、<br />
                 転職を有利に進めよう！
               </h2>
               <a
                 href="#"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-blue-600 rounded-lg font-bold text-lg md:text-xl hover:bg-gray-50 transition-colors shadow-lg"
+                className="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3 md:py-4 bg-white text-blue-600 rounded-lg font-bold text-base md:text-lg lg:text-xl hover:bg-gray-50 transition-colors shadow-lg"
               >
                 無料で始める
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </a>
@@ -1325,25 +1313,25 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-100 py-16">
+      <footer className="bg-gray-100 py-8 md:py-12 lg:py-16">
         <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-8">
           {/* Main Footer Content */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 lg:gap-12 mb-8 md:mb-12">
             {/* Logo Section */}
-            <div className="md:col-span-1">
+            <div className="col-span-2 md:col-span-1">
               <div className="flex items-center gap-2 mb-4">
                 <img
                   src="/ロゴ画像.png"
                   alt="FastPass Logo"
-                  className="h-32 w-auto"
+                  className="h-16 md:h-20 w-auto"
                 />
               </div>
             </div>
 
             {/* 機能 */}
             <div>
-              <h3 className="font-bold text-gray-900 mb-4 text-sm">機能</h3>
-              <ul className="space-y-3 text-sm text-gray-600">
+              <h3 className="font-bold text-gray-900 mb-3 md:mb-4 text-sm">機能</h3>
+              <ul className="space-y-2 md:space-y-3 text-sm text-gray-600">
                 <li><a href="#" className="hover:text-[#4D5CEC] transition-colors">AI面接</a></li>
                 <li><a href="#" className="hover:text-[#4D5CEC] transition-colors">早期特別選考</a></li>
               </ul>
@@ -1351,8 +1339,8 @@ export default function Home() {
 
             {/* コラム記事 */}
             <div>
-              <h3 className="font-bold text-gray-900 mb-4 text-sm">コラム記事</h3>
-              <ul className="space-y-3 text-sm text-gray-600">
+              <h3 className="font-bold text-gray-900 mb-3 md:mb-4 text-sm">コラム記事</h3>
+              <ul className="space-y-2 md:space-y-3 text-sm text-gray-600">
                 <li><a href="#" className="hover:text-[#4D5CEC] transition-colors">新卒</a></li>
                 <li><a href="#" className="hover:text-[#4D5CEC] transition-colors">中途</a></li>
               </ul>
@@ -1360,19 +1348,19 @@ export default function Home() {
 
             {/* ヘルプガイド */}
             <div>
-              <h3 className="font-bold text-gray-900 mb-4 text-sm">ヘルプガイド</h3>
+              <h3 className="font-bold text-gray-900 mb-3 md:mb-4 text-sm">ヘルプガイド</h3>
             </div>
           </div>
 
           {/* Bottom Section */}
-          <div className="border-t border-gray-300 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-xs text-gray-500">©bestiee Inc. all rights reserved.</p>
-              <div className="flex gap-6 text-xs text-gray-600">
+          <div className="border-t border-gray-300 pt-6 md:pt-8">
+            <div className="flex flex-col items-center gap-3 md:gap-4">
+              <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-xs text-gray-600">
                 <a href="#" className="hover:text-[#4D5CEC] transition-colors">お問い合わせ</a>
                 <a href="#" className="hover:text-[#4D5CEC] transition-colors">利用規約</a>
                 <a href="#" className="hover:text-[#4D5CEC] transition-colors">プライバシーポリシー</a>
               </div>
+              <p className="text-xs text-gray-500">©bestiee Inc. all rights reserved.</p>
             </div>
           </div>
         </div>
