@@ -175,8 +175,8 @@ export default function Home() {
 
               {/* Main Heading */}
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6 md:mb-8">
-                <span style={{ color: '#1C252E' }}>難関企業の面接で、</span><br />
-                <span style={{ color: '#1C252E' }}>選ばれる力を就活早期から。</span>
+                <span style={{ color: '#1C252E' }}>難関企業特化のAI面接で、</span><br />
+                <span style={{ color: '#1C252E' }}>他の就活生に差を付けろ。</span>
               </h1>
 
               {/* CTA Buttons */}
