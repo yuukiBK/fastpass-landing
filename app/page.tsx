@@ -289,6 +289,46 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Company Logos Scrolling Section */}
+      <section className="py-8 md:py-12 bg-white border-y border-gray-100">
+        <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-8">
+          <p className="text-center text-sm md:text-base text-gray-600 mb-6 md:mb-8 font-medium">対応企業例</p>
+          <div className="relative overflow-hidden">
+            {/* Gradient overlays */}
+            <div className="absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-r from-white to-transparent z-10"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-l from-white to-transparent z-10"></div>
+
+            {/* Scrolling container */}
+            <div className="flex animate-scroll">
+              {/* First set of logos */}
+              <div className="flex items-center gap-8 md:gap-12 lg:gap-16 min-w-max pr-8 md:pr-12 lg:pr-16">
+                <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 whitespace-nowrap">三菱商事</div>
+                <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 whitespace-nowrap">アクセンチュア</div>
+                <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 whitespace-nowrap">電通</div>
+                <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 whitespace-nowrap">サイバーエージェント</div>
+                <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 whitespace-nowrap">野村総合研究所</div>
+                <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 whitespace-nowrap">LINEヤフー</div>
+                <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 whitespace-nowrap">マッキンゼー</div>
+                <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 whitespace-nowrap">NTTデータ</div>
+                <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 whitespace-nowrap">P&G</div>
+              </div>
+              {/* Duplicate set for seamless loop */}
+              <div className="flex items-center gap-8 md:gap-12 lg:gap-16 min-w-max pr-8 md:pr-12 lg:pr-16">
+                <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 whitespace-nowrap">三菱商事</div>
+                <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 whitespace-nowrap">アクセンチュア</div>
+                <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 whitespace-nowrap">電通</div>
+                <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 whitespace-nowrap">サイバーエージェント</div>
+                <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 whitespace-nowrap">野村総合研究所</div>
+                <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 whitespace-nowrap">LINEヤフー</div>
+                <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 whitespace-nowrap">マッキンゼー</div>
+                <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 whitespace-nowrap">NTTデータ</div>
+                <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 whitespace-nowrap">P&G</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section className="pt-8 pb-16 md:pt-12 md:pb-24 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-8">
