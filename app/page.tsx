@@ -310,8 +310,7 @@ export default function Home() {
               </div>
 
               <p className="text-sm text-gray-700 leading-relaxed text-center">
-                外資・メガベン・日系大手のレベルに合わせたAI面接に、24時間いつでも挑戦可能。
-                自分と経験が近い高スコア回答を参考にしながら、AIのフィードバック→改善のループを回せます。
+                外資・メガベン・日系大手の過去問を、対話形式で練習可能。予想外の質問にも、一貫性を持って答える力が身につきます。
               </p>
             </div>
 
