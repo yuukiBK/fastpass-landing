@@ -265,7 +265,7 @@ export default function Home() {
           </div>
 
           {/* CTA Buttons - Mobile */}
-          <div className="lg:hidden flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-8 md:mb-12">
+          <div className="lg:hidden flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
             <a
               href="#"
               className="px-6 md:px-8 py-3 md:py-4 rounded-lg font-bold text-sm md:text-base text-white transition-all duration-250 hover:opacity-90 text-center"
@@ -288,8 +288,8 @@ export default function Home() {
           </div>
 
           {/* Company Logos Scrolling - Inside Hero Section */}
-          <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-8">
-            <p className="text-center text-sm md:text-base text-gray-600 mb-6 md:mb-8 font-medium">対応企業例</p>
+          <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-8 mt-8 md:mt-12">
+            <p className="text-center text-xl md:text-2xl font-bold mb-6 md:mb-8" style={{ color: '#5371ff' }}>対応企業例</p>
             <div className="relative overflow-hidden">
               {/* Gradient overlays */}
               <div className="absolute left-0 top-0 bottom-0 w-20 md:w-32 z-10" style={{ background: 'linear-gradient(to right, #EBECF5, transparent)' }}></div>
