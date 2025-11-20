@@ -1293,7 +1293,7 @@ export default function Home() {
                 </div>
                 <div className="flex-1">
                   <span className="text-base font-medium text-gray-900">
-                    FastPassとは料金体系はどうなってますか？
+                    Q　FastPassは無料で使えますか？
                   </span>
                 </div>
                 <svg
