@@ -231,7 +231,7 @@ export default function Home() {
               </div>
 
               {/* Company Logos Title - Desktop */}
-              <p className="text-2xl font-bold mb-6" style={{ color: '#5371ff' }}>対応企業例</p>
+              <p className="text-3xl font-bold" style={{ color: '#5371ff' }}>対応企業例</p>
             </div>
 
             {/* Right Content - Video - Desktop */}
@@ -244,14 +244,14 @@ export default function Home() {
                   muted
                   playsInline
                 >
-                  <source src="/AI面接動画.mp4" type="video/mp4" />
+                  <source src="/アクセンチュア株式会社 一次先行 (1).mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
             </div>
           </div>
 
-          {/* Company Logos Scrolling - Desktop Full Width */}
+          {/* Company Logos Section - Desktop Full Width */}
           <div className="hidden lg:block mt-12">
             <div className="relative overflow-hidden">
               {/* Gradient overlays */}
@@ -261,28 +261,28 @@ export default function Home() {
               {/* Scrolling container */}
               <div className="flex animate-scroll">
                 {/* First set of logos */}
-                <div className="flex items-center gap-16 min-w-max pr-16">
-                  <div className="text-3xl font-bold text-gray-800 whitespace-nowrap">三菱商事</div>
-                  <div className="text-3xl font-bold text-gray-800 whitespace-nowrap">アクセンチュア</div>
-                  <div className="text-3xl font-bold text-gray-800 whitespace-nowrap">電通</div>
-                  <div className="text-3xl font-bold text-gray-800 whitespace-nowrap">サイバーエージェント</div>
-                  <div className="text-3xl font-bold text-gray-800 whitespace-nowrap">野村総合研究所</div>
-                  <div className="text-3xl font-bold text-gray-800 whitespace-nowrap">LINEヤフー</div>
-                  <div className="text-3xl font-bold text-gray-800 whitespace-nowrap">マッキンゼー</div>
-                  <div className="text-3xl font-bold text-gray-800 whitespace-nowrap">NTTデータ</div>
-                  <div className="text-3xl font-bold text-gray-800 whitespace-nowrap">P&G</div>
+                <div className="flex items-center gap-8 min-w-max pr-8">
+                  <div className="text-2xl font-bold whitespace-nowrap" style={{ color: '#7b7b7b' }}>三菱商事</div>
+                  <div className="text-2xl font-bold whitespace-nowrap" style={{ color: '#7b7b7b' }}>アクセンチュア</div>
+                  <div className="text-2xl font-bold whitespace-nowrap" style={{ color: '#7b7b7b' }}>電通</div>
+                  <div className="text-2xl font-bold whitespace-nowrap" style={{ color: '#7b7b7b' }}>サイバーエージェント</div>
+                  <div className="text-2xl font-bold whitespace-nowrap" style={{ color: '#7b7b7b' }}>野村総合研究所</div>
+                  <div className="text-2xl font-bold whitespace-nowrap" style={{ color: '#7b7b7b' }}>LINEヤフー</div>
+                  <div className="text-2xl font-bold whitespace-nowrap" style={{ color: '#7b7b7b' }}>マッキンゼー</div>
+                  <div className="text-2xl font-bold whitespace-nowrap" style={{ color: '#7b7b7b' }}>NTTデータ</div>
+                  <div className="text-2xl font-bold whitespace-nowrap" style={{ color: '#7b7b7b' }}>P&G</div>
                 </div>
                 {/* Duplicate set for seamless loop */}
-                <div className="flex items-center gap-16 min-w-max pr-16">
-                  <div className="text-3xl font-bold text-gray-800 whitespace-nowrap">三菱商事</div>
-                  <div className="text-3xl font-bold text-gray-800 whitespace-nowrap">アクセンチュア</div>
-                  <div className="text-3xl font-bold text-gray-800 whitespace-nowrap">電通</div>
-                  <div className="text-3xl font-bold text-gray-800 whitespace-nowrap">サイバーエージェント</div>
-                  <div className="text-3xl font-bold text-gray-800 whitespace-nowrap">野村総合研究所</div>
-                  <div className="text-3xl font-bold text-gray-800 whitespace-nowrap">LINEヤフー</div>
-                  <div className="text-3xl font-bold text-gray-800 whitespace-nowrap">マッキンゼー</div>
-                  <div className="text-3xl font-bold text-gray-800 whitespace-nowrap">NTTデータ</div>
-                  <div className="text-3xl font-bold text-gray-800 whitespace-nowrap">P&G</div>
+                <div className="flex items-center gap-8 min-w-max pr-8">
+                  <div className="text-2xl font-bold whitespace-nowrap" style={{ color: '#7b7b7b' }}>三菱商事</div>
+                  <div className="text-2xl font-bold whitespace-nowrap" style={{ color: '#7b7b7b' }}>アクセンチュア</div>
+                  <div className="text-2xl font-bold whitespace-nowrap" style={{ color: '#7b7b7b' }}>電通</div>
+                  <div className="text-2xl font-bold whitespace-nowrap" style={{ color: '#7b7b7b' }}>サイバーエージェント</div>
+                  <div className="text-2xl font-bold whitespace-nowrap" style={{ color: '#7b7b7b' }}>野村総合研究所</div>
+                  <div className="text-2xl font-bold whitespace-nowrap" style={{ color: '#7b7b7b' }}>LINEヤフー</div>
+                  <div className="text-2xl font-bold whitespace-nowrap" style={{ color: '#7b7b7b' }}>マッキンゼー</div>
+                  <div className="text-2xl font-bold whitespace-nowrap" style={{ color: '#7b7b7b' }}>NTTデータ</div>
+                  <div className="text-2xl font-bold whitespace-nowrap" style={{ color: '#7b7b7b' }}>P&G</div>
                 </div>
               </div>
             </div>
@@ -327,39 +327,39 @@ export default function Home() {
             </a>
           </div>
 
-          {/* Company Logos Scrolling - Inside Hero Section */}
-          <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-8 mt-8 md:mt-12">
-            <p className="text-center text-xl md:text-2xl font-bold mb-6 md:mb-8" style={{ color: '#5371ff' }}>対応企業例</p>
+          {/* Company Logos Section - Mobile */}
+          <div className="lg:hidden mt-8">
+            <p className="text-lg font-bold mb-4 text-center" style={{ color: '#5371ff' }}>対応企業例</p>
             <div className="relative overflow-hidden">
               {/* Gradient overlays */}
-              <div className="absolute left-0 top-0 bottom-0 w-20 md:w-32 z-10" style={{ background: 'linear-gradient(to right, #EBECF5, transparent)' }}></div>
-              <div className="absolute right-0 top-0 bottom-0 w-20 md:w-32 z-10" style={{ background: 'linear-gradient(to left, #EBECF5, transparent)' }}></div>
+              <div className="absolute left-0 top-0 bottom-0 w-20 z-10" style={{ background: 'linear-gradient(to right, #EBECF5, transparent)' }}></div>
+              <div className="absolute right-0 top-0 bottom-0 w-20 z-10" style={{ background: 'linear-gradient(to left, #EBECF5, transparent)' }}></div>
 
               {/* Scrolling container */}
-              <div className="flex animate-scroll">
+              <div className="flex animate-scroll-mobile">
                 {/* First set of logos */}
-                <div className="flex items-center gap-8 md:gap-12 lg:gap-16 min-w-max pr-8 md:pr-12 lg:pr-16">
-                  <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 whitespace-nowrap">三菱商事</div>
-                  <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 whitespace-nowrap">アクセンチュア</div>
-                  <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 whitespace-nowrap">電通</div>
-                  <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 whitespace-nowrap">サイバーエージェント</div>
-                  <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 whitespace-nowrap">野村総合研究所</div>
-                  <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 whitespace-nowrap">LINEヤフー</div>
-                  <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 whitespace-nowrap">マッキンゼー</div>
-                  <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 whitespace-nowrap">NTTデータ</div>
-                  <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 whitespace-nowrap">P&G</div>
+                <div className="flex items-center gap-6 min-w-max pr-6">
+                  <div className="text-lg font-bold whitespace-nowrap" style={{ color: '#7b7b7b' }}>三菱商事</div>
+                  <div className="text-lg font-bold whitespace-nowrap" style={{ color: '#7b7b7b' }}>アクセンチュア</div>
+                  <div className="text-lg font-bold whitespace-nowrap" style={{ color: '#7b7b7b' }}>電通</div>
+                  <div className="text-lg font-bold whitespace-nowrap" style={{ color: '#7b7b7b' }}>サイバーエージェント</div>
+                  <div className="text-lg font-bold whitespace-nowrap" style={{ color: '#7b7b7b' }}>野村総合研究所</div>
+                  <div className="text-lg font-bold whitespace-nowrap" style={{ color: '#7b7b7b' }}>LINEヤフー</div>
+                  <div className="text-lg font-bold whitespace-nowrap" style={{ color: '#7b7b7b' }}>マッキンゼー</div>
+                  <div className="text-lg font-bold whitespace-nowrap" style={{ color: '#7b7b7b' }}>NTTデータ</div>
+                  <div className="text-lg font-bold whitespace-nowrap" style={{ color: '#7b7b7b' }}>P&G</div>
                 </div>
                 {/* Duplicate set for seamless loop */}
-                <div className="flex items-center gap-8 md:gap-12 lg:gap-16 min-w-max pr-8 md:pr-12 lg:pr-16">
-                  <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 whitespace-nowrap">三菱商事</div>
-                  <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 whitespace-nowrap">アクセンチュア</div>
-                  <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 whitespace-nowrap">電通</div>
-                  <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 whitespace-nowrap">サイバーエージェント</div>
-                  <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 whitespace-nowrap">野村総合研究所</div>
-                  <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 whitespace-nowrap">LINEヤフー</div>
-                  <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 whitespace-nowrap">マッキンゼー</div>
-                  <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 whitespace-nowrap">NTTデータ</div>
-                  <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 whitespace-nowrap">P&G</div>
+                <div className="flex items-center gap-6 min-w-max pr-6">
+                  <div className="text-lg font-bold whitespace-nowrap" style={{ color: '#7b7b7b' }}>三菱商事</div>
+                  <div className="text-lg font-bold whitespace-nowrap" style={{ color: '#7b7b7b' }}>アクセンチュア</div>
+                  <div className="text-lg font-bold whitespace-nowrap" style={{ color: '#7b7b7b' }}>電通</div>
+                  <div className="text-lg font-bold whitespace-nowrap" style={{ color: '#7b7b7b' }}>サイバーエージェント</div>
+                  <div className="text-lg font-bold whitespace-nowrap" style={{ color: '#7b7b7b' }}>野村総合研究所</div>
+                  <div className="text-lg font-bold whitespace-nowrap" style={{ color: '#7b7b7b' }}>LINEヤフー</div>
+                  <div className="text-lg font-bold whitespace-nowrap" style={{ color: '#7b7b7b' }}>マッキンゼー</div>
+                  <div className="text-lg font-bold whitespace-nowrap" style={{ color: '#7b7b7b' }}>NTTデータ</div>
+                  <div className="text-lg font-bold whitespace-nowrap" style={{ color: '#7b7b7b' }}>P&G</div>
                 </div>
               </div>
             </div>
@@ -1429,7 +1429,7 @@ export default function Home() {
                     muted
                     playsInline
                   >
-                    <source src="/AI面接動画.mp4" type="video/mp4" />
+                    <source src="/アクセンチュア株式会社 一次先行 (1).mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                 </div>
