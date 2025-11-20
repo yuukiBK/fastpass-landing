@@ -411,7 +411,7 @@ export default function Home() {
                     muted
                     playsInline
                   >
-                    <source src="/AI面接動画.mp4" type="video/mp4" />
+                    <source src="/アクセンチュア株式会社 一次先行 (1).mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                 </div>
