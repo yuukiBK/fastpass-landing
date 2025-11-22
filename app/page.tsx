@@ -42,7 +42,7 @@ export default function Home() {
             {/* Logo */}
             <div className="flex items-center">
               <img
-                src="/fastpass-logo.svg.png"
+                src="/透過ロゴ.png"
                 alt="Fastpass Logo"
                 className="h-16 md:h-20 w-auto"
               />
@@ -378,9 +378,9 @@ export default function Home() {
               </h3>
 
               <div className="flex justify-center mb-6">
-                <div className="w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden">
+                <div className="w-full aspect-video rounded-2xl overflow-hidden">
                   <img
-                    src="/面接練習.png"
+                    src="/実写_実践形式 (3).jpg"
                     alt="面接練習"
                     className="w-full h-full object-cover"
                   />
@@ -395,13 +395,13 @@ export default function Home() {
             {/* Card 2 */}
             <div className="bg-white rounded-3xl p-6 md:p-8 lg:p-10 shadow-sm hover:shadow-md transition-shadow">
               <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-4 md:mb-6 text-center" style={{ color: '#1C252E' }}>
-                自己分析とESづくりが<br />気づいたら完結
+                自己分析とESの土台が<br />気づいたら完結
               </h3>
 
               <div className="flex justify-center mb-6">
-                <div className="w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden">
+                <div className="w-full aspect-video rounded-2xl overflow-hidden">
                   <img
-                    src="/自己分析.png"
+                    src="/実写_実践形式 (4).jpg"
                     alt="自己分析"
                     className="w-full h-full object-cover"
                   />
@@ -410,7 +410,7 @@ export default function Home() {
 
               <p className="text-sm text-gray-700 leading-relaxed text-center">
                 AIが「なぜ？」まで深掘りしてくれるので、練習を重ねるほど自分が大事にしている価値観や向いている業界・働き方を明確化。
-                どの選考でも使える"ESづくり"の型が固まります。
+                どの選考でも使える"ES作成"の土台が固まります。
               </p>
             </div>
 
@@ -421,9 +421,9 @@ export default function Home() {
               </h3>
 
               <div className="flex justify-center mb-6">
-                <div className="w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden">
+                <div className="w-full aspect-video rounded-2xl overflow-hidden">
                   <img
-                    src="/早期特別選考.png"
+                    src="/実写_実践形式 (5).jpg"
                     alt="早期特別選考"
                     className="w-full h-full object-cover"
                   />
@@ -873,14 +873,14 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Card - 優秀者の回答を参考に改善 */}
+            {/* Right Card - ランキング上位者の回答から学べる */}
             <div className="bg-white rounded-3xl p-4 md:p-8 lg:p-10 border border-gray-200 shadow-sm">
               <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 text-center" style={{ color: '#4D5CEC' }}>
-                優秀者の回答を参考に改善
+                ランキング上位者の回答から学べる
               </h3>
 
               <p className="text-sm md:text-base text-gray-900 text-center mb-4 md:mb-6 leading-relaxed">
-                各質問で高得点を獲得した優秀者の実際の回答を確認し、自分の回答をブラッシュアップできます。
+                各質問で上位にランクインした学生の実際の回答を見ながら、自分の回答を効果的に磨けます。
               </p>
 
               {/* Q1 Section with larger graph */}
@@ -1192,31 +1192,46 @@ export default function Home() {
       <section className="py-12 md:py-16 lg:py-24 bg-gradient-to-b from-purple-50 to-blue-50">
         <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-8">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8 md:mb-12 lg:mb-16" style={{ color: '#1C252E' }}>
-            お役立ち情報
+            News/お役立ち情報
           </h2>
 
           <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-8">
             {/* Card 1 */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <a href="https://ai-fes2025.aishukatsu.com/" target="_blank" rel="noopener noreferrer" className="block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow cursor-pointer">
               <div className="aspect-video overflow-hidden">
                 <img
-                  src="/shutterstock_178724234.jpg"
-                  alt="外資系コンサルの面接対策完全ガイド"
+                  src="/News_AIチャレンジャーズフェス (3).png"
+                  alt="通過率が上がるES作成術"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="p-6">
-                <span className="inline-block bg-blue-100 text-blue-700 text-xs font-medium px-3 py-1 rounded-full mb-3">
-                  面接対策
-                </span>
+                <div className="flex flex-wrap gap-2 mb-3">
+                  <span className="inline-block bg-green-100 text-green-700 text-xs font-medium px-3 py-1 rounded-full">
+                    イベント
+                  </span>
+                  <span className="inline-block bg-blue-100 text-blue-700 text-xs font-medium px-3 py-1 rounded-full">
+                    27卒
+                  </span>
+                  <span className="inline-block bg-blue-100 text-blue-700 text-xs font-medium px-3 py-1 rounded-full">
+                    28卒
+                  </span>
+                  <span className="inline-block bg-purple-100 text-purple-700 text-xs font-medium px-3 py-1 rounded-full">
+                    文系
+                  </span>
+                  <span className="inline-block bg-purple-100 text-purple-700 text-xs font-medium px-3 py-1 rounded-full">
+                    理系
+                  </span>
+                </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">
-                  外資系コンサルの面接対策完全ガイド
+                  AIチャレンジャーズフェス2025
                 </h3>
                 <p className="text-sm text-gray-600 leading-relaxed">
-                  マッキンゼー、BCG、ベインなど外資系戦略コンサルの面接で頻出の質問と対策方法を解説
+                  12月21日開催｜国内トップIT企業が一堂に集結。<br />
+                  参加者限定で企業との特別選考チャンスも。
                 </p>
               </div>
-            </div>
+            </a>
 
             {/* Card 2 */}
             <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
@@ -1244,20 +1259,20 @@ export default function Home() {
             <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
               <div className="aspect-video overflow-hidden">
                 <img
-                  src="/AdobeStock_1101233078-1024x624.jpeg"
-                  alt="通過率が上がるES作成術"
+                  src="/shutterstock_178724234.jpg"
+                  alt="外資系コンサルの面接対策完全ガイド"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="p-6">
-                <span className="inline-block bg-green-100 text-green-700 text-xs font-medium px-3 py-1 rounded-full mb-3">
-                  ES・履歴書
+                <span className="inline-block bg-blue-100 text-blue-700 text-xs font-medium px-3 py-1 rounded-full mb-3">
+                  面接対策
                 </span>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">
-                  通過率が上がるES作成術
+                  外資系コンサルの面接対策完全ガイド
                 </h3>
                 <p className="text-sm text-gray-600 leading-relaxed">
-                  人事が見ているポイントと、説得力のあるエントリーシートの書き方を徹底解説
+                  マッキンゼー、BCG、ベインなど外資系戦略コンサルの面接で頻出の質問と対策方法を解説
                 </p>
               </div>
             </div>
@@ -1465,7 +1480,7 @@ export default function Home() {
             <div className="col-span-2 md:col-span-1">
               <div className="flex items-center gap-2 mb-4">
                 <img
-                  src="/ロゴ画像.png"
+                  src="/透過ロゴ.png"
                   alt="FastPass Logo"
                   className="h-16 md:h-20 w-auto"
                 />
