@@ -231,7 +231,16 @@ export default function Home() {
               </div>
 
               {/* Company Logos Title - Desktop */}
-              <p className="text-3xl font-bold" style={{ color: '#5371ff' }}>対応企業例</p>
+              <div className="flex items-end gap-4">
+                <p className="text-3xl font-bold" style={{ color: '#5371ff' }}>対応企業例</p>
+                <a
+                  href="#"
+                  className="text-sm font-bold underline hover:opacity-70 transition-opacity whitespace-nowrap"
+                  style={{ color: '#5371ff' }}
+                >
+                  全掲載企業を見る →
+                </a>
+              </div>
             </div>
 
             {/* Right Content - Video - Desktop */}
@@ -329,7 +338,16 @@ export default function Home() {
 
           {/* Company Logos Section - Mobile */}
           <div className="lg:hidden mt-8">
-            <p className="text-lg font-bold mb-4 text-center" style={{ color: '#5371ff' }}>対応企業例</p>
+            <div className="flex flex-col items-center gap-2 mb-4">
+              <p className="text-lg font-bold text-center" style={{ color: '#5371ff' }}>対応企業例</p>
+              <a
+                href="#"
+                className="text-xs font-bold underline hover:opacity-70 transition-opacity"
+                style={{ color: '#5371ff' }}
+              >
+                全掲載企業を見る →
+              </a>
+            </div>
             <div className="relative overflow-hidden">
               {/* Gradient overlays */}
               <div className="absolute left-0 top-0 bottom-0 w-20 z-10" style={{ background: 'linear-gradient(to right, #EBECF5, transparent)' }}></div>
