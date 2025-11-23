@@ -162,19 +162,19 @@ export default function Home() {
 
             {/* Stats - Mobile */}
             <div className="flex justify-center gap-3 md:gap-4 mb-6 md:mb-8">
-              <div className="bg-white rounded-2xl px-4 md:px-6 py-3 md:py-4 shadow-sm text-center flex-1 max-w-[180px]">
-                <div className="text-xs md:text-sm text-gray-600 mb-1 md:mb-2 font-medium">外資・メガベン・日経大手</div>
-                <div className="text-2xl md:text-3xl font-bold" style={{ color: '#4D5CEC' }}>
-                  50<span className="text-lg md:text-xl">社</span>
-                </div>
-                <div className="text-xs md:text-sm text-gray-600 mt-1">分の面接に対応</div>
+              <div className="flex-1 max-w-[220px]">
+                <img
+                  src="/学生向け_実績 (2200 x 700 px) (3).png"
+                  alt="外資・メガベン・日経大手50社分の面接に対応"
+                  className="w-full h-auto"
+                />
               </div>
-              <div className="bg-white rounded-2xl px-4 md:px-6 py-3 md:py-4 shadow-sm text-center flex-1 max-w-[180px]">
-                <div className="text-xs md:text-sm text-gray-600 mb-1 md:mb-2 font-medium">AI×就活領域</div>
-                <div className="text-2xl md:text-3xl font-bold" style={{ color: '#4D5CEC' }}>
-                  業界No.1
-                </div>
-                <div className="text-xs md:text-sm text-gray-600 mt-1">専門家監修</div>
+              <div className="flex-1 max-w-[220px]">
+                <img
+                  src="/学生向け_実績 (2200 x 700 px) (2).png"
+                  alt="AI×就活領域業界No.1専門家監修"
+                  className="w-full h-auto"
+                />
               </div>
             </div>
           </div>
@@ -185,19 +185,19 @@ export default function Home() {
             <div className="text-left">
               {/* Stats - Desktop */}
               <div className="flex justify-start gap-6 mb-8">
-                <div className="bg-white rounded-2xl px-8 py-5 shadow-sm text-center">
-                  <div className="text-sm text-gray-600 mb-2 font-medium">外資・メガベン・日経大手</div>
-                  <div className="text-4xl font-bold" style={{ color: '#4D5CEC' }}>
-                    50<span className="text-2xl">社</span>
-                  </div>
-                  <div className="text-sm text-gray-600 mt-1">分の面接に対応</div>
+                <div>
+                  <img
+                    src="/学生向け_実績 (2200 x 700 px) (3).png"
+                    alt="外資・メガベン・日経大手50社分の面接に対応"
+                    className="w-auto h-auto max-w-[300px]"
+                  />
                 </div>
-                <div className="bg-white rounded-2xl px-8 py-5 shadow-sm text-center">
-                  <div className="text-sm text-gray-600 mb-2 font-medium">AI×就活領域</div>
-                  <div className="text-4xl font-bold" style={{ color: '#4D5CEC' }}>
-                    業界No.1
-                  </div>
-                  <div className="text-sm text-gray-600 mt-1">専門家監修</div>
+                <div>
+                  <img
+                    src="/学生向け_実績 (2200 x 700 px) (2).png"
+                    alt="AI×就活領域業界No.1専門家監修"
+                    className="w-auto h-auto max-w-[300px]"
+                  />
                 </div>
               </div>
 
@@ -866,7 +866,7 @@ export default function Home() {
               {/* Screenshot */}
               <div className="rounded-2xl overflow-hidden mb-4">
                 <img
-                  src="/企業リスト.jpg"
+                  src="/ランキング (1).jpg"
                   alt="難関企業ごとに特化した面接対策"
                   className="w-full h-auto"
                 />
@@ -883,83 +883,13 @@ export default function Home() {
                 各質問で上位にランクインした学生の実際の回答を見ながら、自分の回答を効果的に磨けます。
               </p>
 
-              {/* Q1 Section with larger graph */}
-              <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-4 md:p-6 mb-4">
-                <div className="flex flex-col lg:flex-row items-start gap-4 lg:gap-6 mb-4">
-                  <div className="w-full lg:flex-1 lg:min-w-0 lg:max-w-[680px]">
-                    <div className="flex items-center gap-2 mb-3">
-                      <div className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-[#4D5CEC] flex items-center justify-center text-white font-bold text-xs md:text-sm flex-shrink-0">Q1</div>
-                      <h4 className="text-sm md:text-base font-bold text-gray-900">学生時代に最も力を入れた経験について教えてください。</h4>
-                    </div>
-                    <div className="bg-white rounded-xl p-3 md:p-4 mb-3">
-                      <p className="text-xs md:text-sm text-gray-700 leading-relaxed mb-3">
-                        私が学生時代に最も力を入れたのは、大学のテニスサークルで部長を務め、部員数を2倍に増やしたことです...
-                      </p>
-                      <div className="flex items-center justify-between text-xs text-gray-500">
-                        <span>ストーリー: Mercari</span>
-                        <span>152文字</span>
-                      </div>
-                    </div>
-                    <div className="flex flex-wrap items-center gap-2 md:gap-3">
-                      <div className="flex items-center gap-1.5 md:gap-2 bg-green-50 px-2 md:px-3 py-1 md:py-1.5 rounded-lg">
-                        <div className="w-2 h-2 rounded-full bg-green-500 flex-shrink-0"></div>
-                        <span className="text-xs text-gray-600 whitespace-nowrap">強み</span>
-                        <span className="text-xs text-green-700 font-medium whitespace-nowrap">リーダーシップ (88点)</span>
-                      </div>
-                      <div className="flex items-center gap-1.5 md:gap-2 bg-yellow-50 px-2 md:px-3 py-1 md:py-1.5 rounded-lg">
-                        <div className="w-2 h-2 rounded-full bg-yellow-500 flex-shrink-0"></div>
-                        <span className="text-xs text-gray-600 whitespace-nowrap">改善点</span>
-                        <span className="text-xs text-yellow-700 font-medium whitespace-nowrap">具体的な数値を追加 (45点)</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex flex-col items-center flex-shrink-0 w-full lg:w-auto">
-                    <div className="relative">
-                      <svg className="w-24 h-24 md:w-32 md:h-32 transform -rotate-90">
-                        <circle cx="48" cy="48" r="42" stroke="#E5E7EB" strokeWidth="6" fill="none" className="md:hidden" />
-                        <circle cx="48" cy="48" r="42" stroke="#4D5CEC" strokeWidth="6" fill="none" strokeDasharray="263.89" strokeDashoffset="95.25" strokeLinecap="round" className="md:hidden" />
-                        <circle cx="64" cy="64" r="56" stroke="#E5E7EB" strokeWidth="8" fill="none" className="hidden md:block" />
-                        <circle
-                          cx="64"
-                          cy="64"
-                          r="56"
-                          stroke="#4D5CEC"
-                          strokeWidth="8"
-                          fill="none"
-                          strokeDasharray="351.858"
-                          strokeDashoffset="127"
-                          strokeLinecap="round"
-                          className="hidden md:block"
-                        />
-                      </svg>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="text-center">
-                          <div className="text-3xl md:text-4xl font-bold text-[#4D5CEC]">62</div>
-                          <div className="text-xs text-gray-500">点</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="text-xs text-gray-500 mt-2">平均: 53.0</div>
-                  </div>
-                </div>
-
-                {/* Other Users' Answers Section */}
-                <div className="mt-6">
-                  <h5 className="text-sm font-bold text-gray-900 mb-3">他のユーザーの優秀回答を見る</h5>
-                  <div className="space-y-2">
-                    {/* Answer Card 1 */}
-                    <div className="bg-white border border-gray-200 rounded-lg p-3 hover:border-[#4D5CEC] transition-colors cursor-pointer">
-                      <div className="flex items-center justify-between mb-2">
-                        <div className="flex items-center gap-2">
-                          <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-xs font-bold text-blue-600">A</div>
-                          <span className="text-xs text-gray-600">早稲田大学 3年</span>
-                        </div>
-                        <span className="text-sm font-bold text-[#4D5CEC]">95点</span>
-                      </div>
-                      <p className="text-xs text-gray-700 line-clamp-2">私はテニスサークルの部長として、部員数を50人から120人に増やした経験があります。具体的には、SNS戦略の見直しと新入生向けイベントの刷新を...</p>
-                    </div>
-                  </div>
-                </div>
+              {/* Screenshot */}
+              <div className="rounded-2xl overflow-hidden">
+                <img
+                  src="/ランキング.jpg"
+                  alt="ランキング上位者の回答から学べる"
+                  className="w-full h-auto"
+                />
               </div>
             </div>
 
@@ -1227,7 +1157,7 @@ export default function Home() {
                   AIチャレンジャーズフェス2025
                 </h3>
                 <p className="text-sm text-gray-600 leading-relaxed">
-                  12月21日開催｜国内トップIT企業が一堂に集結。<br />
+                  2025/12/21(日)開催！国内トップIT企業が一堂に集結。<br />
                   参加者限定で企業との特別選考チャンスも。
                 </p>
               </div>
