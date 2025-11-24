@@ -882,7 +882,7 @@ export default function Home() {
               <div className="flex justify-center mb-6">
                 <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-4 border-pink-200">
                   <img
-                    src="/スクリーンショット 2025-11-24 18.34.27.png"
+                    src="/スクリーンショット 2025-11-24 18.41.36.png"
                     alt="優しい女性人事"
                     className="w-full h-full object-cover"
                   />
@@ -947,7 +947,7 @@ export default function Home() {
               <div className="flex justify-center mb-6">
                 <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-4 border-purple-200">
                   <img
-                    src="/スクリーンショット 2025-11-24 18.41.36.png"
+                    src="/スクリーンショット 2025-11-24 18.34.27.png"
                     alt="技術面接官"
                     className="w-full h-full object-cover"
                   />
