@@ -427,8 +427,8 @@ export default function Home() {
               </div>
 
               <p className="text-sm text-gray-700 leading-relaxed text-center">
-                AIが『なぜ?』と深掘りすることで、面接練習そのものが自己分析に。<br />
-                本番前に、自分の価値観や向いている道が見えてきます。
+                AIの深掘り質問を通じて、<br />面接練習しながら自己理解が深まります。<br />
+                練習を重ねるほど、自分の価値観や向いている業界が明確になります。
               </p>
             </div>
 
