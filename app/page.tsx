@@ -926,10 +926,12 @@ export default function Home() {
             {/* Avatar 3 - 役員面接官 */}
             <div className="bg-gradient-to-b from-amber-50 to-white rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow border border-amber-100">
               <div className="flex justify-center mb-6">
-                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-amber-200 to-amber-100 flex items-center justify-center">
-                  <svg className="w-12 h-12 md:w-14 md:h-14 text-amber-600" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
-                  </svg>
+                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-4 border-amber-200">
+                  <img
+                    src="/スクリーンショット 2025-11-24 18.44.50.png"
+                    alt="役員面接官"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
               <h3 className="text-lg md:text-xl font-bold mb-3 text-center" style={{ color: '#1C252E' }}>
