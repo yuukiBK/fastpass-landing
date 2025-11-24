@@ -903,10 +903,12 @@ export default function Home() {
             {/* Avatar 2 - 一般的な男性人事 */}
             <div className="bg-gradient-to-b from-blue-50 to-white rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow border border-blue-100">
               <div className="flex justify-center mb-6">
-                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-blue-200 to-blue-100 flex items-center justify-center">
-                  <svg className="w-12 h-12 md:w-14 md:h-14 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd"/>
-                  </svg>
+                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-4 border-blue-200">
+                  <img
+                    src="/スクリーンショット 2025-11-24 18.43.54.png"
+                    alt="スタンダード人事"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
               <h3 className="text-lg md:text-xl font-bold mb-3 text-center" style={{ color: '#1C252E' }}>
