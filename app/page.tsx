@@ -881,7 +881,7 @@ export default function Home() {
             <div className="bg-gradient-to-b from-pink-50 to-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-pink-100">
               <div className="w-full h-48 md:h-56 overflow-hidden">
                 <img
-                  src="/スクリーンショット 2025-11-24 18.41.36.png"
+                  src="/33623226_s.jpg"
                   alt="優しい女性人事"
                   className="w-full h-full object-cover"
                 />
