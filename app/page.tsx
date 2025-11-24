@@ -860,6 +860,126 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Avatar Selection Section */}
+      <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
+        <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-8">
+          {/* Section Title */}
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
+              <span style={{ color: '#4D5CEC' }}>4つのアバター</span>
+              <span style={{ color: '#1C252E' }}>で、あらゆる面接シーンに対応</span>
+            </h2>
+            <p className="text-base md:text-lg text-gray-600 leading-relaxed">
+              面接官のタイプに合わせて練習することで、<br className="hidden md:block" />
+              本番さながらの実践的な対策が可能になります。
+            </p>
+          </div>
+
+          {/* Avatar Cards Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            {/* Avatar 1 - 優しい女性人事 */}
+            <div className="bg-gradient-to-b from-pink-50 to-white rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow border border-pink-100">
+              <div className="flex justify-center mb-6">
+                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-pink-200 to-pink-100 flex items-center justify-center">
+                  <svg className="w-12 h-12 md:w-14 md:h-14 text-pink-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd"/>
+                  </svg>
+                </div>
+              </div>
+              <h3 className="text-lg md:text-xl font-bold mb-3 text-center" style={{ color: '#1C252E' }}>
+                優しい女性人事
+              </h3>
+              <p className="text-sm text-gray-700 leading-relaxed text-center mb-4">
+                学生の深掘りを丁寧にしてくれる、親しみやすい雰囲気の人事担当者。
+              </p>
+              <div className="bg-pink-50 rounded-lg p-3 text-xs text-gray-600">
+                <p className="font-semibold mb-1">こんな学生におすすめ：</p>
+                <p>初めての面接練習や、自己分析を深めたい方</p>
+              </div>
+            </div>
+
+            {/* Avatar 2 - 一般的な男性人事 */}
+            <div className="bg-gradient-to-b from-blue-50 to-white rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow border border-blue-100">
+              <div className="flex justify-center mb-6">
+                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-blue-200 to-blue-100 flex items-center justify-center">
+                  <svg className="w-12 h-12 md:w-14 md:h-14 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd"/>
+                  </svg>
+                </div>
+              </div>
+              <h3 className="text-lg md:text-xl font-bold mb-3 text-center" style={{ color: '#1C252E' }}>
+                スタンダード人事
+              </h3>
+              <p className="text-sm text-gray-700 leading-relaxed text-center mb-4">
+                最も一般的な面接スタイル。標準的な質問で基礎力を固める練習に最適。
+              </p>
+              <div className="bg-blue-50 rounded-lg p-3 text-xs text-gray-600">
+                <p className="font-semibold mb-1">こんな学生におすすめ：</p>
+                <p>基本的な面接対策を万全にしたい方</p>
+              </div>
+            </div>
+
+            {/* Avatar 3 - エンジニア面接官 */}
+            <div className="bg-gradient-to-b from-purple-50 to-white rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow border border-purple-100">
+              <div className="flex justify-center mb-6">
+                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-purple-200 to-purple-100 flex items-center justify-center">
+                  <svg className="w-12 h-12 md:w-14 md:h-14 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"/>
+                  </svg>
+                </div>
+              </div>
+              <h3 className="text-lg md:text-xl font-bold mb-3 text-center" style={{ color: '#1C252E' }}>
+                技術面接官
+              </h3>
+              <p className="text-sm text-gray-700 leading-relaxed text-center mb-4">
+                技術や研究内容を詳細に深掘りする、エンジニア・研究職向けの専門面接官。
+              </p>
+              <div className="bg-purple-50 rounded-lg p-3 text-xs text-gray-600">
+                <p className="font-semibold mb-1">こんな学生におすすめ：</p>
+                <p>理系職種や技術面接を控えている方</p>
+              </div>
+            </div>
+
+            {/* Avatar 4 - 役員面接官 */}
+            <div className="bg-gradient-to-b from-amber-50 to-white rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow border border-amber-100">
+              <div className="flex justify-center mb-6">
+                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-amber-200 to-amber-100 flex items-center justify-center">
+                  <svg className="w-12 h-12 md:w-14 md:h-14 text-amber-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
+                  </svg>
+                </div>
+              </div>
+              <h3 className="text-lg md:text-xl font-bold mb-3 text-center" style={{ color: '#1C252E' }}>
+                役員面接官
+              </h3>
+              <p className="text-sm text-gray-700 leading-relaxed text-center mb-4">
+                ビジョンや志望動機を深く問う、最終面接を想定した経営層レベルの面接官。
+              </p>
+              <div className="bg-amber-50 rounded-lg p-3 text-xs text-gray-600">
+                <p className="font-semibold mb-1">こんな学生におすすめ：</p>
+                <p>最終面接対策やキャリアビジョンを磨きたい方</p>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA Button */}
+          <div className="text-center mt-12 md:mt-16">
+            <a
+              href="#"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-bold text-base text-white transition-all duration-250 hover:opacity-90"
+              style={{
+                background: 'linear-gradient(90deg, #7f4dec 0%, #395be5 100%)',
+              }}
+            >
+              4つのアバターで面接練習を始める
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* What FastPass Can Do Section */}
       <section className="pt-0 pb-16 md:pb-24 bg-white">
         <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-8">
