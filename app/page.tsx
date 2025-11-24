@@ -880,7 +880,7 @@ export default function Home() {
             {/* Avatar 1 - 優しい女性人事 */}
             <div className="bg-gradient-to-b from-pink-50 to-white rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow border border-pink-100">
               <div className="flex justify-center mb-6">
-                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-4 border-pink-200">
+                <div className="w-32 h-40 md:w-40 md:h-48 rounded-2xl overflow-hidden border-4 border-pink-200">
                   <img
                     src="/スクリーンショット 2025-11-24 18.41.36.png"
                     alt="優しい女性人事"
@@ -903,7 +903,7 @@ export default function Home() {
             {/* Avatar 2 - 一般的な男性人事 */}
             <div className="bg-gradient-to-b from-blue-50 to-white rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow border border-blue-100">
               <div className="flex justify-center mb-6">
-                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-4 border-blue-200">
+                <div className="w-32 h-40 md:w-40 md:h-48 rounded-2xl overflow-hidden border-4 border-blue-200">
                   <img
                     src="/スクリーンショット 2025-11-24 18.43.54.png"
                     alt="スタンダード人事"
@@ -926,7 +926,7 @@ export default function Home() {
             {/* Avatar 3 - 役員面接官 */}
             <div className="bg-gradient-to-b from-amber-50 to-white rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow border border-amber-100">
               <div className="flex justify-center mb-6">
-                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-4 border-amber-200">
+                <div className="w-32 h-40 md:w-40 md:h-48 rounded-2xl overflow-hidden border-4 border-amber-200">
                   <img
                     src="/スクリーンショット 2025-11-24 18.44.50.png"
                     alt="役員面接官"
@@ -949,7 +949,7 @@ export default function Home() {
             {/* Avatar 4 - エンジニア面接官 */}
             <div className="bg-gradient-to-b from-purple-50 to-white rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow border border-purple-100">
               <div className="flex justify-center mb-6">
-                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-4 border-purple-200">
+                <div className="w-32 h-40 md:w-40 md:h-48 rounded-2xl overflow-hidden border-4 border-purple-200">
                   <img
                     src="/スクリーンショット 2025-11-24 18.34.27.png"
                     alt="技術面接官"
