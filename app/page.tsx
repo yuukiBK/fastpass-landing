@@ -945,10 +945,12 @@ export default function Home() {
             {/* Avatar 4 - エンジニア面接官 */}
             <div className="bg-gradient-to-b from-purple-50 to-white rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow border border-purple-100">
               <div className="flex justify-center mb-6">
-                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-purple-200 to-purple-100 flex items-center justify-center">
-                  <svg className="w-12 h-12 md:w-14 md:h-14 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"/>
-                  </svg>
+                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-4 border-purple-200">
+                  <img
+                    src="/スクリーンショット 2025-11-24 18.41.36.png"
+                    alt="技術面接官"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
               <h3 className="text-lg md:text-xl font-bold mb-3 text-center" style={{ color: '#1C252E' }}>
