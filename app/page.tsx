@@ -880,10 +880,12 @@ export default function Home() {
             {/* Avatar 1 - 優しい女性人事 */}
             <div className="bg-gradient-to-b from-pink-50 to-white rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow border border-pink-100">
               <div className="flex justify-center mb-6">
-                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-pink-200 to-pink-100 flex items-center justify-center">
-                  <svg className="w-12 h-12 md:w-14 md:h-14 text-pink-600" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd"/>
-                  </svg>
+                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-4 border-pink-200">
+                  <img
+                    src="/スクリーンショット 2025-11-24 18.34.27.png"
+                    alt="優しい女性人事"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
               <h3 className="text-lg md:text-xl font-bold mb-3 text-center" style={{ color: '#1C252E' }}>
@@ -919,7 +921,28 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Avatar 3 - エンジニア面接官 */}
+            {/* Avatar 3 - 役員面接官 */}
+            <div className="bg-gradient-to-b from-amber-50 to-white rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow border border-amber-100">
+              <div className="flex justify-center mb-6">
+                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-amber-200 to-amber-100 flex items-center justify-center">
+                  <svg className="w-12 h-12 md:w-14 md:h-14 text-amber-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
+                  </svg>
+                </div>
+              </div>
+              <h3 className="text-lg md:text-xl font-bold mb-3 text-center" style={{ color: '#1C252E' }}>
+                役員面接官
+              </h3>
+              <p className="text-sm text-gray-700 leading-relaxed text-center mb-4">
+                ビジョンや志望動機を深く問う、最終面接想定の経営層レベルの面接官。
+              </p>
+              <div className="bg-amber-50 rounded-lg p-3 text-xs text-gray-600">
+                <p className="font-semibold mb-1">こんな学生におすすめ：</p>
+                <p>最終面接対策やキャリアビジョンを磨きたい方</p>
+              </div>
+            </div>
+
+            {/* Avatar 4 - エンジニア面接官 */}
             <div className="bg-gradient-to-b from-purple-50 to-white rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow border border-purple-100">
               <div className="flex justify-center mb-6">
                 <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-purple-200 to-purple-100 flex items-center justify-center">
@@ -937,27 +960,6 @@ export default function Home() {
               <div className="bg-purple-50 rounded-lg p-3 text-xs text-gray-600">
                 <p className="font-semibold mb-1">こんな学生におすすめ：</p>
                 <p>理系職種や技術面接を控えている方</p>
-              </div>
-            </div>
-
-            {/* Avatar 4 - 役員面接官 */}
-            <div className="bg-gradient-to-b from-amber-50 to-white rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow border border-amber-100">
-              <div className="flex justify-center mb-6">
-                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-amber-200 to-amber-100 flex items-center justify-center">
-                  <svg className="w-12 h-12 md:w-14 md:h-14 text-amber-600" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
-                  </svg>
-                </div>
-              </div>
-              <h3 className="text-lg md:text-xl font-bold mb-3 text-center" style={{ color: '#1C252E' }}>
-                役員面接官
-              </h3>
-              <p className="text-sm text-gray-700 leading-relaxed text-center mb-4">
-                ビジョンや志望動機を深く問う、最終面接を想定した経営層レベルの面接官。
-              </p>
-              <div className="bg-amber-50 rounded-lg p-3 text-xs text-gray-600">
-                <p className="font-semibold mb-1">こんな学生におすすめ：</p>
-                <p>最終面接対策やキャリアビジョンを磨きたい方</p>
               </div>
             </div>
           </div>
