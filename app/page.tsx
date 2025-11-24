@@ -955,7 +955,7 @@ export default function Home() {
                 技術面接官
               </h3>
               <p className="text-sm text-gray-700 leading-relaxed text-center mb-4">
-                技術や研究内容を詳細に深掘りする、エンジニア・研究職向けの専門面接官。
+                技術や研究内容を深掘りする、エンジニア・研究職向けの専門面接官。
               </p>
               <div className="bg-purple-50 rounded-lg p-3 text-xs text-gray-600">
                 <p className="font-semibold mb-1">こんな学生におすすめ：</p>
