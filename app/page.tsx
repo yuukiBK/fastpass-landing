@@ -427,8 +427,8 @@ export default function Home() {
               </div>
 
               <p className="text-sm text-gray-700 leading-relaxed text-center">
-                AIが「なぜ？」まで深掘りしてくれるので、練習を重ねるほど自分が大事にしている価値観や向いている業界・働き方を明確化。
-                どの選考でも使える"ES作成"の土台が固まります。
+                AIが『なぜ?』と深掘りすることで、面接練習そのものが自己分析に。<br />
+                本番前に、自分の価値観や向いている道が見えてきます。
               </p>
             </div>
 
@@ -494,8 +494,7 @@ export default function Home() {
                   対話形式の実践的なAI面接
                 </h3>
                 <p className="text-sm md:text-base lg:text-lg text-gray-800 mt-3 md:mt-4 leading-relaxed">
-                  AI面接官と本番さながらの面接練習を、何度でも行えます。
-                  蓄積されたスコアとフィードバックが、自己分析とESづくりの土台にもなります。
+                  AI面接官があなたの答えに応じて次の質問を展開。<br />本番さながらの対話形式で、何度でも実践的な面接練習ができます。
                 </p>
               </div>
               <div className="rounded-2xl overflow-hidden bg-gradient-to-br from-purple-100 to-blue-100 p-4">
@@ -642,7 +641,7 @@ export default function Home() {
                   選考免除オファー
                 </h3>
                 <p className="text-sm md:text-base lg:text-lg text-gray-800 mt-3 md:mt-4 leading-relaxed">
-                  AI面接で蓄積されたスコアや価値観データにもとづき、相性の良い外資・難関企業の限定イベントや、選考免除付きの人事面談などの選考免除オファーに招待されます。
+                  AI面接のスコアと価値観データをもとに、<br />難関企業の限定イベントや選考免除付き面談に招待されます。
                 </p>
               </div>
               <div className="rounded-2xl overflow-hidden bg-white border-2 border-gray-100 shadow-sm">
@@ -720,7 +719,7 @@ export default function Home() {
                     <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
-                    <h4 className="text-lg font-bold text-gray-900">早期特別選考に応募する</h4>
+                    <h4 className="text-lg font-bold text-gray-900">選考免除オファーを獲得する</h4>
                   </div>
                   <span className="text-[#4D5CEC] text-sm font-medium inline-flex items-center gap-1 hover:opacity-80 transition-opacity cursor-default">
                     すべて見る→
@@ -885,7 +884,7 @@ export default function Home() {
               {/* Screenshot */}
               <div className="rounded-2xl overflow-hidden mb-4">
                 <img
-                  src="/スクリーンショット 2025-11-24 11.20.26.png"
+                  src="/ランキング (5).jpg"
                   alt="17の評価項目で、各社基準に合わせ練習"
                   className="w-full h-auto"
                 />
@@ -923,139 +922,13 @@ export default function Home() {
                 企業だけからパーソナライズされたスカウトが届きます。
               </p>
 
-              {/* Scout Interface */}
-              <div className="rounded-2xl overflow-hidden bg-white border-2 border-gray-100 shadow-sm">
-                <div className="grid grid-cols-1 md:grid-cols-[3fr_7fr] h-auto md:h-[380px]">
-                  {/* Left Panel - Scout List */}
-                  <div className="bg-gray-50 md:border-r border-b md:border-b-0 border-gray-200 flex flex-col min-h-[200px] md:min-h-0">
-                    {/* Header */}
-                    <div className="p-2 md:p-3 border-b border-gray-200 bg-white">
-                      <div className="flex items-center gap-2 mb-3">
-                        <span className="font-semibold text-sm text-gray-900">FastPass</span>
-                      </div>
-                      <div className="flex gap-1 text-xs text-gray-600">
-                        <button className="flex-1 py-1.5 px-2 rounded hover:bg-gray-100">
-                          <svg className="w-3.5 h-3.5 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                          </svg>
-                        </button>
-                        <button className="flex-1 py-1.5 px-2 rounded hover:bg-gray-100">
-                          <svg className="w-3.5 h-3.5 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                          </svg>
-                        </button>
-                        <button className="flex-1 py-1.5 px-2 rounded bg-blue-50 text-[#4D5CEC]">
-                          <svg className="w-3.5 h-3.5 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                          </svg>
-                        </button>
-                        <button className="flex-1 py-1.5 px-2 rounded hover:bg-gray-100">
-                          <svg className="w-3.5 h-3.5 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
-
-                    {/* Scout List */}
-                    <div className="flex-1 overflow-y-auto">
-                      <div className="space-y-1 p-2">
-                        <div className="bg-blue-50 border-l-2 border-[#4D5CEC] p-1.5 rounded cursor-pointer">
-                          <div className="flex items-center gap-2 mb-1">
-                            <div className="w-2 h-2 bg-[#4D5CEC] rounded-full"></div>
-                            <div className="flex-1 min-w-0">
-                              <p className="text-[10px] font-medium text-gray-900 truncate leading-tight">戦略コンサルタント早期特別選考</p>
-                              <p className="text-[9px] text-gray-500 truncate leading-tight mt-0.5">28卒向け｜BlueArrow Consulting</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="flex items-center gap-2 p-1.5 hover:bg-gray-100 rounded cursor-pointer">
-                          <div className="flex-1 min-w-0">
-                            <p className="text-[10px] font-medium text-gray-900 truncate leading-tight">ビジネス総合職 FastPass限定選考</p>
-                            <p className="text-[9px] text-gray-500 truncate leading-tight mt-0.5">28卒向け｜Recruit</p>
-                          </div>
-                        </div>
-                        <div className="flex items-center gap-2 p-1.5 hover:bg-gray-100 rounded cursor-pointer">
-                          <div className="flex-1 min-w-0">
-                            <p className="text-[10px] font-medium text-gray-900 truncate leading-tight">新規事業開発 特別採用ルート</p>
-                            <p className="text-[9px] text-gray-500 truncate leading-tight mt-0.5">28卒向け｜Mercari</p>
-                          </div>
-                        </div>
-                        <div className="flex items-center gap-2 p-1.5 hover:bg-gray-100 rounded cursor-pointer">
-                          <div className="flex-1 min-w-0">
-                            <p className="text-[10px] font-medium text-gray-900 truncate leading-tight">総合職 早期キャリア面談付き特別選考</p>
-                            <p className="text-[9px] text-gray-500 truncate leading-tight mt-0.5">28卒向け｜三菱UFJ銀行</p>
-                          </div>
-                        </div>
-                        <div className="flex items-center gap-2 p-1.5 hover:bg-gray-100 rounded cursor-pointer">
-                          <div className="flex-1 min-w-0">
-                            <p className="text-[10px] font-medium text-gray-900 truncate leading-tight">戦略コンサルタント 1次免除ルート</p>
-                            <p className="text-[9px] text-gray-500 truncate leading-tight mt-0.5">28卒向け｜KEARNEY</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Right Panel - Scout Cards Stack */}
-                  <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-4 md:p-8 flex items-start justify-center relative pt-8 md:pt-12 min-h-[300px] md:min-h-0">
-                    <div className="relative w-full max-w-sm">
-                      {/* Card 3 - Background */}
-                      <div className="absolute top-8 left-4 right-4 bg-white rounded-xl shadow-lg p-4 transform rotate-2 opacity-40">
-                        <div className="flex items-center gap-3">
-                          <div className="w-12 h-12 bg-gray-200 rounded-lg"></div>
-                          <div className="flex-1">
-                            <div className="h-3 bg-gray-200 rounded w-3/4 mb-2"></div>
-                            <div className="h-2 bg-gray-100 rounded w-1/2"></div>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Card 2 - Middle */}
-                      <div className="absolute top-4 left-2 right-2 bg-white rounded-xl shadow-lg p-4 transform rotate-1 opacity-70">
-                        <div className="flex items-center gap-3">
-                          <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-                            <span className="text-2xl">🌿</span>
-                          </div>
-                          <div className="flex-1">
-                            <p className="text-sm font-bold text-gray-900">Ecoverra</p>
-                            <p className="text-xs text-gray-600">25卒向け</p>
-                            <p className="text-xs text-gray-500 mt-1">環境関連のお知らせ</p>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Card 1 - Front - Chat Style */}
-                      <div className="relative bg-white rounded-xl shadow-xl p-5 border-2 border-blue-100">
-                        <div className="absolute top-3 right-3 w-2 h-2 bg-red-500 rounded-full"></div>
-                        <div className="flex items-start gap-3">
-                          {/* Profile Icon */}
-                          <div className="flex-shrink-0">
-                            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm shadow-md">
-                              BA
-                            </div>
-                          </div>
-                          {/* Chat Bubble */}
-                          <div className="flex-1">
-                            <p className="text-xs text-gray-600 mb-1">BlueArrow Consulting 採用担当</p>
-                            <div className="relative bg-blue-50 rounded-2xl rounded-tl-none p-4 shadow-sm">
-                              {/* Triangle pointer */}
-                              <div className="absolute -left-2 top-0 w-0 h-0 border-t-[8px] border-t-blue-50 border-r-[8px] border-r-transparent"></div>
-                              <div className="flex items-center gap-2 mb-2">
-                                <span className="bg-blue-100 text-blue-700 text-xs px-2 py-0.5 rounded-full font-medium">28卒向け</span>
-                              </div>
-                              <p className="text-sm font-bold text-gray-900 mb-2">戦略コンサルタント早期特別選考のご案内</p>
-                              <p className="text-xs text-gray-700 leading-relaxed mb-2">
-                                山田太郎さん<br />AI面接の回答を拝見し、ぜひ弊社の「戦略コンサルタント 28卒向け早期特別選考」にご招待したく、ご連絡差し上げました。
-                              </p>
-                              <p className="text-xs text-gray-500">2時間前</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              {/* Screenshot */}
+              <div className="rounded-2xl overflow-hidden mb-4">
+                <img
+                  src="/ランキング (3).jpg"
+                  alt="志望領域 × スコアで届く特別オファー"
+                  className="w-full h-auto"
+                />
               </div>
             </div>
 
