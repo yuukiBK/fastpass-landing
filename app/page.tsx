@@ -157,7 +157,7 @@ export default function Home() {
             {/* Main Heading - Mobile */}
             <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-6 md:mb-8">
               <span style={{ color: '#1C252E' }}>難関企業特化のAI面接で、</span><br />
-              <span style={{ color: '#1C252E' }}>他の就活生に差を付けろ。</span>
+              <span style={{ color: '#1C252E' }}>企業ごとの個別対策を。</span>
             </h1>
 
             {/* Stats - Mobile */}
@@ -204,7 +204,7 @@ export default function Home() {
               {/* Main Heading - Desktop */}
               <h1 className="text-5xl font-bold leading-tight mb-8">
                 <span style={{ color: '#1C252E' }}>難関企業特化のAI面接で、</span><br />
-                <span style={{ color: '#1C252E' }}>他の就活生に差を付けろ。</span>
+                <span style={{ color: '#1C252E' }}>企業ごとの個別対策を。</span>
               </h1>
 
               {/* CTA Buttons - Desktop */}
@@ -234,11 +234,11 @@ export default function Home() {
               <div className="flex items-end gap-4">
                 <p className="text-3xl font-bold" style={{ color: '#5371ff' }}>対応企業例</p>
                 <a
-                  href="#"
-                  className="text-sm font-bold underline hover:opacity-70 transition-opacity whitespace-nowrap"
+                  href="/companies"
+                  className="text-lg font-bold underline hover:opacity-70 transition-opacity whitespace-nowrap"
                   style={{ color: '#5371ff' }}
                 >
-                  全掲載企業を見る →
+                  企業一覧を見る→
                 </a>
               </div>
             </div>
@@ -253,7 +253,7 @@ export default function Home() {
                   muted
                   playsInline
                 >
-                  <source src="/アクセンチュア株式会社 一次先行 (1).mp4" type="video/mp4" />
+                  <source src="/アクセンチュア株式会社 一次先行 (4).mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
@@ -341,11 +341,11 @@ export default function Home() {
             <div className="flex flex-col items-center gap-2 mb-4">
               <p className="text-lg font-bold text-center" style={{ color: '#5371ff' }}>対応企業例</p>
               <a
-                href="#"
-                className="text-xs font-bold underline hover:opacity-70 transition-opacity"
+                href="/companies"
+                className="text-base font-bold underline hover:opacity-70 transition-opacity"
                 style={{ color: '#5371ff' }}
               >
-                全掲載企業を見る →
+                企業一覧を見る→
               </a>
             </div>
             <div className="relative overflow-hidden">
@@ -413,7 +413,7 @@ export default function Home() {
             {/* Card 2 */}
             <div className="bg-white rounded-3xl p-6 md:p-8 lg:p-10 shadow-sm hover:shadow-md transition-shadow">
               <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-4 md:mb-6 text-center" style={{ color: '#1C252E' }}>
-                自己分析とESの土台が<br />気づいたら完結
+                AI面接を重ねるうちに<br />自己分析とESの軸が固まる
               </h3>
 
               <div className="flex justify-center mb-6">
@@ -491,7 +491,7 @@ export default function Home() {
               <div className="text-center mb-4 md:mb-6">
                 <p className="text-xs md:text-sm text-gray-500 mb-2">Feature 1</p>
                 <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4" style={{ color: '#4D5CEC' }}>
-                  AI面接
+                  対話形式の実践的なAI面接
                 </h3>
                 <p className="text-sm md:text-base lg:text-lg text-gray-800 mt-3 md:mt-4 leading-relaxed">
                   AI面接官と本番さながらの面接練習を、何度でも行えます。
@@ -507,7 +507,7 @@ export default function Home() {
                     muted
                     playsInline
                   >
-                    <source src="/アクセンチュア株式会社 一次先行 (1).mp4" type="video/mp4" />
+                    <source src="/アクセンチュア株式会社 一次先行 (4).mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                 </div>
@@ -669,7 +669,7 @@ export default function Home() {
                     <div className="flex-shrink-0" style={{ width: '240px' }}>
                       {/* Company Logo and Name */}
                       <div className="mb-6">
-                        <h4 className="text-xl font-bold text-gray-900 mb-1">ブルーアロー・<br />コンサルティング株式会社</h4>
+                        <h4 className="text-xl font-bold text-gray-900 mb-1">ブルー・<br />コンサルティング株式会社</h4>
                       </div>
 
                       {/* Job Details */}
@@ -894,11 +894,11 @@ export default function Home() {
             {/* Right Card - ランキング上位者の回答から学べる */}
             <div className="bg-white rounded-3xl p-4 md:p-8 lg:p-10 border border-gray-200 shadow-sm">
               <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 text-center" style={{ color: '#4D5CEC' }}>
-                ランキング上位者の回答から学べる
+                お題別ランキング上位の回答が見られる
               </h3>
 
               <p className="text-sm md:text-base text-gray-900 text-center mb-4 md:mb-6 leading-relaxed">
-                各質問で上位にランクインした学生の実際の回答を見ながら、自分の回答を効果的に磨けます。
+                各お題で上位にランクインした学生の実際の回答を見ながら、自分の回答を効果的に磨けます。
               </p>
 
               {/* Screenshot */}
@@ -914,7 +914,7 @@ export default function Home() {
             {/* Card 3 - 相性の良い企業からだけ届くスカウト */}
             <div className="bg-white rounded-3xl p-4 md:p-8 lg:p-10 border border-gray-200 shadow-sm">
               <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 text-center" style={{ color: '#4D5CEC' }}>
-                相性の良い企業からだけ届くスカウト
+                志望領域 × スコアで届く特別オファー
               </h3>
 
               <p className="text-sm md:text-base text-gray-900 text-center mb-4 md:mb-6 leading-relaxed">
@@ -1392,7 +1392,7 @@ export default function Home() {
                     muted
                     playsInline
                   >
-                    <source src="/アクセンチュア株式会社 一次先行 (1).mp4" type="video/mp4" />
+                    <source src="/アクセンチュア株式会社 一次先行 (4).mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                 </div>
