@@ -878,94 +878,94 @@ export default function Home() {
           {/* Avatar Cards Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {/* Avatar 1 - 優しい女性人事 */}
-            <div className="bg-gradient-to-b from-pink-50 to-white rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow border border-pink-100">
-              <div className="flex justify-center mb-6">
-                <div className="w-32 h-40 md:w-40 md:h-48 rounded-2xl overflow-hidden border-4 border-pink-200">
-                  <img
-                    src="/スクリーンショット 2025-11-24 18.41.36.png"
-                    alt="優しい女性人事"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+            <div className="bg-gradient-to-b from-pink-50 to-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-pink-100">
+              <div className="w-full h-48 md:h-56 overflow-hidden">
+                <img
+                  src="/スクリーンショット 2025-11-24 18.41.36.png"
+                  alt="優しい女性人事"
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <h3 className="text-lg md:text-xl font-bold mb-3 text-center" style={{ color: '#1C252E' }}>
-                優しい女性人事
-              </h3>
-              <p className="text-sm text-gray-700 leading-relaxed text-center mb-4">
-                学生の深掘りを丁寧にしてくれる、親しみやすい雰囲気の人事担当者。
-              </p>
-              <div className="bg-pink-50 rounded-lg p-3 text-xs text-gray-600">
-                <p className="font-semibold mb-1">こんな学生におすすめ：</p>
-                <p>初めての面接練習や、自己分析を深めたい方</p>
+              <div className="p-6 md:p-8">
+                <h3 className="text-lg md:text-xl font-bold mb-3 text-center" style={{ color: '#1C252E' }}>
+                  優しい女性人事
+                </h3>
+                <p className="text-sm text-gray-700 leading-relaxed text-center mb-4">
+                  学生の深掘りを丁寧にしてくれる、親しみやすい雰囲気の人事担当者。
+                </p>
+                <div className="bg-pink-50 rounded-lg p-3 text-xs text-gray-600">
+                  <p className="font-semibold mb-1">こんな学生におすすめ：</p>
+                  <p>初めての面接練習や、自己分析を深めたい方</p>
+                </div>
               </div>
             </div>
 
             {/* Avatar 2 - 一般的な男性人事 */}
-            <div className="bg-gradient-to-b from-blue-50 to-white rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow border border-blue-100">
-              <div className="flex justify-center mb-6">
-                <div className="w-32 h-40 md:w-40 md:h-48 rounded-2xl overflow-hidden border-4 border-blue-200">
-                  <img
-                    src="/スクリーンショット 2025-11-24 18.43.54.png"
-                    alt="スタンダード人事"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+            <div className="bg-gradient-to-b from-blue-50 to-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-blue-100">
+              <div className="w-full h-48 md:h-56 overflow-hidden">
+                <img
+                  src="/スクリーンショット 2025-11-24 18.43.54.png"
+                  alt="スタンダード人事"
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <h3 className="text-lg md:text-xl font-bold mb-3 text-center" style={{ color: '#1C252E' }}>
-                スタンダード人事
-              </h3>
-              <p className="text-sm text-gray-700 leading-relaxed text-center mb-4">
-                最も一般的な面接スタイル。標準的な質問で基礎力を固める練習に最適。
-              </p>
-              <div className="bg-blue-50 rounded-lg p-3 text-xs text-gray-600">
-                <p className="font-semibold mb-1">こんな学生におすすめ：</p>
-                <p>基本的な面接対策を万全にしたい方</p>
+              <div className="p-6 md:p-8">
+                <h3 className="text-lg md:text-xl font-bold mb-3 text-center" style={{ color: '#1C252E' }}>
+                  スタンダード人事
+                </h3>
+                <p className="text-sm text-gray-700 leading-relaxed text-center mb-4">
+                  最も一般的な面接スタイル。標準的な質問で基礎力を固める練習に最適。
+                </p>
+                <div className="bg-blue-50 rounded-lg p-3 text-xs text-gray-600">
+                  <p className="font-semibold mb-1">こんな学生におすすめ：</p>
+                  <p>基本的な面接対策を万全にしたい方</p>
+                </div>
               </div>
             </div>
 
             {/* Avatar 3 - 役員面接官 */}
-            <div className="bg-gradient-to-b from-amber-50 to-white rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow border border-amber-100">
-              <div className="flex justify-center mb-6">
-                <div className="w-32 h-40 md:w-40 md:h-48 rounded-2xl overflow-hidden border-4 border-amber-200">
-                  <img
-                    src="/スクリーンショット 2025-11-24 18.44.50.png"
-                    alt="役員面接官"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+            <div className="bg-gradient-to-b from-amber-50 to-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-amber-100">
+              <div className="w-full h-48 md:h-56 overflow-hidden">
+                <img
+                  src="/スクリーンショット 2025-11-24 18.44.50.png"
+                  alt="役員面接官"
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <h3 className="text-lg md:text-xl font-bold mb-3 text-center" style={{ color: '#1C252E' }}>
-                役員面接官
-              </h3>
-              <p className="text-sm text-gray-700 leading-relaxed text-center mb-4">
-                ビジョンや志望動機を深く問う、最終面接想定の経営層レベルの面接官。
-              </p>
-              <div className="bg-amber-50 rounded-lg p-3 text-xs text-gray-600">
-                <p className="font-semibold mb-1">こんな学生におすすめ：</p>
-                <p>最終面接対策やキャリアビジョンを磨きたい方</p>
+              <div className="p-6 md:p-8">
+                <h3 className="text-lg md:text-xl font-bold mb-3 text-center" style={{ color: '#1C252E' }}>
+                  役員面接官
+                </h3>
+                <p className="text-sm text-gray-700 leading-relaxed text-center mb-4">
+                  ビジョンや志望動機を深く問う、最終面接想定の経営層レベルの面接官。
+                </p>
+                <div className="bg-amber-50 rounded-lg p-3 text-xs text-gray-600">
+                  <p className="font-semibold mb-1">こんな学生におすすめ：</p>
+                  <p>最終面接対策やキャリアビジョンを磨きたい方</p>
+                </div>
               </div>
             </div>
 
             {/* Avatar 4 - エンジニア面接官 */}
-            <div className="bg-gradient-to-b from-purple-50 to-white rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow border border-purple-100">
-              <div className="flex justify-center mb-6">
-                <div className="w-32 h-40 md:w-40 md:h-48 rounded-2xl overflow-hidden border-4 border-purple-200">
-                  <img
-                    src="/スクリーンショット 2025-11-24 18.34.27.png"
-                    alt="技術面接官"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+            <div className="bg-gradient-to-b from-purple-50 to-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-purple-100">
+              <div className="w-full h-48 md:h-56 overflow-hidden">
+                <img
+                  src="/スクリーンショット 2025-11-24 18.34.27.png"
+                  alt="技術面接官"
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <h3 className="text-lg md:text-xl font-bold mb-3 text-center" style={{ color: '#1C252E' }}>
-                技術面接官
-              </h3>
-              <p className="text-sm text-gray-700 leading-relaxed text-center mb-4">
-                技術や研究内容を深掘りする、エンジニア・研究職向けの専門面接官。
-              </p>
-              <div className="bg-purple-50 rounded-lg p-3 text-xs text-gray-600">
-                <p className="font-semibold mb-1">こんな学生におすすめ：</p>
-                <p>理系職種や技術面接を控えている方</p>
+              <div className="p-6 md:p-8">
+                <h3 className="text-lg md:text-xl font-bold mb-3 text-center" style={{ color: '#1C252E' }}>
+                  技術面接官
+                </h3>
+                <p className="text-sm text-gray-700 leading-relaxed text-center mb-4">
+                  技術や研究内容を深掘りする、エンジニア・研究職向けの専門面接官。
+                </p>
+                <div className="bg-purple-50 rounded-lg p-3 text-xs text-gray-600">
+                  <p className="font-semibold mb-1">こんな学生におすすめ：</p>
+                  <p>理系職種や技術面接を控えている方</p>
+                </div>
               </div>
             </div>
           </div>
