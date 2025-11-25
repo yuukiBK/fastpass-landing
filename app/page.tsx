@@ -427,8 +427,7 @@ export default function Home() {
               </div>
 
               <p className="text-sm text-gray-700 leading-relaxed text-center">
-                AIの深掘り質問を通じて、<br />面接練習しながら自己理解が深まります。<br />
-                練習を重ねるほど、自分の価値観や向いている業界が明確になります。
+                何を書けばいいか分からなくても大丈夫。メンターAIの質問に答えるうちに、自己分析が深まりガクチカが完成します。
               </p>
             </div>
 
