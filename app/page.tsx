@@ -413,7 +413,7 @@ export default function Home() {
             {/* Card 2 */}
             <div className="bg-white rounded-3xl p-6 md:p-8 lg:p-10 shadow-sm hover:shadow-md transition-shadow">
               <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-4 md:mb-6 text-center" style={{ color: '#1C252E' }}>
-                AI面接を重ねるうちに<br />自己分析とESの軸が固まる
+                メンターAIと一緒に<br />0から自己分析・ガクチカ作りも
               </h3>
 
               <div className="flex justify-center mb-6">
