@@ -406,7 +406,7 @@ export default function Home() {
               </div>
 
               <p className="text-sm text-gray-700 leading-relaxed text-center">
-                外資・メガベン・日系大手の過去問を、対話形式で練習可能。予想外の質問にも、一貫性を持って答える力が身につきます。
+                難関企業の過去問を、対話形式で練習可能。どんな質問にも対応できる実践力を養えます。
               </p>
             </div>
 
