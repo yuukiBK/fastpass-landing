@@ -427,7 +427,7 @@ export default function Home() {
               </div>
 
               <p className="text-sm text-gray-700 leading-relaxed text-center">
-                何を書けばいいか分からなくても大丈夫。メンターAIの質問に答えるうちに、自己分析が深まりガクチカが完成します。
+                何を書けばいいか分からなくても大丈夫。<br />メンターAIの質問に答えるうちに、自己分析が深まりガクチカが完成します。
               </p>
             </div>
 
