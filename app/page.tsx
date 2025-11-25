@@ -996,7 +996,48 @@ export default function Home() {
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-            {/* Left Card - 複数の難関企業を一気に比較検討 */}
+            {/* Left Card - 17の評価項目で、各社基準に合わせ練習 */}
+            <div className="bg-white rounded-3xl p-4 md:p-8 lg:p-10 border border-gray-200 shadow-sm">
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 text-center" style={{ color: '#4D5CEC' }}>
+                17の評価項目で、各社基準に合わせ練習
+              </h3>
+
+              <p className="text-sm md:text-base text-gray-900 text-center mb-4 md:mb-6 leading-relaxed">
+                17の評価項目で、あなたの強み・弱みを多角的に評価。<br />
+                企業別の評価基準に合わせ、実践的な対策が可能。
+              </p>
+
+              {/* Screenshot */}
+              <div className="rounded-2xl overflow-hidden mb-4">
+                <img
+                  src="/ランキング (5).jpg"
+                  alt="17の評価項目で、各社基準に合わせ練習"
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
+
+            {/* Right Card - ランキング上位者の回答から学べる */}
+            <div className="bg-white rounded-3xl p-4 md:p-8 lg:p-10 border border-gray-200 shadow-sm">
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 text-center" style={{ color: '#4D5CEC' }}>
+                お題別ランキング上位の回答が見られる
+              </h3>
+
+              <p className="text-sm md:text-base text-gray-900 text-center mb-4 md:mb-6 leading-relaxed">
+                各お題で上位にランクインした学生の実際の回答を見ながら、<br />自分の回答を効果的に磨けます。
+              </p>
+
+              {/* Screenshot */}
+              <div className="rounded-2xl overflow-hidden">
+                <img
+                  src="/ランキング.jpg"
+                  alt="ランキング上位者の回答から学べる"
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
+
+            {/* Card 3 - 複数の難関企業を一気に比較検討 */}
             <div className="bg-white rounded-3xl p-4 md:p-8 lg:p-10 border border-gray-200 shadow-sm">
               <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 text-center" style={{ color: '#4D5CEC' }}>
                 複数の難関企業を一気に比較検討
@@ -1068,47 +1109,6 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            {/* Right Card - 17の評価項目で、各社基準に合わせ練習 */}
-            <div className="bg-white rounded-3xl p-4 md:p-8 lg:p-10 border border-gray-200 shadow-sm">
-              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 text-center" style={{ color: '#4D5CEC' }}>
-                17の評価項目で、各社基準に合わせ練習
-              </h3>
-
-              <p className="text-sm md:text-base text-gray-900 text-center mb-4 md:mb-6 leading-relaxed">
-                17の評価項目で、あなたの強み・弱みを多角的に評価。<br />
-                企業別の評価基準に合わせ、実践的な対策が可能。
-              </p>
-
-              {/* Screenshot */}
-              <div className="rounded-2xl overflow-hidden mb-4">
-                <img
-                  src="/ランキング (5).jpg"
-                  alt="17の評価項目で、各社基準に合わせ練習"
-                  className="w-full h-auto"
-                />
-              </div>
-            </div>
-
-            {/* Card 3 - ランキング上位者の回答から学べる */}
-            <div className="bg-white rounded-3xl p-4 md:p-8 lg:p-10 border border-gray-200 shadow-sm">
-              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 text-center" style={{ color: '#4D5CEC' }}>
-                お題別ランキング上位の回答が見られる
-              </h3>
-
-              <p className="text-sm md:text-base text-gray-900 text-center mb-4 md:mb-6 leading-relaxed">
-                各お題で上位にランクインした学生の実際の回答を見ながら、<br />自分の回答を効果的に磨けます。
-              </p>
-
-              {/* Screenshot */}
-              <div className="rounded-2xl overflow-hidden">
-                <img
-                  src="/ランキング.jpg"
-                  alt="ランキング上位者の回答から学べる"
-                  className="w-full h-auto"
-                />
               </div>
             </div>
 
