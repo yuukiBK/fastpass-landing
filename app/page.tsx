@@ -448,7 +448,7 @@ export default function Home() {
               </div>
 
               <p className="text-sm text-gray-700 leading-relaxed text-center">
-                AI面接のスコアや志向性データをもとに、相性の良い外資・難関企業の限定イベントや選考免除付きの人事面談に招待。
+                AI面接のスコアや志向性データをもとに、<br />相性の良い外資・難関企業の限定イベントや選考免除付きの人事面談に招待。
               </p>
             </div>
           </div>
