@@ -950,7 +950,7 @@ export default function Home() {
             <div className="bg-gradient-to-b from-amber-50 to-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-amber-100">
               <div className="w-full h-48 md:h-56 overflow-hidden">
                 <img
-                  src="/スクリーンショット 2025-11-24 18.44.50.png"
+                  src="/29105858_s.jpg"
                   alt="役員面接官"
                   className="w-full h-full object-cover"
                 />
