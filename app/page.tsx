@@ -449,7 +449,6 @@ export default function Home() {
 
               <p className="text-sm text-gray-700 leading-relaxed text-center">
                 AI面接のスコアや志向性データをもとに、相性の良い外資・難関企業の限定イベントや選考免除付きの人事面談に招待。
-                就活早期から理想の企業との出会いを実現します。
               </p>
             </div>
           </div>
