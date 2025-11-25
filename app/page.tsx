@@ -1037,28 +1037,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Card 3 - 相性の良い企業からだけ届くスカウト */}
-            <div className="bg-white rounded-3xl p-4 md:p-8 lg:p-10 border border-gray-200 shadow-sm">
-              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 text-center" style={{ color: '#4D5CEC' }}>
-                志望領域 × スコアで届く特別オファー
-              </h3>
-
-              <p className="text-sm md:text-base text-gray-900 text-center mb-4 md:mb-6 leading-relaxed">
-                AI面接の結果から、あなたの志向性やスキルにマッチした<br className="hidden md:block" />
-                企業だけからパーソナライズされたスカウトが届きます。
-              </p>
-
-              {/* Screenshot */}
-              <div className="rounded-2xl overflow-hidden mb-4">
-                <img
-                  src="/ランキング (3).jpg"
-                  alt="志望領域 × スコアで届く特別オファー"
-                  className="w-full h-auto"
-                />
-              </div>
-            </div>
-
-            {/* Card 4 - 興味点など志望点の分析 */}
+            {/* Card 3 - 興味点など志望点の分析 */}
             <div className="bg-white rounded-3xl p-4 md:p-8 lg:p-10 border border-gray-200 shadow-sm">
               <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 text-center" style={{ color: '#4D5CEC' }}>
                 複数の難関企業を一気に比較検討
@@ -1130,6 +1109,27 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+
+            {/* Card 4 - 相性の良い企業からだけ届くスカウト */}
+            <div className="bg-white rounded-3xl p-4 md:p-8 lg:p-10 border border-gray-200 shadow-sm">
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 text-center" style={{ color: '#4D5CEC' }}>
+                志望領域 × スコアで届く特別オファー
+              </h3>
+
+              <p className="text-sm md:text-base text-gray-900 text-center mb-4 md:mb-6 leading-relaxed">
+                AI面接の結果から、あなたの志向性やスキルにマッチした<br className="hidden md:block" />
+                企業だけからパーソナライズされたスカウトが届きます。
+              </p>
+
+              {/* Screenshot */}
+              <div className="rounded-2xl overflow-hidden mb-4">
+                <img
+                  src="/ランキング (3).jpg"
+                  alt="志望領域 × スコアで届く特別オファー"
+                  className="w-full h-auto"
+                />
               </div>
             </div>
           </div>
