@@ -923,30 +923,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Avatar 3 - 役員面接官 */}
-            <div className="bg-gradient-to-b from-amber-50 to-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-amber-100">
-              <div className="w-full h-48 md:h-56 overflow-hidden">
-                <img
-                  src="/スクリーンショット 2025-11-24 18.44.50.png"
-                  alt="役員面接官"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6 md:p-8">
-                <h3 className="text-lg md:text-xl font-bold mb-3 text-center" style={{ color: '#1C252E' }}>
-                  役員面接官
-                </h3>
-                <p className="text-sm text-gray-700 leading-relaxed text-center mb-4">
-                  ビジョンや志望動機を深く問う、最終面接想定の経営層レベルの面接官。
-                </p>
-                <div className="bg-amber-50 rounded-lg p-3 text-xs text-gray-600">
-                  <p className="font-semibold mb-1">こんな学生におすすめ：</p>
-                  <p>最終面接対策やキャリアビジョンを磨きたい方</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Avatar 4 - エンジニア面接官 */}
+            {/* Avatar 3 - エンジニア面接官 */}
             <div className="bg-gradient-to-b from-purple-50 to-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-purple-100">
               <div className="w-full h-48 md:h-56 overflow-hidden">
                 <img
@@ -965,6 +942,29 @@ export default function Home() {
                 <div className="bg-purple-50 rounded-lg p-3 text-xs text-gray-600">
                   <p className="font-semibold mb-1">こんな学生におすすめ：</p>
                   <p>理系職種や技術面接を控えている方</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Avatar 4 - 役員面接官 */}
+            <div className="bg-gradient-to-b from-amber-50 to-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-amber-100">
+              <div className="w-full h-48 md:h-56 overflow-hidden">
+                <img
+                  src="/スクリーンショット 2025-11-24 18.44.50.png"
+                  alt="役員面接官"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-6 md:p-8">
+                <h3 className="text-lg md:text-xl font-bold mb-3 text-center" style={{ color: '#1C252E' }}>
+                  役員面接官
+                </h3>
+                <p className="text-sm text-gray-700 leading-relaxed text-center mb-4">
+                  ビジョンや志望動機を深く問う、最終面接想定の経営層レベルの面接官。
+                </p>
+                <div className="bg-amber-50 rounded-lg p-3 text-xs text-gray-600">
+                  <p className="font-semibold mb-1">こんな学生におすすめ：</p>
+                  <p>最終面接対策やキャリアビジョンを磨きたい方</p>
                 </div>
               </div>
             </div>
