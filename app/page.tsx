@@ -392,7 +392,28 @@ export default function Home() {
             {/* Card 1 */}
             <div className="bg-white rounded-3xl p-6 md:p-8 lg:p-10 shadow-sm hover:shadow-md transition-shadow">
               <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-4 md:mb-6 text-center" style={{ color: '#1C252E' }}>
-                難関企業の「過去問」を<br />対話型の実践形式で練習可能
+                メンターAIと対話しながら<br />0から自己分析・ガクチカ作成
+              </h3>
+
+              <div className="flex justify-center mb-6">
+                <div className="w-full aspect-video rounded-2xl overflow-hidden">
+                  <img
+                    src="/実写_実践形式 (4).jpg"
+                    alt="自己分析"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+
+              <p className="text-sm text-gray-700 leading-relaxed text-center">
+                何を書けばいいか分からなくても大丈夫。<br />メンターAIの質問に答えるうちに、<br />自己分析・ガクチカの整理が完了します。
+              </p>
+            </div>
+
+            {/* Card 2 */}
+            <div className="bg-white rounded-3xl p-6 md:p-8 lg:p-10 shadow-sm hover:shadow-md transition-shadow">
+              <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-4 md:mb-6 text-center" style={{ color: '#1C252E' }}>
+                面接AIで実践練習<br />難関企業の「過去問」に挑戦
               </h3>
 
               <div className="flex justify-center mb-6">
@@ -407,27 +428,6 @@ export default function Home() {
 
               <p className="text-sm text-gray-700 leading-relaxed text-center">
                 難関企業の過去問を、対話形式で練習可能。<br />過去の頻出質問を網羅しているから、<br />どんな質問にも対応できる実践力を養えます。
-              </p>
-            </div>
-
-            {/* Card 2 */}
-            <div className="bg-white rounded-3xl p-6 md:p-8 lg:p-10 shadow-sm hover:shadow-md transition-shadow">
-              <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-4 md:mb-6 text-center" style={{ color: '#1C252E' }}>
-                就活のスタート段階から<br />自己分析・ガクチカ作成
-              </h3>
-
-              <div className="flex justify-center mb-6">
-                <div className="w-full aspect-video rounded-2xl overflow-hidden">
-                  <img
-                    src="/実写_実践形式 (4).jpg"
-                    alt="自己分析"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-
-              <p className="text-sm text-gray-700 leading-relaxed text-center">
-                何を書けばいいか分からなくても大丈夫。<br />メンターAIの質問に答えるうちに、<br />説得力のあるガクチカが完成します。
               </p>
             </div>
 
@@ -996,7 +996,28 @@ export default function Home() {
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-            {/* Left Card - 17の評価項目で、各社基準に合わせ練習 */}
+            {/* Card 1 - メンターAIとの対話で自己分析 */}
+            <div className="bg-white rounded-3xl p-4 md:p-8 lg:p-10 border border-gray-200 shadow-sm">
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 text-center" style={{ color: '#4D5CEC' }}>
+                メンターAIとの対話で自己分析
+              </h3>
+
+              <p className="text-sm md:text-base text-gray-900 text-center mb-4 md:mb-6 leading-relaxed">
+                AIの深掘り質問に答えるだけで、言語化できていなかった<br />
+                強み・価値観・エピソードが整理できます。
+              </p>
+
+              {/* Screenshot */}
+              <div className="rounded-2xl overflow-hidden mb-4">
+                <img
+                  src="/スクリーンショット 2025-11-27 14.57.51.png"
+                  alt="対話型の自己分析"
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
+
+            {/* Card 2 - 17の評価項目で、各社基準に合わせ練習 */}
             <div className="bg-white rounded-3xl p-4 md:p-8 lg:p-10 border border-gray-200 shadow-sm">
               <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 text-center" style={{ color: '#4D5CEC' }}>
                 17の評価項目で、各社基準に合わせ練習
@@ -1017,7 +1038,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Card - ランキング上位者の回答から学べる */}
+            {/* Card 3 - ランキング上位者の回答から学べる */}
             <div className="bg-white rounded-3xl p-4 md:p-8 lg:p-10 border border-gray-200 shadow-sm">
               <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 text-center" style={{ color: '#4D5CEC' }}>
                 お題別ランキング上位の回答が見られる
@@ -1037,7 +1058,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Card 3 - 相性の良い企業からだけ届くスカウト */}
+            {/* Card 4 - 相性の良い企業からだけ届くスカウト */}
             <div className="bg-white rounded-3xl p-4 md:p-8 lg:p-10 border border-gray-200 shadow-sm">
               <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 text-center" style={{ color: '#4D5CEC' }}>
                 志望領域 × スコアで届く特別オファー
@@ -1051,85 +1072,10 @@ export default function Home() {
               {/* Screenshot */}
               <div className="rounded-2xl overflow-hidden mb-4">
                 <img
-                  src="/ランキング (3).jpg"
+                  src="/ランキング (7).jpg"
                   alt="志望領域 × スコアで届く特別オファー"
                   className="w-full h-auto"
                 />
-              </div>
-            </div>
-
-            {/* Card 4 - 複数の難関企業を一気に比較検討 */}
-            <div className="bg-white rounded-3xl p-4 md:p-8 lg:p-10 border border-gray-200 shadow-sm">
-              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 text-center" style={{ color: '#4D5CEC' }}>
-                複数の難関企業を一気に比較検討
-              </h3>
-
-              <p className="text-sm md:text-base text-gray-900 text-center mb-4 md:mb-6 leading-relaxed">
-                AI面接の結果をもとに、少人数制の座談会にご招待。<br />
-                FastPassだけの早期選考ルートをゲットできるチャンスです。
-              </p>
-
-              {/* Large Event Card Example */}
-              <div className="rounded-2xl overflow-hidden bg-white border-2 border-gray-100 shadow-sm mb-6 md:mb-8">
-                {/* Blue Header Banner */}
-                <div className="bg-[#4D5CEC] px-4 md:px-6 py-3 md:py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="bg-white text-[#4D5CEC] text-xs font-medium px-3 py-1 rounded-full">28卒向け</span>
-                      <span className="text-white text-xs">Posted 3日前</span>
-                    </div>
-                    <h3 className="text-white text-lg md:text-xl font-bold">
-                      28卒向け｜複数難関企業 少人数制座談会
-                    </h3>
-                  </div>
-                  <a href="#" className="bg-white text-[#4D5CEC] px-4 md:px-6 py-2 rounded-lg font-bold text-sm hover:bg-gray-50 transition-colors whitespace-nowrap inline-block text-center w-full sm:w-auto">
-                    応募する
-                  </a>
-                </div>
-
-                {/* Content Area */}
-                <div className="p-4">
-                  <div className="flex flex-col md:flex-row gap-4">
-                    {/* Left Column - Event Info */}
-                    <div className="flex-shrink-0 md:w-[240px]">
-                      <h5 className="text-base font-bold text-gray-900 mb-4">イベント概要</h5>
-
-                      {/* Event Details */}
-                      <div className="space-y-3 text-sm">
-                        <div>
-                          <div className="text-gray-500 text-xs mb-1">開催形式</div>
-                          <div className="font-medium text-gray-900">対面／少人数制座談会</div>
-                        </div>
-
-                        <div>
-                          <div className="text-gray-500 text-xs mb-1">会場</div>
-                          <div className="font-medium text-gray-900">都内オフィス</div>
-                        </div>
-
-                        <div>
-                          <div className="text-gray-500 text-xs mb-1">参加企業例</div>
-                          <div className="font-medium text-gray-900">コンサルティング／ITメガベンチャー／日系大手事業会社 など</div>
-                        </div>
-
-                        <div>
-                          <div className="text-gray-500 text-xs mb-1">特典</div>
-                          <div className="font-medium text-gray-900">早期特別選考ルートをご案内</div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Right Column - Event Image */}
-                    <div className="flex-1">
-                      <div className="rounded-xl overflow-hidden mb-4">
-                        <img
-                          src="/少人数制座談会.jpeg"
-                          alt="少人数制座談会"
-                          className="w-full h-auto"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
