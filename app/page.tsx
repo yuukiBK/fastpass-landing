@@ -1094,7 +1094,7 @@ export default function Home() {
             <a href="https://ai-fes2025.aishukatsu.com/" target="_blank" rel="noopener noreferrer" className="block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow cursor-pointer">
               <div className="aspect-video overflow-hidden">
                 <img
-                  src="/News_AIチャレンジャーズフェス (3).png"
+                  src="/News_AIチャレンジャーズフェス (10).png"
                   alt="通過率が上がるES作成術"
                   className="w-full h-full object-cover"
                 />
