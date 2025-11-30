@@ -996,10 +996,10 @@ export default function Home() {
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-            {/* Card 1 - メンターAIとの対話で自己分析 */}
+            {/* Card 1 - キャリア相談AIとの対話で自己分析 */}
             <div className="bg-white rounded-3xl p-4 md:p-8 lg:p-10 border border-gray-200 shadow-sm">
               <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 text-center" style={{ color: '#4D5CEC' }}>
-                メンターAIとの対話で自己分析
+                キャリア相談AIとの対話で自己分析
               </h3>
 
               <p className="text-sm md:text-base text-gray-900 text-center mb-4 md:mb-6 leading-relaxed">
