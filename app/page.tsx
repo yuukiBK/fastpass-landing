@@ -392,21 +392,21 @@ export default function Home() {
             {/* Card 1 */}
             <div className="bg-white rounded-3xl p-6 md:p-8 lg:p-10 shadow-sm hover:shadow-md transition-shadow">
               <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-4 md:mb-6 text-center" style={{ color: '#1C252E' }}>
-                メンターAIと対話しながら<br />0から自己分析・ガクチカ作成
+                キャリア相談AIで、<br />あなたに合う業界が見つかる
               </h3>
 
               <div className="flex justify-center mb-6">
                 <div className="w-full aspect-video rounded-2xl overflow-hidden">
                   <img
-                    src="/実写_実践形式 (4).jpg"
-                    alt="自己分析"
+                    src="/33861112_m.jpg"
+                    alt="キャリア相談AI"
                     className="w-full h-full object-cover"
                   />
                 </div>
               </div>
 
               <p className="text-sm text-gray-700 leading-relaxed text-center">
-                何を書けばいいか分からなくても大丈夫。<br />メンターAIの質問に答えるうちに、<br />自己分析・ガクチカの整理が完了します。
+                AIが対話であなたの経験を深掘りし、<br />相性の良い業界や社風を「理由付き」で提案。<br />就活で使えるエピソードの掘り起こしまでサポート。
               </p>
             </div>
 
