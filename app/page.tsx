@@ -398,7 +398,7 @@ export default function Home() {
               <div className="flex justify-center mb-6">
                 <div className="w-full aspect-video rounded-2xl overflow-hidden">
                   <img
-                    src="/名称未設定のデザイン (14).jpg"
+                    src="/名称未設定のデザイン (15).jpg"
                     alt="キャリア相談AI"
                     className="w-full h-full object-cover"
                   />
