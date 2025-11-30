@@ -398,7 +398,7 @@ export default function Home() {
               <div className="flex justify-center mb-6">
                 <div className="w-full aspect-video rounded-2xl overflow-hidden">
                   <img
-                    src="/33861112_m.jpg"
+                    src="/名称未設定のデザイン (14).jpg"
                     alt="キャリア相談AI"
                     className="w-full h-full object-cover"
                   />
@@ -1041,7 +1041,7 @@ export default function Home() {
             {/* Card 3 - ランキング上位者の回答から学べる */}
             <div className="bg-white rounded-3xl p-4 md:p-8 lg:p-10 border border-gray-200 shadow-sm">
               <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 text-center" style={{ color: '#4D5CEC' }}>
-                お題別ランキング上位の回答が見られる
+                優秀者の回答内容が見られる
               </h3>
 
               <p className="text-sm md:text-base text-gray-900 text-center mb-4 md:mb-6 leading-relaxed">
