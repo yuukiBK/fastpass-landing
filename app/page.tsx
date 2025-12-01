@@ -489,7 +489,7 @@ export default function Home() {
               <div className="text-center mb-4 md:mb-6">
                 <p className="text-xs md:text-sm text-gray-500 mb-2">Feature 1</p>
                 <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4" style={{ color: '#4D5CEC' }}>
-                  対話形式の実践的なAI面接
+                  音声でも筆記でも実践的なAI面接
                 </h3>
                 <p className="text-sm md:text-base lg:text-lg text-gray-800 mt-3 md:mt-4 leading-relaxed">
                   AI面接官があなたの答えに応じて次の質問を展開。<br />本番さながらの対話形式で、何度でも実践的な面接練習ができます。
@@ -1010,29 +1010,30 @@ export default function Home() {
               {/* Screenshot */}
               <div className="rounded-2xl overflow-hidden mb-4">
                 <img
-                  src="/スクリーンショット 2025-11-27 14.57.51.png"
+                  src="/スクリーンショット 2025-12-01 13.16.13.png"
                   alt="対話型の自己分析"
                   className="w-full h-auto"
                 />
               </div>
             </div>
 
-            {/* Card 2 - 17の評価項目で、各社基準に合わせ練習 */}
+            {/* Card 2 - 企業ごとに"刺さる"伝え方を練習可能 */}
             <div className="bg-white rounded-3xl p-4 md:p-8 lg:p-10 border border-gray-200 shadow-sm">
               <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 text-center" style={{ color: '#4D5CEC' }}>
-                17の評価項目で、各社基準に合わせ練習
+                企業ごとに"刺さる"伝え方を練習可能
               </h3>
 
               <p className="text-sm md:text-base text-gray-900 text-center mb-4 md:mb-6 leading-relaxed">
-                17の評価項目で、あなたの強み・弱みを多角的に評価。<br />
-                企業別の評価基準に合わせ、実践的な対策が可能。
+                FastPassは、企業ごとの評価基準を分析し、<br />
+                あなたの経験を"どう語ると刺さるか"を分かりやすく提示。<br />
+                企業別の伝え方を理解しながら練習できます。
               </p>
 
               {/* Screenshot */}
               <div className="rounded-2xl overflow-hidden mb-4">
                 <img
-                  src="/ランキング (5).jpg"
-                  alt="17の評価項目で、各社基準に合わせ練習"
+                  src="/スクリーンショット 2025-12-01 13.25.23.png"
+                  alt="企業ごとに刺さる伝え方を練習可能"
                   className="w-full h-auto"
                 />
               </div>
