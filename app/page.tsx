@@ -1132,7 +1132,7 @@ export default function Home() {
             <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
               <div className="aspect-video overflow-hidden">
                 <img
-                  src="/175950f70cf28d7831846c123d8d6de2_t.jpeg"
+                  src="/自己分析.png"
                   alt="効果的な自己分析の進め方"
                   className="w-full h-full object-cover"
                 />
