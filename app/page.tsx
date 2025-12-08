@@ -1129,26 +1129,26 @@ export default function Home() {
             </a>
 
             {/* Card 2 */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <a href="/guide" className="block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow cursor-pointer">
               <div className="aspect-video overflow-hidden">
                 <img
-                  src="/自己分析.png"
-                  alt="効果的な自己分析の進め方"
+                  src="/unnamed (19).jpg"
+                  alt="3分で分かるFastPassの使い方"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="p-6">
                 <span className="inline-block bg-purple-100 text-purple-700 text-xs font-medium px-3 py-1 rounded-full mb-3">
-                  自己分析
+                  使い方ガイド
                 </span>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">
-                  効果的な自己分析の進め方
+                  3分で分かる『FastPass』の使い方
                 </h3>
                 <p className="text-sm text-gray-600 leading-relaxed">
-                  就活で差がつく自己分析のフレームワークと、AIを活用した新しいアプローチ
+                  FastPassの機能と使い方をステップごとに分かりやすく解説
                 </p>
               </div>
-            </div>
+            </a>
 
             {/* Card 3 */}
             <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
