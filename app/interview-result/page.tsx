@@ -78,12 +78,12 @@ export default function InterviewResultPage() {
   ];
 
   const rankings = [
-    { rank: 1, username: "田中 優子", score: 95, summary: "具体的な数値と感情を織り交ぜた説得力ある自己紹介" },
-    { rank: 2, username: "山本 健太", score: 92, summary: "ストーリー性のある経験談で強みを印象付け" },
-    { rank: 3, username: "佐藤 美咲", score: 89, summary: "企業研究を活かした志望動機との接続が秀逸" },
-    { rank: 4, username: "鈴木 大輔", score: 85, summary: "簡潔かつインパクトのある構成" },
-    { rank: 5, username: "高橋 さくら", score: 82, summary: "独自の視点で差別化に成功" },
-    { rank: 15, username: "あなた", score: 72, summary: "巻き込み力を軸にした一貫性のある自己紹介", isCurrentUser: true },
+    { rank: 1, username: "user_3a8k2", score: 95, summary: "長期インターンでの新規事業立ち上げ経験" },
+    { rank: 2, username: "taka_m91", score: 92, summary: "体育会サッカー部での主将経験" },
+    { rank: 3, username: "study_22x", score: 89, summary: "ゼミでの産学連携プロジェクトリーダー" },
+    { rank: 4, username: "and0_k", score: 85, summary: "アルバイト先での売上改善施策" },
+    { rank: 5, username: "mochi_55", score: 82, summary: "留学中の現地NPOボランティア活動" },
+    { rank: 15, username: "あなた", score: 72, summary: "テニスサークル副代表でのSNS集客施策", isCurrentUser: true },
   ];
 
   const chatMessages = [
