@@ -502,8 +502,12 @@ export default function InterviewResultPage() {
                 <div key={index}>
                   {msg.role === "interviewer" ? (
                     <div className="flex gap-3">
-                      <div className="w-8 h-8 rounded-full bg-gray-200 flex-shrink-0 flex items-center justify-center">
-                        <span className="text-sm">🤖</span>
+                      <div className="w-8 h-8 rounded-full flex-shrink-0 overflow-hidden">
+                        <img
+                          src="/Interviewer_icon.png"
+                          alt="面接官"
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                       <div className="bg-gray-100 rounded-2xl rounded-tl-none px-4 py-3 max-w-[85%]">
                         <p className="text-sm text-gray-700">{msg.message}</p>
@@ -548,12 +552,12 @@ export default function InterviewResultPage() {
 
         {/* CTA */}
         <div className="mt-8 text-center">
-          <a
-            href="https://ai-shukatsu.com"
+          <Link
+            href="/consulting"
             className="inline-block px-8 py-4 bg-[#4D5CEC] text-white font-bold rounded-xl hover:bg-[#3D4CDC] transition-colors"
           >
-            FastPassで面接練習を始める
-          </a>
+            質問一覧に戻る
+          </Link>
         </div>
       </main>
     </div>
