@@ -551,10 +551,16 @@ export default function InterviewResultPage() {
         </div>
 
         {/* CTA */}
-        <div className="mt-8 text-center">
+        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="https://ai-shukatsu.com"
+            className="w-full sm:w-auto px-8 py-4 bg-[#4D5CEC] text-white font-bold rounded-xl hover:bg-[#3D4CDC] transition-colors text-center"
+          >
+            もう一度挑戦する
+          </a>
           <Link
             href="/consulting"
-            className="inline-block px-8 py-4 bg-[#4D5CEC] text-white font-bold rounded-xl hover:bg-[#3D4CDC] transition-colors"
+            className="w-full sm:w-auto px-8 py-4 bg-white text-gray-700 font-bold rounded-xl border-2 border-gray-200 hover:bg-gray-50 transition-colors text-center"
           >
             質問一覧に戻る
           </Link>
