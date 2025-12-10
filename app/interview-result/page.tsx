@@ -327,7 +327,7 @@ export default function InterviewResultPage() {
             {/* Good Points */}
             <div className="bg-blue-50 rounded-xl p-4">
               <h4 className="text-blue-700 font-bold mb-3 flex items-center gap-2">
-                <span className="text-xl">👍</span> 良い点
+                <img src="/FastPass_result_good.png" alt="良い点" className="w-6 h-6" /> 良い点
               </h4>
               <ul className="space-y-3">
                 {evaluation.goodPoints.map((point, index) => (
@@ -341,7 +341,7 @@ export default function InterviewResultPage() {
             {/* Improvements */}
             <div className="bg-orange-50 rounded-xl p-4">
               <h4 className="text-orange-700 font-bold mb-3 flex items-center gap-2">
-                <span className="text-xl">💡</span> 改善点
+                <img src="/FastPass_result_bad.png" alt="改善点" className="w-6 h-6" /> 改善点
               </h4>
               <ul className="space-y-3">
                 {evaluation.improvements.map((point, index) => (
@@ -351,6 +351,25 @@ export default function InterviewResultPage() {
                 ))}
               </ul>
             </div>
+          </div>
+
+          {/* Example Button */}
+          <div className="mt-6 pt-6 border-t border-gray-100">
+            <a
+              href="https://ai-shukatsu.com"
+              className="flex items-center justify-between w-full p-4 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl hover:from-purple-100 hover:to-indigo-100 transition-colors group"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center">
+                  <span className="text-white text-lg">📄</span>
+                </div>
+                <div>
+                  <p className="font-bold text-gray-900">具体例を見る（住友不動産）</p>
+                  <p className="text-xs text-gray-500">内定者の回答例を参考にしよう</p>
+                </div>
+              </div>
+              <span className="text-purple-500 group-hover:translate-x-1 transition-transform">→</span>
+            </a>
           </div>
         </section>
 
@@ -504,8 +523,8 @@ export default function InterviewResultPage() {
                     <div className="flex gap-3">
                       <div className="w-8 h-8 rounded-full flex-shrink-0 overflow-hidden">
                         <img
-                          src="/Interviewer_icon.png"
-                          alt="面接官"
+                          src="/FastPass_result_cahticon.png"
+                          alt="AI"
                           className="w-full h-full object-cover"
                         />
                       </div>

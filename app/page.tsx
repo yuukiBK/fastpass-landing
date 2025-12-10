@@ -228,6 +228,12 @@ export default function Home() {
                 >
                   ログイン
                 </a>
+                <a
+                  href="/demo/sumitomo-realty"
+                  className="px-8 py-4 rounded-lg font-bold text-base border-2 border-gray-300 text-gray-600 transition-all duration-250 hover:bg-gray-50 text-center"
+                >
+                  デモを見る
+                </a>
               </div>
 
               {/* Company Logos Title - Desktop */}
@@ -333,6 +339,12 @@ export default function Home() {
               }}
             >
               ログイン
+            </a>
+            <a
+              href="/demo/sumitomo-realty"
+              className="px-6 md:px-8 py-3 md:py-4 rounded-lg font-bold text-sm md:text-base border-2 border-gray-300 text-gray-600 transition-all duration-250 hover:bg-gray-50 text-center"
+            >
+              デモを見る
             </a>
           </div>
 
