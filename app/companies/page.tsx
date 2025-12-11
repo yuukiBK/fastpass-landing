@@ -1,61 +1,17 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
+
+type IndustryCard = {
+  category: string;
+  title: string;
+  companies: string[];
+  questionCount: number;
+  link: string;
+};
 
 export default function CompaniesPage() {
-  const companies = [
-    { name: "三菱商事", category: "商社" },
-    { name: "アクセンチュア", category: "総合コンサル" },
-    { name: "電通", category: "マスコミ・広告" },
-    { name: "サイバーエージェント", category: "日系IT・通信" },
-    { name: "野村総合研究所", category: "シンクタンク" },
-    { name: "LINEヤフー", category: "日系IT・通信" },
-    { name: "マッキンゼー・アンド・カンパニー", category: "戦略コンサル" },
-    { name: "NTTデータ", category: "日系IT・通信" },
-    { name: "P&G", category: "外資系メーカー・サービス" },
-    { name: "ボストン・コンサルティング・グループ", category: "戦略コンサル" },
-    { name: "ベイン・アンド・カンパニー", category: "戦略コンサル" },
-    { name: "デロイト トーマツ コンサルティング", category: "総合コンサル" },
-    { name: "PwCコンサルティング", category: "総合コンサル" },
-    { name: "EYストラテジー・アンド・コンサルティング", category: "総合コンサル" },
-    { name: "KPMGコンサルティング", category: "財務・会計・その他コンサル" },
-    { name: "ブルー・コンサルティング", category: "ITコンサル" },
-    { name: "三井物産", category: "商社" },
-    { name: "住友商事", category: "商社" },
-    { name: "伊藤忠商事", category: "商社" },
-    { name: "丸紅", category: "商社" },
-    { name: "楽天グループ", category: "日系IT・通信" },
-    { name: "メルカリ", category: "日系IT・通信" },
-    { name: "DeNA", category: "日系IT・通信" },
-    { name: "リクルート", category: "日系メーカー・サービス" },
-    { name: "博報堂", category: "マスコミ・広告" },
-    { name: "ADKホールディングス", category: "マスコミ・広告" },
-    { name: "ソニー", category: "日系メーカー・サービス" },
-    { name: "パナソニック", category: "日系メーカー・サービス" },
-    { name: "日立製作所", category: "日系メーカー・サービス" },
-    { name: "富士通", category: "日系IT・通信" },
-    { name: "NEC", category: "日系IT・通信" },
-    { name: "日本IBM", category: "ITコンサル" },
-    { name: "日本マイクロソフト", category: "外資IT" },
-    { name: "Google", category: "外資IT" },
-    { name: "Amazon Japan", category: "外資IT" },
-    { name: "メタ・プラットフォームズ", category: "外資IT" },
-    { name: "Apple Japan", category: "外資IT" },
-    { name: "セールスフォース・ジャパン", category: "外資IT" },
-    { name: "オラクル", category: "外資IT" },
-    { name: "ゴールドマン・サックス", category: "外資系金融・証券" },
-    { name: "モルガン・スタンレー", category: "外資系金融・証券" },
-    { name: "J.P.モルガン", category: "外資系金融・証券" },
-    { name: "野村證券", category: "日系金融・証券" },
-    { name: "大和証券", category: "日系金融・証券" },
-    { name: "三菱UFJ銀行", category: "日系金融・証券" },
-    { name: "三井住友銀行", category: "日系金融・証券" },
-    { name: "みずほ銀行", category: "日系金融・証券" },
-    { name: "ユニリーバ・ジャパン", category: "外資系メーカー・サービス" },
-    { name: "ロレアル", category: "外資系メーカー・サービス" },
-    { name: "資生堂", category: "日系メーカー・サービス" },
-  ];
-
   const categories = [
     "戦略コンサル",
     "総合コンサル",
@@ -70,58 +26,136 @@ export default function CompaniesPage() {
     "日系金融・証券",
     "商社",
     "日系メーカー・サービス",
-    "デベロッパー・不動産・建設",
+    "デベロッパー・不動産・建築",
     "マスコミ・広告",
     "国家公務員・公的機関",
   ];
 
-  // 職種データ
-  const jobTypes = [
-    "コンサルタント",
-    "エンジニア",
-    "事業開発",
-    "マーケティング・企画",
-    "営業",
-    "リサーチ・アナリスト",
-    "クリエイティブ",
-    "人事・採用",
+  const industryCards: IndustryCard[] = [
+    {
+      category: "戦略コンサル",
+      title: "戦略コンサル業界の面接対策",
+      companies: ["マッキンゼー", "BCG", "ベイン", "A.T.カーニー", "ローランド・ベルガー", "Strategy&", "アーサー・D・リトル", "ドリームインキュベータ"],
+      questionCount: 30,
+      link: "/demo/sumitomo-realty",
+    },
+    {
+      category: "総合コンサル",
+      title: "総合コンサル業界の面接対策",
+      companies: ["アクセンチュア", "デロイト", "PwC", "EY", "KPMG", "アビームコンサルティング", "ベイカレント", "クニエ"],
+      questionCount: 32,
+      link: "/demo/sumitomo-realty",
+    },
+    {
+      category: "ITコンサル",
+      title: "ITコンサル業界の面接対策",
+      companies: ["アビームコンサルティング", "ベイカレント", "フューチャー", "シグマクシス", "ウルシステムズ", "ケンブリッジ", "スカイライト"],
+      questionCount: 28,
+      link: "/demo/sumitomo-realty",
+    },
+    {
+      category: "シンクタンク",
+      title: "シンクタンク業界の面接対策",
+      companies: ["野村総合研究所", "三菱総合研究所", "日本総研", "大和総研", "みずほリサーチ&テクノロジーズ", "NTTデータ経営研究所"],
+      questionCount: 26,
+      link: "/demo/sumitomo-realty",
+    },
+    {
+      category: "財務・会計・その他コンサル",
+      title: "財務・会計コンサル業界の面接対策",
+      companies: ["PwC FAS", "デロイトFAS", "KPMG FAS", "EY FAS", "リンクアンドモチベーション", "マーサー", "タワーズワトソン"],
+      questionCount: 24,
+      link: "/demo/sumitomo-realty",
+    },
+    {
+      category: "M&Aアドバイザリー",
+      title: "M&Aアドバイザリー業界の面接対策",
+      companies: ["日本M&Aセンター", "M&Aキャピタルパートナーズ", "ストライク", "フロンティア・マネジメント", "GCA", "IGPI", "経営共創基盤"],
+      questionCount: 25,
+      link: "/demo/sumitomo-realty",
+    },
+    {
+      category: "外資系金融・証券",
+      title: "外資系金融・証券業界の面接対策",
+      companies: ["ゴールドマン・サックス", "モルガン・スタンレー", "J.P.モルガン", "バンク・オブ・アメリカ", "シティグループ", "UBS", "ドイツ銀行", "バークレイズ"],
+      questionCount: 30,
+      link: "/demo/sumitomo-realty",
+    },
+    {
+      category: "日系IT・通信",
+      title: "日系IT・通信業界の面接対策",
+      companies: ["NTTデータ", "富士通", "NEC", "KDDI", "ソフトバンク", "楽天", "サイバーエージェント", "DeNA", "メルカリ", "LINE"],
+      questionCount: 28,
+      link: "/demo/sumitomo-realty",
+    },
+    {
+      category: "外資IT",
+      title: "外資IT業界の面接対策",
+      companies: ["Google", "Amazon", "Microsoft", "Apple", "Meta", "セールスフォース", "オラクル", "SAP", "Adobe", "Netflix"],
+      questionCount: 32,
+      link: "/demo/sumitomo-realty",
+    },
+    {
+      category: "外資系メーカー・サービス",
+      title: "外資系メーカー・サービス業界の面接対策",
+      companies: ["P&G", "ユニリーバ", "ロレアル", "ネスレ", "ジョンソン・エンド・ジョンソン", "フィリップモリス", "LVMH", "ダイソン"],
+      questionCount: 26,
+      link: "/demo/sumitomo-realty",
+    },
+    {
+      category: "日系金融・証券",
+      title: "日系金融・証券業界の面接対策",
+      companies: ["三菱UFJ銀行", "三井住友銀行", "みずほ銀行", "野村證券", "大和証券", "SMBC日興証券", "東京海上", "三井住友海上", "日本生命"],
+      questionCount: 28,
+      link: "/demo/sumitomo-realty",
+    },
+    {
+      category: "商社",
+      title: "総合商社業界の面接対策",
+      companies: ["三菱商事", "三井物産", "伊藤忠商事", "住友商事", "丸紅", "豊田通商", "双日"],
+      questionCount: 30,
+      link: "/demo/sumitomo-realty",
+    },
+    {
+      category: "日系メーカー・サービス",
+      title: "日系メーカー・サービス業界の面接対策",
+      companies: ["トヨタ", "ソニー", "パナソニック", "日立", "キーエンス", "リクルート", "任天堂", "ファーストリテイリング", "資生堂", "味の素"],
+      questionCount: 28,
+      link: "/demo/sumitomo-realty",
+    },
+    {
+      category: "デベロッパー・不動産・建築",
+      title: "デベロッパー・不動産業界の面接対策",
+      companies: ["三井不動産", "三菱地所", "住友不動産", "東急不動産", "野村不動産", "森ビル", "NTT都市開発", "鹿島建設", "大成建設"],
+      questionCount: 32,
+      link: "/demo/sumitomo-realty",
+    },
+    {
+      category: "マスコミ・広告",
+      title: "マスコミ・広告業界の面接対策",
+      companies: ["電通", "博報堂", "ADK", "日本テレビ", "フジテレビ", "TBS", "テレビ朝日", "NHK", "集英社", "講談社"],
+      questionCount: 26,
+      link: "/demo/sumitomo-realty",
+    },
+    {
+      category: "国家公務員・公的機関",
+      title: "国家公務員・公的機関の面接対策",
+      companies: ["総合職", "一般職", "外務省専門職", "国税専門官", "JICA", "JETRO", "日本銀行", "DBJ", "JBIC"],
+      questionCount: 24,
+      link: "/demo/sumitomo-realty",
+    },
   ];
 
-  // こだわりポイントデータ
-  const preferences = [
-    "実力主義",
-    "若手から活躍",
-    "グローバル環境",
-    "リモートワーク可",
-    "福利厚生充実",
-    "初年度500万円以上",
-    "フレックス制度",
-    "育児支援充実",
-    "研修制度充実",
-    "副業OK",
-  ];
-
-  // 面接スキルデータ
-  const interviewSkills = [
-    "ケース面接",
-    "フェルミ推定",
-    "論理的思考力",
-    "プレゼンテーション",
-    "志望動機",
-    "自己PR",
-    "ガクチカ",
-    "逆質問",
-    "グループディスカッション",
-    "英語面接",
-  ];
-
-  const [activeTab, setActiveTab] = useState<'industry' | 'job' | 'preference' | 'skill'>('industry');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
 
-  const filteredCompanies = companies.filter(company => {
-    const matchesCategory = selectedCategory ? company.category === selectedCategory : true;
-    const matchesSearch = company.name.toLowerCase().includes(searchQuery.toLowerCase());
+  const filteredCards = industryCards.filter(card => {
+    const matchesCategory = selectedCategory ? card.category === selectedCategory : true;
+    const matchesSearch = searchQuery
+      ? card.companies.some(company =>
+          company.toLowerCase().includes(searchQuery.toLowerCase())
+        ) || card.category.toLowerCase().includes(searchQuery.toLowerCase())
+      : true;
     return matchesCategory && matchesSearch;
   });
 
@@ -159,12 +193,12 @@ export default function CompaniesPage() {
             </h1>
             <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               FastPassでは、外資系コンサル、メガベンチャー、日系大手企業など、<br className="hidden md:block" />
-              厳選された優良企業50社以上のAI面接対策が可能です。
+              厳選された優良企業のAI面接対策が可能です。
             </p>
           </div>
 
           {/* Search Bar */}
-          <div className="mb-8 md:mb-12">
+          <div className="mb-6 md:mb-8">
             <div className="max-w-2xl mx-auto">
               <div className="relative">
                 <input
@@ -199,191 +233,118 @@ export default function CompaniesPage() {
             </div>
           </div>
 
-          {/* Tab Navigation */}
+          {/* Category Filter */}
           <div className="mb-8 md:mb-12">
-            <div className="border-b-2 border-gray-200 mb-6 md:mb-8">
-              <div className="flex flex-wrap gap-2 md:gap-0">
+            <div className="flex flex-wrap justify-start gap-2 md:gap-3">
+              {categories.map((category) => (
                 <button
-                  onClick={() => { setActiveTab('industry'); setSelectedCategory(null); }}
-                  className="px-4 md:px-6 py-3 md:py-4 text-sm md:text-base font-bold transition-all border-b-4 -mb-0.5"
+                  key={category}
+                  onClick={() => setSelectedCategory(category === selectedCategory ? null : category)}
+                  className="px-3 md:px-4 py-2 rounded-lg border-2 text-sm md:text-base font-medium hover:scale-105 transition-all"
                   style={{
-                    borderColor: activeTab === 'industry' ? '#4D5CEC' : 'transparent',
-                    color: activeTab === 'industry' ? '#4D5CEC' : '#6B7280'
+                    borderColor: '#4D5CEC',
+                    backgroundColor: selectedCategory === category ? '#4D5CEC' : 'white',
+                    color: selectedCategory === category ? 'white' : '#4D5CEC'
                   }}
                 >
-                  業界から探す
+                  {category}
                 </button>
-                <button
-                  onClick={() => { setActiveTab('job'); setSelectedCategory(null); }}
-                  className="px-4 md:px-6 py-3 md:py-4 text-sm md:text-base font-bold transition-all border-b-4 -mb-0.5"
-                  style={{
-                    borderColor: activeTab === 'job' ? '#4D5CEC' : 'transparent',
-                    color: activeTab === 'job' ? '#4D5CEC' : '#6B7280'
-                  }}
-                >
-                  職種から探す
-                </button>
-                <button
-                  onClick={() => { setActiveTab('preference'); setSelectedCategory(null); }}
-                  className="px-4 md:px-6 py-3 md:py-4 text-sm md:text-base font-bold transition-all border-b-4 -mb-0.5"
-                  style={{
-                    borderColor: activeTab === 'preference' ? '#4D5CEC' : 'transparent',
-                    color: activeTab === 'preference' ? '#4D5CEC' : '#6B7280'
-                  }}
-                >
-                  こだわりポイントから探す
-                </button>
-                <button
-                  onClick={() => { setActiveTab('skill'); setSelectedCategory(null); }}
-                  className="px-4 md:px-6 py-3 md:py-4 text-sm md:text-base font-bold transition-all border-b-4 -mb-0.5"
-                  style={{
-                    borderColor: activeTab === 'skill' ? '#4D5CEC' : 'transparent',
-                    color: activeTab === 'skill' ? '#4D5CEC' : '#6B7280'
-                  }}
-                >
-                  面接スキルから探す
-                </button>
-              </div>
+              ))}
             </div>
-
-            {/* Tab Content */}
-            <div>
-              {selectedCategory && (
-                <div className="mb-4 md:mb-6 flex items-center justify-between">
-                  <div className="text-sm md:text-base text-gray-600">
-                    絞り込み中: <span className="font-bold" style={{ color: '#4D5CEC' }}>{selectedCategory}</span>
-                  </div>
-                  <button
-                    onClick={() => setSelectedCategory(null)}
-                    className="text-sm md:text-base font-medium hover:opacity-70 transition-opacity flex items-center gap-1"
-                    style={{ color: '#4D5CEC' }}
-                  >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                    絞り込みを解除
-                  </button>
-                </div>
-              )}
-
-              {/* Industry Tab */}
-              {activeTab === 'industry' && (
-                <div className="flex flex-wrap gap-2 md:gap-3">
-                  {categories.map((category) => (
-                    <button
-                      key={category}
-                      onClick={() => setSelectedCategory(category === selectedCategory ? null : category)}
-                      className="px-3 md:px-4 py-2 rounded-lg border-2 text-sm md:text-base font-medium hover:scale-105 transition-all"
-                      style={{
-                        borderColor: '#4D5CEC',
-                        backgroundColor: selectedCategory === category ? '#4D5CEC' : 'white',
-                        color: selectedCategory === category ? 'white' : '#4D5CEC'
-                      }}
-                    >
-                      {category}
-                    </button>
-                  ))}
-                </div>
-              )}
-
-              {/* Job Type Tab */}
-              {activeTab === 'job' && (
-                <div className="flex flex-wrap gap-2 md:gap-3">
-                  {jobTypes.map((job) => (
-                    <button
-                      key={job}
-                      onClick={() => setSelectedCategory(job === selectedCategory ? null : job)}
-                      className="px-3 md:px-4 py-2 rounded-lg border-2 text-sm md:text-base font-medium hover:scale-105 transition-all"
-                      style={{
-                        borderColor: '#4D5CEC',
-                        backgroundColor: selectedCategory === job ? '#4D5CEC' : 'white',
-                        color: selectedCategory === job ? 'white' : '#4D5CEC'
-                      }}
-                    >
-                      {job}
-                    </button>
-                  ))}
-                </div>
-              )}
-
-              {/* Preference Tab */}
-              {activeTab === 'preference' && (
-                <div className="flex flex-wrap gap-2 md:gap-3">
-                  {preferences.map((pref) => (
-                    <button
-                      key={pref}
-                      onClick={() => setSelectedCategory(pref === selectedCategory ? null : pref)}
-                      className="px-3 md:px-4 py-2 rounded-lg border-2 text-sm md:text-base font-medium hover:scale-105 transition-all"
-                      style={{
-                        borderColor: '#4D5CEC',
-                        backgroundColor: selectedCategory === pref ? '#4D5CEC' : 'white',
-                        color: selectedCategory === pref ? 'white' : '#4D5CEC'
-                      }}
-                    >
-                      {pref}
-                    </button>
-                  ))}
-                </div>
-              )}
-
-              {/* Interview Skill Tab */}
-              {activeTab === 'skill' && (
-                <div className="flex flex-wrap gap-2 md:gap-3">
-                  {interviewSkills.map((skill) => (
-                    <button
-                      key={skill}
-                      onClick={() => setSelectedCategory(skill === selectedCategory ? null : skill)}
-                      className="px-3 md:px-4 py-2 rounded-lg border-2 text-sm md:text-base font-medium hover:scale-105 transition-all"
-                      style={{
-                        borderColor: '#4D5CEC',
-                        backgroundColor: selectedCategory === skill ? '#4D5CEC' : 'white',
-                        color: selectedCategory === skill ? 'white' : '#4D5CEC'
-                      }}
-                    >
-                      {skill}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* Companies Grid */}
-          <div className="mb-6 md:mb-8">
-            <p className="text-sm md:text-base text-gray-600">
-              {selectedCategory ? `${selectedCategory}の企業: ${filteredCompanies.length}社` : `全企業: ${companies.length}社`}
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-            {filteredCompanies.sort((a, b) => a.name.localeCompare(b.name, 'ja')).map((company, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl p-4 md:p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 border-2 border-transparent hover:border-opacity-50"
-                style={{ '--hover-border-color': '#4D5CEC' } as React.CSSProperties}
-              >
-                <div className="mb-3 md:mb-4">
-                  <span className="inline-block px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium" style={{ backgroundColor: '#E8EBFF', color: '#4D5CEC' }}>
-                    {company.category}
-                  </span>
-                </div>
-                <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3" style={{ color: '#1C252E' }}>
-                  {company.name}
-                </h3>
-                <a
-                  href="https://fastpass.bio.link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 md:gap-2 text-sm md:text-base font-medium hover:opacity-70 transition-opacity"
+            {selectedCategory && (
+              <div className="mt-4 text-center">
+                <button
+                  onClick={() => setSelectedCategory(null)}
+                  className="text-sm md:text-base font-medium hover:opacity-70 transition-opacity flex items-center gap-1 mx-auto"
                   style={{ color: '#4D5CEC' }}
                 >
-                  面接対策を始める
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
-                </a>
+                  絞り込みを解除
+                </button>
               </div>
-            ))}
+            )}
           </div>
+
+          {/* Industry Cards Grid */}
+          {filteredCards.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+              {filteredCards.map((card, index) => (
+                <Link
+                  key={index}
+                  href={card.link}
+                  className="block bg-white rounded-2xl p-5 md:p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border-2 border-transparent hover:border-[#4D5CEC]"
+                >
+                  <div className="mb-3">
+                    <span className="inline-block px-3 py-1 rounded-full text-xs md:text-sm font-medium" style={{ backgroundColor: '#E8EBFF', color: '#4D5CEC' }}>
+                      {card.category}
+                    </span>
+                  </div>
+                  <h3 className="text-lg md:text-xl font-bold mb-3" style={{ color: '#1C252E' }}>
+                    {card.title}
+                  </h3>
+                  <div className="mb-4">
+                    <p className="text-xs text-gray-500 mb-2">対応企業例：</p>
+                    <p className="text-sm text-gray-700 leading-relaxed">
+                      {card.companies.join(" / ")}
+                    </p>
+                  </div>
+                  <div className="flex items-center justify-between pt-3 border-t border-gray-100">
+                    <span className="text-sm text-gray-500">全{card.questionCount}問</span>
+                    <span
+                      className="inline-flex items-center gap-1 text-sm font-bold"
+                      style={{ color: '#4D5CEC' }}
+                    >
+                      対策を始める
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <div className="bg-white rounded-2xl shadow-md p-8 md:p-12 text-center">
+              <div className="w-16 h-16 mx-auto mb-4 bg-gray-100 rounded-full flex items-center justify-center">
+                <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">
+                「{searchQuery}」の面接対策は見つかりませんでした
+              </h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                志望企業が見つからない場合は、<br className="hidden sm:block" />
+                <span className="font-bold" style={{ color: '#4D5CEC' }}>業界タグから近い業界を選んで対策</span>することをおすすめします！
+              </p>
+              <div className="bg-blue-50 rounded-xl p-4 md:p-6 text-left">
+                <p className="text-sm font-bold text-blue-700 mb-3">おすすめの対策方法：</p>
+                <ul className="text-sm text-gray-700 space-y-2">
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-500 mt-0.5">1.</span>
+                    上のタグから、志望企業に近い<span className="font-bold">業界</span>を選択
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-500 mt-0.5">2.</span>
+                    その業界の面接対策で<span className="font-bold">頻出質問</span>を練習
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-500 mt-0.5">3.</span>
+                    業界共通の質問は、企業が違っても<span className="font-bold">高確率で出題</span>されます！
+                  </li>
+                </ul>
+              </div>
+              <button
+                onClick={() => setSearchQuery('')}
+                className="mt-6 px-6 py-3 rounded-lg font-bold text-white transition-all hover:opacity-90"
+                style={{ backgroundColor: '#4D5CEC' }}
+              >
+                検索をクリアして業界から選ぶ
+              </button>
+            </div>
+          )}
         </div>
       </main>
 
