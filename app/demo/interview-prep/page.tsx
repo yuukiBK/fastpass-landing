@@ -119,7 +119,7 @@ export default function InterviewPrepPage() {
                   <h3 className="font-bold text-gray-900 mb-2">プライバシー保護について</h3>
                   <p className="text-sm text-gray-600 mb-4">
                     回答内容は他のユーザーに表示される場合があります。<br />
-                    <span className="text-red-500 font-medium">本名・大学名を回答に含めないでください。</span>
+                    <span className="text-red-500 font-medium">本名を回答に含めないでください。</span>
                   </p>
                   <label className="flex items-center gap-3 cursor-pointer">
                     <input
@@ -129,7 +129,7 @@ export default function InterviewPrepPage() {
                       className="w-5 h-5 rounded border-gray-300 text-[#4D5CEC] focus:ring-[#4D5CEC]"
                     />
                     <span className="text-sm font-medium text-gray-700">
-                      本名・大学名を回答に含めないことを理解しました
+                      本名を回答に含めないことを理解しました
                     </span>
                   </label>
                 </div>
