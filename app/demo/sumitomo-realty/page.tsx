@@ -227,7 +227,7 @@ export default function DeveloperRealtyPage() {
             <ul className="space-y-1">
               <li className="text-sm text-white/90">・主力事業: オフィスビル賃貸、分譲マンション、商業施設開発、都市再開発</li>
               <li className="text-sm text-white/90">・業界トレンド: スマートシティ構想、環境配慮型建築（ZEB/ZEH）、海外展開</li>
-              <li className="text-sm text-white/90">・求める人物像: 長期視点で粘り強く取り組める人、多様な関係者を巻き込める調整力</li>
+              <li className="text-sm text-white/90">・面接頻出テーマ: 長期視点で粘り強く取り組める人、多様な関係者を巻き込める調整力</li>
             </ul>
           </div>
         </section>
