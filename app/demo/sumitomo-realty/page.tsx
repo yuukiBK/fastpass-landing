@@ -8,6 +8,57 @@ type Question = {
   status: "completed" | "in_progress" | "pending";
 };
 
+// Sidebar Component
+function Sidebar() {
+  return (
+    <aside className="hidden lg:flex flex-col w-64 min-h-screen bg-white border-r border-gray-200 fixed left-0 top-0 z-40">
+      {/* Logo */}
+      <div className="p-6">
+        <Link href="/" className="flex items-center">
+          <img
+            src="/名称未設定のデザイン (71).png"
+            alt="FastPass"
+            className="h-10"
+          />
+        </Link>
+      </div>
+
+      {/* Navigation */}
+      <nav className="flex-1 px-4">
+        <Link
+          href="/companies"
+          className="flex items-center gap-3 px-4 py-3 rounded-lg transition-colors"
+          style={{ backgroundColor: '#E8E3FE', color: '#934FFC' }}
+        >
+          <img
+            src="/サイドバー_ホーム_タップ時 (1).png"
+            alt="ホーム"
+            className="w-6 h-6"
+          />
+          <span className="font-medium">ホーム</span>
+        </Link>
+      </nav>
+
+      {/* User Profile Section */}
+      <div className="p-4 border-t border-gray-200">
+        <div className="flex flex-col items-center text-center">
+          <div className="w-12 h-12 rounded-full bg-gray-200 mb-2 overflow-hidden">
+            <img
+              src="/S__222806024.jpg"
+              alt="プロフィール画像"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <span className="text-sm text-gray-700 mb-2">LogicalTiger2025</span>
+          <button className="px-4 py-1.5 text-sm border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+            プロフィール
+          </button>
+        </div>
+      </div>
+    </aside>
+  );
+}
+
 export default function DeveloperRealtyPage() {
   const industryInfo = {
     name: "デベロッパー・不動産業界",
@@ -80,7 +131,7 @@ export default function DeveloperRealtyPage() {
     return (
       <Link
         key={index}
-        href="/interview-result"
+        href="/demo/interview-prep"
         className={`block p-4 rounded-xl border-2 transition-all duration-200 ${
           isCompleted
             ? "bg-green-50 border-green-200 hover:shadow-md"
@@ -107,7 +158,7 @@ export default function DeveloperRealtyPage() {
               </h3>
               <div className="flex items-center gap-3 mt-2">
                 <span className="text-xs px-2 py-0.5 rounded-full bg-gray-100 text-gray-600">
-                  想定 {question.time}
+                  想定時間 {question.time}
                 </span>
                 {isInProgress && (
                   <span className="text-xs px-2 py-0.5 rounded-full bg-orange-100 text-orange-600 font-medium">
@@ -138,41 +189,45 @@ export default function DeveloperRealtyPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm sticky top-0 z-10">
-        <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link
-            href="/companies"
-            className="text-[#4D5CEC] text-sm font-medium hover:text-[#3D4CDC]"
-          >
-            ← 対応企業一覧へ戻る
-          </Link>
-          <span className="text-sm text-gray-500">デモページ</span>
-        </div>
-      </header>
+      {/* Sidebar */}
+      <Sidebar />
 
-      <main className="max-w-4xl mx-auto px-4 py-8">
-        {/* Industry Header */}
-        <section className="bg-white rounded-2xl shadow-sm p-6 mb-6">
-          <h1 className="text-2xl font-bold text-gray-900 mb-3">
-            {industryInfo.name}
-          </h1>
-          <p className="text-gray-600 leading-relaxed mb-4">
-            {industryInfo.description}
-          </p>
+      {/* Main Content Area - offset for sidebar on desktop */}
+      <div className="lg:ml-64">
+        {/* Header */}
+        <header className="bg-white shadow-sm sticky top-0 z-10">
+          <div className="px-4 py-4">
+            <Link
+              href="/companies"
+              className="text-[#4D5CEC] text-sm font-medium hover:text-[#3D4CDC]"
+            >
+              ← 対応企業一覧へ戻る
+            </Link>
+          </div>
+        </header>
 
-          {/* Keywords Section */}
-          <div className="bg-blue-50 rounded-xl p-4">
-            <h2 className="text-sm font-bold text-blue-700 mb-3">
+        <main className="max-w-4xl mx-auto px-4 py-8">
+        {/* Industry Header - Blue Card Design */}
+        <section className="rounded-2xl overflow-hidden mb-6" style={{ backgroundColor: '#4D5CEC' }}>
+          {/* Top Section */}
+          <div className="p-6 pb-4">
+            <h1 className="text-2xl font-bold text-white mb-3">
+              デベロッパー・不動産業界
+            </h1>
+            <p className="text-white/90 leading-relaxed">
+              土地を取得し、オフィスビル・商業施設・マンションなどの開発を行う業界。街づくりを通じて社会に大きなインパクトを与えられる点が魅力。三井不動産・三菱地所・住友不動産の「御三家」を筆頭に、各社が独自の強みで競争。
+            </p>
+          </div>
+
+          {/* Bottom Section - Keywords */}
+          <div className="bg-white/10 px-6 py-4">
+            <h2 className="text-sm font-bold text-white mb-3">
               面接で使える！重要キーワード・事業データ
             </h2>
-            <ul className="space-y-2">
-              {industryInfo.keywords.map((keyword, index) => (
-                <li key={index} className="text-sm text-gray-700 flex items-start gap-2">
-                  <span className="text-blue-500 mt-0.5">•</span>
-                  {keyword}
-                </li>
-              ))}
+            <ul className="space-y-1">
+              <li className="text-sm text-white/90">・主力事業: オフィスビル賃貸、分譲マンション、商業施設開発、都市再開発</li>
+              <li className="text-sm text-white/90">・業界トレンド: スマートシティ構想、環境配慮型建築（ZEB/ZEH）、海外展開</li>
+              <li className="text-sm text-white/90">・求める人物像: 長期視点で粘り強く取り組める人、多様な関係者を巻き込める調整力</li>
             </ul>
           </div>
         </section>
@@ -226,6 +281,7 @@ export default function DeveloperRealtyPage() {
           </a>
         </div>
       </main>
+      </div>
     </div>
   );
 }
