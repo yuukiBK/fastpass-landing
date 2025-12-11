@@ -118,7 +118,7 @@ export default function InterviewPrepPage() {
                 <div className="flex-1">
                   <h3 className="font-bold text-gray-900 mb-2">プライバシー保護について</h3>
                   <p className="text-sm text-gray-600 mb-4">
-                    回答内容は他のユーザーのランキングに表示される場合があります。<br />
+                    回答内容は他のユーザーに表示される場合があります。<br />
                     <span className="text-red-500 font-medium">本名・大学名を回答に含めないでください。</span>
                   </p>
                   <label className="flex items-center gap-3 cursor-pointer">
@@ -149,7 +149,7 @@ export default function InterviewPrepPage() {
                 <div className="flex-1">
                   <h3 className="font-bold text-gray-900 mb-2">面接の中断について</h3>
                   <p className="text-sm text-gray-600 mb-4">
-                    面接中にタブを切り替えたり、画面を閉じると面接は中断されます。<br />
+                    面接中にタブを閉じたり、通信を切断すると面接は中断されます。<br />
                     <span className="text-orange-500 font-medium">途中から再開することはできません（最初からやり直し）</span>
                   </p>
                   <label className="flex items-center gap-3 cursor-pointer">
