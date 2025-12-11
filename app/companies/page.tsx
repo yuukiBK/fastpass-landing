@@ -11,6 +11,56 @@ type IndustryCard = {
   link: string;
 };
 
+// Sidebar Component
+function Sidebar() {
+  return (
+    <aside className="hidden lg:flex flex-col w-64 min-h-screen bg-white border-r border-gray-200 fixed left-0 top-0 z-40">
+      {/* Logo */}
+      <div className="p-6">
+        <Link href="/" className="flex items-center">
+          <img
+            src="/名称未設定のデザイン (71).png"
+            alt="FastPass"
+            className="h-10"
+          />
+        </Link>
+      </div>
+
+      {/* Navigation */}
+      <nav className="flex-1 px-4">
+        <div
+          className="flex items-center gap-3 px-4 py-3 rounded-lg transition-colors"
+          style={{ backgroundColor: '#E8E3FE', color: '#934FFC' }}
+        >
+          <img
+            src="/サイドバー_ホーム_タップ時 (1).png"
+            alt="ホーム"
+            className="w-6 h-6"
+          />
+          <span className="font-medium">ホーム</span>
+        </div>
+      </nav>
+
+      {/* User Profile Section */}
+      <div className="p-4 border-t border-gray-200">
+        <div className="flex flex-col items-center text-center">
+          <div className="w-12 h-12 rounded-full bg-gray-200 mb-2 overflow-hidden">
+            <img
+              src="/S__222806024.jpg"
+              alt="プロフィール画像"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <span className="text-sm text-gray-700 mb-2">LogicalTiger2025</span>
+          <button className="px-4 py-1.5 text-sm border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+            プロフィール
+          </button>
+        </div>
+      </div>
+    </aside>
+  );
+}
+
 export default function CompaniesPage() {
   const categories = [
     "戦略コンサル",
@@ -160,46 +210,116 @@ export default function CompaniesPage() {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
-      {/* Header */}
-      <header className="bg-white border-b sticky top-0 z-50 shadow-sm">
-        <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between">
+    <div className="min-h-screen bg-gray-100">
+      {/* Sidebar - Desktop only */}
+      <Sidebar />
+
+      {/* Main wrapper with sidebar offset on desktop */}
+      <div className="lg:ml-64">
+        {/* Header - Mobile only */}
+        <header className="bg-white border-b sticky top-0 z-50 shadow-sm lg:hidden">
+          <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-8 py-4">
             <a href="/" className="flex items-center gap-2 hover:opacity-70 transition-opacity">
               <svg className="w-5 h-5" style={{ color: '#4D5CEC' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
               <span className="text-base font-medium" style={{ color: '#4D5CEC' }}>トップページに戻る</span>
             </a>
-            <a
-              href="https://fastpass.bio.link"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 md:px-6 py-2 md:py-3 rounded-lg font-bold text-white text-sm md:text-base hover:opacity-90 transition-opacity"
-              style={{ backgroundColor: '#4D5CEC' }}
-            >
-              AI面接を受ける
-            </a>
           </div>
-        </div>
-      </header>
+        </header>
 
       {/* Main Content */}
       <main className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-8 py-8 md:py-12 lg:py-16">
-        <div className="mb-10 md:mb-16">
-          <div className="text-center mb-8 md:mb-12">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6" style={{ color: '#1C252E' }}>
-              対応企業一覧
-            </h1>
-            <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              FastPassでは、外資系コンサル、メガベンチャー、日系大手企業など、<br className="hidden md:block" />
-              厳選された優良企業のAI面接対策が可能です。
-            </p>
-          </div>
+        {/* Profile Card */}
+        <div className="bg-white rounded-2xl shadow-sm p-6 mb-8 border border-gray-100">
+          <div className="flex flex-col md:flex-row md:items-center gap-6">
+            {/* Avatar */}
+            <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-gray-200 flex-shrink-0 overflow-hidden border-4 border-white shadow-md">
+              <img
+                src="/S__222806024.jpg"
+                alt="プロフィール画像"
+                className="w-full h-full object-cover"
+              />
+            </div>
 
+            {/* Profile Info */}
+            <div className="flex-1">
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                <div>
+                  <div className="flex items-center gap-3 mb-1">
+                    <h2 className="text-xl md:text-2xl font-bold text-gray-900">LogicalTiger2025</h2>
+                  </div>
+                  <p className="text-sm text-gray-500 mb-3">guest@example.com</p>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-3 py-1 text-xs font-medium rounded-full border text-[#934FFC] border-[#934FFC]">慶應義塾大学</span>
+                    <span className="px-3 py-1 text-xs font-medium rounded-full border text-[#934FFC] border-[#934FFC]">文系</span>
+                    <span className="px-3 py-1 text-xs font-medium rounded-full border text-[#934FFC] border-[#934FFC]">27卒</span>
+                    <span className="px-3 py-1 text-xs font-medium rounded-full border text-[#934FFC] border-[#934FFC]">財務アドバイザリー・会計関連</span>
+                    <span className="px-3 py-1 text-xs font-medium rounded-full border text-[#934FFC] border-[#934FFC]">戦略コンサル</span>
+                    <span className="px-3 py-1 text-xs font-medium rounded-full border text-[#934FFC] border-[#934FFC]">M&Aアドバイザリー</span>
+                  </div>
+                </div>
+
+                {/* Edit Button */}
+                <button
+                  className="flex items-center gap-2 px-5 py-2.5 rounded-full font-bold text-white transition-all hover:opacity-90 self-start"
+                  style={{ backgroundColor: '#934FFC' }}
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                  </svg>
+                  プロフィール編集
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        {/* Banner Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+          <div className="rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+            <img
+              src="/FastPass_banar_manual.jpg"
+              alt="使い方マニュアル"
+              className="w-full h-auto"
+            />
+          </div>
+          <div className="rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+            <img
+              src="/FastPass_banar_careerAI.png"
+              alt="キャリアAI"
+              className="w-full h-auto"
+            />
+          </div>
+          <div className="rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+            <img
+              src="/FastPass_banar_common question.png"
+              alt="共通質問"
+              className="w-full h-auto"
+            />
+          </div>
+        </div>
+
+        <div className="mb-10 md:mb-16">
           {/* Search Bar */}
           <div className="mb-6 md:mb-8">
-            <div className="max-w-2xl mx-auto">
+            <div className="flex items-center gap-3 mb-2">
+              <img
+                src="/AI就活_ファビコン (5) (1).png"
+                alt="AI面接"
+                className="w-8 h-8"
+              />
+              <h2 className="text-xl md:text-2xl font-bold text-gray-900">
+                AI面接に挑戦する
+              </h2>
+            </div>
+            <p className="text-base text-gray-500 mb-4">
+              FastPassでは、外資系コンサル、メガベンチャー、日系大手企業など、厳選された優良企業50社以上のAI面接対策が可能です。
+            </p>
+            <div className="w-full">
               <div className="relative">
                 <input
                   type="text"
@@ -356,6 +476,7 @@ export default function CompaniesPage() {
           </p>
         </div>
       </footer>
+      </div>
     </div>
   );
 }
