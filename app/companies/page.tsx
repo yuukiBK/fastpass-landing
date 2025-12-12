@@ -27,7 +27,7 @@ function Sidebar() {
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 px-4">
+      <nav className="flex-1 px-4 space-y-2">
         <div
           className="flex items-center gap-3 px-4 py-3 rounded-lg transition-colors"
           style={{ backgroundColor: '#E8E3FE', color: '#934FFC' }}
@@ -39,6 +39,15 @@ function Sidebar() {
           />
           <span className="font-medium">ホーム</span>
         </div>
+        <Link
+          href="/history"
+          className="flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-gray-600 hover:bg-gray-100"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span className="font-medium">履歴</span>
+        </Link>
       </nav>
 
       {/* User Profile Section */}
