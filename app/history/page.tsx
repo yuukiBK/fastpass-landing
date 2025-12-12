@@ -24,9 +24,9 @@ function Sidebar() {
           className="flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-gray-600 hover:bg-gray-100"
         >
           <img
-            src="/サイドバー_ホーム_タップ時 (1).png"
+            src="/名称未設定のデザイン (72).png"
             alt="ホーム"
-            className="w-6 h-6 opacity-50"
+            className="w-5 h-5"
           />
           <span className="font-medium">ホーム</span>
         </Link>
@@ -34,9 +34,11 @@ function Sidebar() {
           className="flex items-center gap-3 px-4 py-3 rounded-lg transition-colors"
           style={{ backgroundColor: '#E8E3FE', color: '#934FFC' }}
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
+          <img
+            src="/名称未設定のデザイン (78).png"
+            alt="履歴"
+            className="w-5 h-5"
+          />
           <span className="font-medium">履歴</span>
         </div>
       </nav>
@@ -135,12 +137,12 @@ export default function HistoryPage() {
 
       {/* Main Content Area - offset for sidebar on desktop */}
       <div className="lg:ml-64">
-        {/* Header */}
-        <header className="bg-white shadow-sm sticky top-0 z-10">
+        {/* Header - Mobile only */}
+        <header className="bg-white shadow-sm sticky top-0 z-10 lg:hidden">
           <div className="px-4 py-4">
             <Link
               href="/companies"
-              className="text-[#4D5CEC] text-sm font-medium hover:text-[#3D4CDC] lg:hidden"
+              className="text-[#4D5CEC] text-sm font-medium hover:text-[#3D4CDC]"
             >
               ← ホームへ戻る
             </Link>
@@ -150,7 +152,10 @@ export default function HistoryPage() {
         <main className="max-w-4xl mx-auto px-4 py-8">
           {/* Page Title */}
           <div className="mb-8">
-            <h1 className="text-2xl font-bold text-gray-900 mb-2">AI面接の履歴</h1>
+            <h1 className="text-2xl font-bold text-gray-900 mb-2 flex items-center gap-2">
+              <img src="/名称未設定のデザイン (80).png" alt="" className="w-6 h-6" />
+              AI面接の履歴
+            </h1>
             <p className="text-gray-500">過去の面接結果を確認できます</p>
           </div>
 
