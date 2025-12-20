@@ -919,7 +919,7 @@ export default function DMMDungeonPage() {
 
           {/* Daily Quest Card */}
           <img
-            src="/スクリーンショット 2025-12-20 8.53.09.png"
+            src="/右サイドバー_DMM (3).png"
             alt="デイリークエスト"
             className="w-full rounded-2xl"
           />
