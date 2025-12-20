@@ -208,24 +208,26 @@ export default function CoursesPage() {
 
       {/* Main Content */}
       <div className="lg:ml-64">
-        {/* Header */}
-        <header className="sticky top-0 bg-white z-30">
-          <div className="max-w-4xl mx-auto px-6 py-5 flex items-center justify-center">
-            <h1 className="text-lg font-bold text-gray-700">就活生のためのコース</h1>
-          </div>
-        </header>
-
         {/* Main Area */}
         <main className="max-w-4xl mx-auto px-6 py-10">
-          {/* 企業グリッド */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-6 gap-y-10">
-            {companies.map((company) => (
-              <CompanyCard
-                key={company.slug}
-                company={company}
-              />
-            ))}
-          </div>
+          {/* 企業グリッド画像1 - DMMへのリンク */}
+          <Link href="/demo/dmm" className="block">
+            <img
+              src="/見出しを追加 (17).png"
+              alt="コースを選択"
+              className="w-full"
+            />
+          </Link>
+          <img
+            src="/見出しを追加 (1626 x 869 px).png"
+            alt="コースを選択2"
+            className="w-full mt-6"
+          />
+          <img
+            src="/見出しを追加 (1626 x 869 px) (1).png"
+            alt="コースを選択3"
+            className="w-full mt-6"
+          />
         </main>
       </div>
     </div>

@@ -1,7 +1,56 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
+// Video Modal Component (Full Screen)
+function VideoModal({
+  isOpen,
+  onClose
+}: {
+  isOpen: boolean;
+  onClose: () => void;
+}) {
+  // ブラウザの戻るボタンで閉じる
+  useEffect(() => {
+    if (typeof window !== 'undefined' && isOpen) {
+      window.history.pushState({ videoModal: true }, '');
+      window.onpopstate = () => {
+        onClose();
+        // まず一番上に移動してから、ザーッと一番下までスクロール
+        window.scrollTo({ top: 0, behavior: 'instant' });
+        setTimeout(() => {
+          window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }, 50);
+      };
+    }
+  }, [isOpen, onClose]);
+
+  if (!isOpen) return null;
+
+  const handleClose = () => {
+    onClose();
+    // まず一番上に移動してから、ザーッと一番下までスクロール
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    setTimeout(() => {
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }, 50);
+  };
+
+  return (
+    <div
+      className="fixed inset-0 bg-black z-[100] flex items-center justify-center cursor-pointer"
+      onClick={handleClose}
+    >
+      {/* Video - Full Screen */}
+      <video
+        src="/DMM最終面接.mp4"
+        autoPlay
+        className="w-full h-full object-contain pointer-events-none"
+      />
+    </div>
+  );
+}
 
 // Quest Popup Component
 function QuestPopup({
@@ -12,7 +61,8 @@ function QuestPopup({
   year,
   color,
   interviewerImage,
-  interviewerName
+  interviewerName,
+  onStartVideo
 }: {
   isOpen: boolean;
   onClose: () => void;
@@ -22,8 +72,15 @@ function QuestPopup({
   color: string;
   interviewerImage?: string;
   interviewerName?: string;
+  onStartVideo?: () => void;
 }) {
   if (!isOpen) return null;
+
+  const handleButtonClick = () => {
+    if (onStartVideo) {
+      onStartVideo();
+    }
+  };
 
   return (
     <>
@@ -67,7 +124,7 @@ function QuestPopup({
 
           {/* Practice Button */}
           <button
-            onClick={() => window.location.href = '/demo/interview-prep'}
+            onClick={handleButtonClick}
             className="w-full py-3 rounded-xl font-bold text-gray-700 mb-3 transition-all hover:brightness-95 active:scale-[0.98]"
             style={{
               backgroundColor: 'white',
@@ -79,7 +136,7 @@ function QuestPopup({
 
           {/* 本番モード Button */}
           <button
-            onClick={() => window.location.href = '/demo/interview-prep'}
+            onClick={handleButtonClick}
             className="w-full py-3 rounded-xl font-bold transition-all hover:brightness-95 active:scale-[0.98]"
             style={{
               backgroundColor: '#FFC800',
@@ -385,6 +442,7 @@ const questDetails: Record<number, { title: string; description: string; year: s
 function UnitSection({ unit }: { unit: typeof units[0] }) {
   const [popupOpen, setPopupOpen] = useState(false);
   const [selectedQuest, setSelectedQuest] = useState<{ title: string; description: string; year: string; interviewerImage: string; interviewerName: string } | null>(null);
+  const [videoOpen, setVideoOpen] = useState(false);
 
   const handleQuestClick = () => {
     const quests = questDetails[unit.unitNumber];
@@ -392,6 +450,11 @@ function UnitSection({ unit }: { unit: typeof units[0] }) {
       setSelectedQuest(quests[0]);
       setPopupOpen(true);
     }
+  };
+
+  const handleStartVideo = () => {
+    setPopupOpen(false);
+    setVideoOpen(true);
   };
 
   // ユニット1は画像をそのまま使用
@@ -424,8 +487,12 @@ function UnitSection({ unit }: { unit: typeof units[0] }) {
             color={unit.color}
             interviewerImage={selectedQuest.interviewerImage}
             interviewerName={selectedQuest.interviewerName}
+            onStartVideo={handleStartVideo}
           />
         )}
+
+        {/* Video Modal */}
+        <VideoModal isOpen={videoOpen} onClose={() => setVideoOpen(false)} />
       </div>
     );
   }
@@ -460,8 +527,12 @@ function UnitSection({ unit }: { unit: typeof units[0] }) {
             color={unit.color}
             interviewerImage={selectedQuest.interviewerImage}
             interviewerName={selectedQuest.interviewerName}
+            onStartVideo={handleStartVideo}
           />
         )}
+
+        {/* Video Modal */}
+        <VideoModal isOpen={videoOpen} onClose={() => setVideoOpen(false)} />
       </div>
     );
   }
@@ -496,8 +567,12 @@ function UnitSection({ unit }: { unit: typeof units[0] }) {
             color={unit.color}
             interviewerImage={selectedQuest.interviewerImage}
             interviewerName={selectedQuest.interviewerName}
+            onStartVideo={handleStartVideo}
           />
         )}
+
+        {/* Video Modal */}
+        <VideoModal isOpen={videoOpen} onClose={() => setVideoOpen(false)} />
       </div>
     );
   }
@@ -532,8 +607,12 @@ function UnitSection({ unit }: { unit: typeof units[0] }) {
             color={unit.color}
             interviewerImage={selectedQuest.interviewerImage}
             interviewerName={selectedQuest.interviewerName}
+            onStartVideo={handleStartVideo}
           />
         )}
+
+        {/* Video Modal */}
+        <VideoModal isOpen={videoOpen} onClose={() => setVideoOpen(false)} />
       </div>
     );
   }
@@ -568,8 +647,12 @@ function UnitSection({ unit }: { unit: typeof units[0] }) {
             color={unit.color}
             interviewerImage={selectedQuest.interviewerImage}
             interviewerName={selectedQuest.interviewerName}
+            onStartVideo={handleStartVideo}
           />
         )}
+
+        {/* Video Modal */}
+        <VideoModal isOpen={videoOpen} onClose={() => setVideoOpen(false)} />
       </div>
     );
   }
@@ -604,8 +687,12 @@ function UnitSection({ unit }: { unit: typeof units[0] }) {
             color={unit.color}
             interviewerImage={selectedQuest.interviewerImage}
             interviewerName={selectedQuest.interviewerName}
+            onStartVideo={handleStartVideo}
           />
         )}
+
+        {/* Video Modal */}
+        <VideoModal isOpen={videoOpen} onClose={() => setVideoOpen(false)} />
       </div>
     );
   }
@@ -640,8 +727,12 @@ function UnitSection({ unit }: { unit: typeof units[0] }) {
             color={unit.color}
             interviewerImage={selectedQuest.interviewerImage}
             interviewerName={selectedQuest.interviewerName}
+            onStartVideo={handleStartVideo}
           />
         )}
+
+        {/* Video Modal */}
+        <VideoModal isOpen={videoOpen} onClose={() => setVideoOpen(false)} />
       </div>
     );
   }
@@ -749,7 +840,13 @@ const bossUnit = {
 
 export default function DMMDungeonPage() {
   const [bossPopupOpen, setBossPopupOpen] = useState(false);
+  const [bossVideoOpen, setBossVideoOpen] = useState(false);
   const bossQuest = questDetails[8]?.[0];
+
+  const handleBossStartVideo = () => {
+    setBossPopupOpen(false);
+    setBossVideoOpen(true);
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -794,8 +891,12 @@ export default function DMMDungeonPage() {
                   color={bossUnit.color}
                   interviewerImage={bossQuest.interviewerImage}
                   interviewerName={bossQuest.interviewerName}
+                  onStartVideo={handleBossStartVideo}
                 />
               )}
+
+              {/* Boss Video Modal */}
+              <VideoModal isOpen={bossVideoOpen} onClose={() => setBossVideoOpen(false)} />
             </div>
           </div>
         </div>
