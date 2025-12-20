@@ -905,14 +905,14 @@ export default function DMMDungeonPage() {
         <div className="hidden xl:block w-[480px] bg-white pl-10 pr-24 py-6 space-y-6 sticky top-0 h-screen overflow-y-auto">
           {/* Status Bar (DMM style) */}
           <img
-            src="/右サイドバー_DMM (1).png"
+            src="/右サイドバー_DMM (2).png"
             alt="DMM Status Bar"
             className="w-full"
           />
 
           {/* Ranking Card */}
           <img
-            src="/スクリーンショット 2025-12-20 9.01.21.png"
+            src="/名称未設定のデザイン (89).png"
             alt="ランキングに参加しよう"
             className="w-full rounded-2xl"
           />
@@ -924,10 +924,10 @@ export default function DMMDungeonPage() {
             className="w-full rounded-2xl"
           />
 
-          {/* Friends Streak Card */}
+          {/* Friends Card */}
           <img
-            src="/スクリーンショット 2025-12-20 8.55.21.png"
-            alt="フレンズ連続記録"
+            src="/フレンド.png"
+            alt="フレンド"
             className="w-full rounded-2xl"
           />
 
