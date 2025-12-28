@@ -125,7 +125,7 @@ export default function Home() {
                 ログイン
               </a>
               <a
-                href="#"
+                href="/register/welcome"
                 className="text-sm font-bold text-white px-4 md:px-6 py-2 md:py-2.5 rounded-lg transition-all duration-250 hover:opacity-90"
                 style={{
                   background: 'linear-gradient(90deg, #7f4dec 0%, #395be5 100%)',
@@ -210,7 +210,7 @@ export default function Home() {
               {/* CTA Buttons - Desktop */}
               <div className="flex gap-4 mb-8">
                 <a
-                  href="#"
+                  href="/register/welcome"
                   className="px-8 py-4 rounded-lg font-bold text-base text-white transition-all duration-250 hover:opacity-90 text-center"
                   style={{
                     background: 'linear-gradient(90deg, #7f4dec 0%, #395be5 100%)',
@@ -322,7 +322,7 @@ export default function Home() {
           {/* CTA Buttons - Mobile */}
           <div className="lg:hidden flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
             <a
-              href="#"
+              href="/register/welcome"
               className="px-6 md:px-8 py-3 md:py-4 rounded-lg font-bold text-sm md:text-base text-white transition-all duration-250 hover:opacity-90 text-center"
               style={{
                 background: 'linear-gradient(90deg, #7f4dec 0%, #395be5 100%)',
@@ -1365,7 +1365,7 @@ export default function Home() {
                 転職を有利に進めよう！
               </h2>
               <a
-                href="#"
+                href="/register/welcome"
                 className="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3 md:py-4 bg-white text-blue-600 rounded-lg font-bold text-base md:text-lg lg:text-xl hover:bg-gray-50 transition-colors shadow-lg"
               >
                 無料で始める

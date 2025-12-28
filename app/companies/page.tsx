@@ -203,13 +203,10 @@ function CompanyCard({
 export default function CoursesPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Sidebar */}
-      <Sidebar />
-
       {/* Main Content */}
-      <div className="lg:ml-64">
+      <div className="">
         {/* Main Area */}
-        <main className="max-w-4xl mx-auto px-6 py-10">
+        <main className="max-w-4xl mx-auto px-4 py-6 lg:px-6 lg:py-10">
           {/* 企業グリッド画像1 - DMMへのリンク */}
           <Link href="/demo/dmm" className="block">
             <img
@@ -226,7 +223,7 @@ export default function CoursesPage() {
           <img
             src="/見出しを追加 (1626 x 869 px) (1).png"
             alt="コースを選択3"
-            className="w-full mt-6"
+            className="w-full mt-4 lg:mt-6"
           />
         </main>
       </div>

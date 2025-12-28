@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 
-// Sidebar Component
-function Sidebar() {
+// Sidebar Component (shared with other pages)
+function Sidebar({ activePage = 'home' }: { activePage?: 'home' | 'courses' | 'events' | 'messages' | 'history' | 'profile' }) {
   return (
     <aside className="hidden lg:flex flex-col w-64 min-h-screen bg-white border-r border-gray-200 fixed left-0 top-0 z-40">
       {/* Logo */}
@@ -18,47 +18,87 @@ function Sidebar() {
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 px-4 space-y-2">
+      <nav className="flex-1 px-4 space-y-3">
+        {/* ホーム */}
         <Link
-          href="/companies"
-          className="flex items-center gap-3 px-4 py-3 rounded-lg transition-colors text-gray-600 hover:bg-gray-100"
+          href="/demo/dmm"
+          className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-colors ${
+            activePage === 'home'
+              ? 'bg-[#DDF4FF] text-[#1CB0F6]'
+              : 'text-gray-500 hover:bg-gray-100'
+          }`}
         >
-          <img
-            src="/名称未設定のデザイン (72).png"
-            alt="ホーム"
-            className="w-5 h-5"
-          />
-          <span className="font-medium">ホーム</span>
+          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+          </svg>
+          <span className="font-bold">ホーム</span>
         </Link>
-        <div
-          className="flex items-center gap-3 px-4 py-3 rounded-lg transition-colors"
-          style={{ backgroundColor: '#E8E3FE', color: '#934FFC' }}
-        >
-          <img
-            src="/名称未設定のデザイン (78).png"
-            alt="履歴"
-            className="w-5 h-5"
-          />
-          <span className="font-medium">履歴</span>
-        </div>
-      </nav>
 
-      {/* User Profile Section */}
-      <div className="p-4 border-t border-gray-200">
-        <div className="flex flex-col items-center text-center">
-          <div className="w-12 h-12 rounded-full bg-gray-200 mb-2 overflow-hidden">
+        {/* コースを選択 */}
+        <Link
+          href="/demo/courses"
+          className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-colors ${
+            activePage === 'courses'
+              ? 'bg-[#DDF4FF] text-[#1CB0F6]'
+              : 'text-gray-500 hover:bg-gray-100'
+          }`}
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+          </svg>
+          <span className="font-bold">コースを選択</span>
+        </Link>
+
+        {/* イベント */}
+        <Link
+          href="/demo/events"
+          className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-colors ${
+            activePage === 'events'
+              ? 'bg-[#DDF4FF] text-[#1CB0F6]'
+              : 'text-gray-500 hover:bg-gray-100'
+          }`}
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          <span className="font-bold">イベント</span>
+          <span className="ml-auto bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">3</span>
+        </Link>
+
+        {/* 履歴 */}
+        <Link
+          href="/history"
+          className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-colors ${
+            activePage === 'history'
+              ? 'bg-[#DDF4FF] text-[#1CB0F6]'
+              : 'text-gray-500 hover:bg-gray-100'
+          }`}
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span className="font-bold">履歴</span>
+        </Link>
+
+        {/* プロフィール */}
+        <Link
+          href="#"
+          className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-colors ${
+            activePage === 'profile'
+              ? 'bg-[#DDF4FF] text-[#1CB0F6]'
+              : 'text-gray-500 hover:bg-gray-100'
+          }`}
+        >
+          <div className="w-6 h-6 rounded-full bg-gray-200 overflow-hidden">
             <img
               src="/S__222806024.jpg"
               alt="プロフィール画像"
               className="w-full h-full object-cover"
             />
           </div>
-          <span className="text-sm text-gray-700 mb-2">LogicalTiger2025</span>
-          <button className="px-4 py-1.5 text-sm border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-            プロフィール
-          </button>
-        </div>
-      </div>
+          <span className="font-bold">プロフィール</span>
+        </Link>
+      </nav>
     </aside>
   );
 }
@@ -131,9 +171,9 @@ export default function HistoryPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       {/* Sidebar */}
-      <Sidebar />
+      <Sidebar activePage="history" />
 
       {/* Main Content Area - offset for sidebar on desktop */}
       <div className="lg:ml-64">

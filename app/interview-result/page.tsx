@@ -5,9 +5,9 @@ import Link from "next/link";
 export default function InterviewResultPage() {
   // サンプルデータ
   const questionData = {
-    title: "1分間で自己紹介をしてください",
-    subtitle: "面接の第一印象を決める重要な1分間",
-    estimatedTime: "16分",
+    title: "あなたのレベル診断結果",
+    subtitle: "FastPassがあなたにぴったりのスタート地点を見つけました！",
+    estimatedTime: "5分",
     difficulty: "Level 1",
   };
 
@@ -192,14 +192,20 @@ export default function InterviewResultPage() {
       <main className="max-w-6xl mx-auto px-4 py-8">
         {/* Question Header */}
         <section className="bg-white rounded-2xl shadow-sm p-6 mb-6">
-          <div className="flex flex-wrap items-center gap-3 mb-3">
-            <span className="px-3 py-1 bg-[#4D5CEC]/10 text-[#4D5CEC] text-sm font-medium rounded-full">
-              {questionData.difficulty}
-            </span>
-            <span className="px-3 py-1 bg-gray-100 text-gray-600 text-sm rounded-full">
-              想定時間: {questionData.estimatedTime}
-            </span>
-          </div>
+          {(questionData.difficulty || questionData.estimatedTime) && (
+            <div className="flex flex-wrap items-center gap-3 mb-3">
+              {questionData.difficulty && (
+                <span className="px-3 py-1 bg-[#4D5CEC]/10 text-[#4D5CEC] text-sm font-medium rounded-full">
+                  {questionData.difficulty}
+                </span>
+              )}
+              {questionData.estimatedTime && (
+                <span className="px-3 py-1 bg-gray-100 text-gray-600 text-sm rounded-full">
+                  想定時間: {questionData.estimatedTime}
+                </span>
+              )}
+            </div>
+          )}
           <h2 className="text-2xl font-bold text-gray-900 mb-2">
             {questionData.title}
           </h2>
@@ -353,24 +359,6 @@ export default function InterviewResultPage() {
             </div>
           </div>
 
-          {/* Example Button */}
-          <div className="mt-6 pt-6 border-t border-gray-100">
-            <a
-              href="https://ai-shukatsu.com"
-              className="flex items-center justify-between w-full p-4 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl hover:from-purple-100 hover:to-indigo-100 transition-colors group"
-            >
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center">
-                  <span className="text-white text-lg">📄</span>
-                </div>
-                <div>
-                  <p className="font-bold text-gray-900">具体例を見る（住友不動産）</p>
-                  <p className="text-xs text-gray-500">内定者の回答例を参考にしよう</p>
-                </div>
-              </div>
-              <span className="text-purple-500 group-hover:translate-x-1 transition-transform">→</span>
-            </a>
-          </div>
         </section>
 
         {/* Criteria Section */}
@@ -571,17 +559,11 @@ export default function InterviewResultPage() {
 
         {/* CTA */}
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            href="https://ai-shukatsu.com"
+          <Link
+            href="/register/level-result"
             className="w-full sm:w-auto px-8 py-4 bg-[#4D5CEC] text-white font-bold rounded-xl hover:bg-[#3D4CDC] transition-colors text-center"
           >
-            もう一度挑戦する
-          </a>
-          <Link
-            href="/consulting"
-            className="w-full sm:w-auto px-8 py-4 bg-white text-gray-700 font-bold rounded-xl border-2 border-gray-200 hover:bg-gray-50 transition-colors text-center"
-          >
-            質問一覧に戻る
+            次へ進む
           </Link>
         </div>
       </main>
