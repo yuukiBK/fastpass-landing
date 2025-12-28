@@ -82,7 +82,7 @@ function Sidebar({ activePage = 'home' }: { activePage?: 'home' | 'courses' | 'e
 
         {/* プロフィール */}
         <Link
-          href="#"
+          href="/demo/profile"
           className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-colors ${
             activePage === 'profile'
               ? 'bg-[#DDF4FF] text-[#1CB0F6]'
@@ -91,7 +91,7 @@ function Sidebar({ activePage = 'home' }: { activePage?: 'home' | 'courses' | 'e
         >
           <div className="w-6 h-6 rounded-full bg-gray-200 overflow-hidden">
             <img
-              src="/S__222806024.jpg"
+              src="/β版　アニメーション.png"
               alt="プロフィール画像"
               className="w-full h-full object-cover"
             />
