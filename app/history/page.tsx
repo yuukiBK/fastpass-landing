@@ -181,7 +181,7 @@ export default function HistoryPage() {
         <header className="bg-white shadow-sm sticky top-0 z-10 lg:hidden">
           <div className="px-4 py-4">
             <Link
-              href="/companies"
+              href="/demo/dmm"
               className="text-[#4D5CEC] text-sm font-medium hover:text-[#3D4CDC]"
             >
               ← ホームへ戻る

@@ -151,15 +151,15 @@ export default function EventApplyPage() {
 
           {/* Event Info */}
           <div className="bg-gray-50 rounded-lg p-4 mb-8">
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <img
                 src="/【β版】FastPass素材 (1).png"
                 alt="FastPass"
-                className="w-16 h-16 object-contain"
+                className="w-14 h-14 sm:w-16 sm:h-16 object-contain"
               />
               <div>
                 <p className="text-sm text-gray-500 mb-1">申込イベント</p>
-                <h2 className="font-bold text-gray-800">
+                <h2 className="font-bold text-gray-800 text-sm sm:text-base">
                   【27卒対象】キャリアアドバイザーとの個別面談
                 </h2>
                 <p className="text-sm text-[#4D5CEC] mt-1">1月5日(月) 13:00〜14:00</p>
