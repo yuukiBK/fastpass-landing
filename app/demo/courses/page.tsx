@@ -1,6 +1,8 @@
 'use client';
 
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 
 // Sidebar Component (shared with DMM page)
 function Sidebar({ activePage = 'home' }: { activePage?: 'home' | 'courses' | 'events' | 'messages' | 'history' | 'profile' }) {
@@ -103,14 +105,17 @@ function Sidebar({ activePage = 'home' }: { activePage?: 'home' | 'courses' | 'e
   );
 }
 
-export default function CoursesPage() {
+function CoursesContent() {
+  const searchParams = useSearchParams();
+  const isFromRegister = searchParams.get('from') === 'register';
+
   return (
     <div className="min-h-screen bg-white">
-      {/* Sidebar */}
-      <Sidebar activePage="courses" />
+      {/* Sidebar - 登録フローからの遷移時は非表示 */}
+      {!isFromRegister && <Sidebar activePage="courses" />}
 
       {/* Main Content */}
-      <main className="lg:ml-64 min-h-screen">
+      <main className={`${isFromRegister ? '' : 'lg:ml-64'} min-h-screen`}>
         <div className="max-w-4xl mx-auto px-4 py-8 lg:px-8 lg:py-12">
           {/* Title */}
           <div className="text-center mb-10">
@@ -118,24 +123,8 @@ export default function CoursesPage() {
               面接対策したい企業は？
             </h1>
             <p className="text-gray-500">
-              後から他の企業も追加できます
+              後から追加・変更もできます
             </p>
-          </div>
-
-          {/* 選択ボタン */}
-          <div className="mb-8 flex flex-col sm:flex-row gap-3 justify-center">
-            <Link
-              href="/register/start?company=undecided"
-              className="inline-block py-4 px-8 text-center font-bold text-[#4B5563] bg-white border-2 border-gray-300 rounded-2xl hover:bg-gray-50 active:bg-gray-100 transition-all shadow-[0_2px_0_0_#d1d5db] hover:shadow-[0_2px_0_0_#d1d5db] active:shadow-none active:translate-y-[2px]"
-            >
-              自分に合う業界を探す
-            </Link>
-            <Link
-              href="/register/industry"
-              className="inline-block py-4 px-8 text-center font-bold text-[#4B5563] bg-white border-2 border-gray-300 rounded-2xl hover:bg-gray-50 active:bg-gray-100 transition-all shadow-[0_2px_0_0_#d1d5db] hover:shadow-[0_2px_0_0_#d1d5db] active:shadow-none active:translate-y-[2px]"
-            >
-              業界別に練習する
-            </Link>
           </div>
 
           {/* 企業グリッド画像 */}
@@ -181,5 +170,13 @@ export default function CoursesPage() {
         </div>
       </main>
     </div>
+  );
+}
+
+export default function CoursesPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-white" />}>
+      <CoursesContent />
+    </Suspense>
   );
 }

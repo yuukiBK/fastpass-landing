@@ -6,16 +6,21 @@ import { setCurrentStep, completeStep } from '@/lib/registration-store';
 
 export default function LevelResultPage() {
   const router = useRouter();
-  const [isVisible, setIsVisible] = useState(false);
+  const [showMascot, setShowMascot] = useState(false);
+  const [showBubble, setShowBubble] = useState(false);
 
   useEffect(() => {
     setCurrentStep('level-result');
-    const timer = setTimeout(() => setIsVisible(true), 100);
+    // welcomeと同じタイミング：吹き出しとアニメーションを同時にフェードイン
+    const timer = setTimeout(() => {
+      setShowBubble(true);
+      setShowMascot(true);
+    }, 100);
     return () => clearTimeout(timer);
   }, []);
 
   const handleBack = () => {
-    router.push('/register/goal');
+    router.push('/register/result-detail');
   };
 
   const handleNext = () => {
@@ -59,27 +64,30 @@ export default function LevelResultPage() {
 
       {/* Main Content */}
       <main className="flex-1 flex flex-col items-center justify-center px-4 pb-32">
-        {/* Speech Bubble */}
-        <div className={`mb-4 ${isVisible ? 'animate-pop' : 'opacity-0'}`}>
-          <div className="relative">
-            <div className="bg-white border-2 border-gray-200 rounded-2xl px-6 py-5 shadow-sm max-w-sm">
-              <p className="text-lg md:text-xl font-bold text-center text-gray-800 leading-relaxed">
-                ぴったりなレベルは<span className="text-[#4D5CEC]">セクション2</span>みたいだね！まずはそこからスタートして、あとで調整しよう。
+        {/* Speech Bubble - 上に配置（welcomeと同じ） */}
+        <div className="relative mb-4">
+          <div className={`transition-opacity duration-300 ${showBubble ? 'opacity-100' : 'opacity-0'}`}>
+            <div className="bg-white border-2 border-gray-200 rounded-2xl px-6 py-4 shadow-sm">
+              <p className="text-lg md:text-xl font-bold text-gray-800 text-center">
+                ぴったりなレベルは<span className="text-[#4D5CEC]">セクション2</span>みたい！
+              </p>
+              <p className="text-lg md:text-xl font-bold text-gray-800 text-center">
+                まずは、そこからスタートがおすすめ！
               </p>
             </div>
-            {/* Bubble Arrow (pointing down) */}
-            <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-2">
-              <div className="w-3 h-3 bg-white border-r-2 border-b-2 border-gray-200 transform rotate-45"></div>
+            {/* Bubble Arrow - 下向き（welcomeと同じ） */}
+            <div className="absolute left-1/2 -translate-x-1/2 -bottom-3">
+              <div className="w-4 h-4 bg-white border-r-2 border-b-2 border-gray-200 transform rotate-45"></div>
             </div>
           </div>
         </div>
 
-        {/* Mascot */}
-        <div className={`${isVisible ? 'animate-fadeInUp' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
+        {/* Animation - 下に配置（welcomeと同じ） */}
+        <div className={`w-64 h-64 md:w-80 md:h-80 transition-opacity duration-300 ${showMascot ? 'opacity-100' : 'opacity-0'}`}>
           <img
             src="/β版　アニメーション (6).gif"
             alt="マスコット"
-            className="w-40 h-40 object-contain"
+            className="w-full h-full object-contain"
           />
         </div>
       </main>

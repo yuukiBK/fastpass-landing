@@ -77,6 +77,47 @@ function AnimatedNumber({ value, duration = 500 }: { value: number; duration?: n
   return <span>{displayValue}</span>;
 }
 
+// ランクスロットアニメーション
+function AnimatedRank({ targetRank, color, duration = 1000 }: { targetRank: string; color: string; duration?: number }) {
+  const ranks = ['S', 'A', 'B', 'C', 'D'];
+  const [displayRank, setDisplayRank] = useState('S');
+  const [isAnimating, setIsAnimating] = useState(true);
+
+  useEffect(() => {
+    const startTime = Date.now();
+    let currentIndex = 0;
+
+    const animate = () => {
+      const elapsed = Date.now() - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      if (progress < 1) {
+        // スロットのように高速で回転（最初は速く、徐々に遅く）
+        const speed = Math.max(50, 200 * (1 - progress));
+        currentIndex = (currentIndex + 1) % ranks.length;
+        setDisplayRank(ranks[currentIndex]);
+
+        setTimeout(animate, speed);
+      } else {
+        // 最終的にターゲットランクで停止
+        setDisplayRank(targetRank);
+        setIsAnimating(false);
+      }
+    };
+
+    animate();
+  }, [targetRank, duration]);
+
+  return (
+    <span
+      style={{ color: isAnimating ? '#9CA3AF' : color }}
+      className="transition-colors duration-200"
+    >
+      {displayRank}
+    </span>
+  );
+}
+
 // ランク計算
 function getRank(score: number): { rank: string; color: string } {
   if (score >= 90) return { rank: 'S', color: '#FFD700' };
@@ -89,75 +130,49 @@ function getRank(score: number): { rank: string; color: string } {
 export default function CompletePage() {
   const router = useRouter();
 
-  // 評価項目データ
-  const criteria = [
-    { name: '簡潔さ', score: 78 },
-    { name: '構成力', score: 72 },
-    { name: '印象・話し方', score: 85 },
-  ];
-
-  const totalScore = Math.round(criteria.reduce((sum, c) => sum + c.score, 0) / criteria.length);
+  // スコアデータ
+  const totalScore = 78;
   const isCleared = totalScore >= 70;
   const { rank, color: rankColor } = getRank(totalScore);
 
   // アニメーション状態
-  const [currentStep, setCurrentStep] = useState(-1);
-  const [showTotal, setShowTotal] = useState(false);
+  const [showScore, setShowScore] = useState(false);
+  const [showRank, setShowRank] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
-  const [showMessage, setShowMessage] = useState(false);
+  const [showNextButton, setShowNextButton] = useState(false);
 
   // アニメーションシーケンス
   useEffect(() => {
     const timers: NodeJS.Timeout[] = [];
-    const baseDelay = 500;
+    const scoreDelay = 600;
+    const rankDelay = scoreDelay + 1000; // スコア表示後1秒後にランク
+    const rankAnimationDuration = 600; // ランクのスロットアニメーション時間（短縮）
+    const nextButtonDelay = rankDelay + rankAnimationDuration + 200; // ランクアニメーション完了後
 
-    // 各項目のタイマー
-    criteria.forEach((_, index) => {
-      timers.push(setTimeout(() => setCurrentStep(index), baseDelay + index * 600));
-    });
+    timers.push(setTimeout(() => setShowScore(true), scoreDelay));
+    timers.push(setTimeout(() => setShowRank(true), rankDelay));
+    timers.push(setTimeout(() => setShowNextButton(true), nextButtonDelay));
 
-    // トータルスコア表示
-    timers.push(setTimeout(() => setShowTotal(true), baseDelay + criteria.length * 600 + 400));
-
-    // クリア時のみ紙吹雪
     if (isCleared) {
-      timers.push(setTimeout(() => setShowConfetti(true), baseDelay + criteria.length * 600 + 1000));
+      timers.push(setTimeout(() => setShowConfetti(true), rankDelay + rankAnimationDuration + 200)); // ランクアニメーション後
     }
 
-    // メッセージ表示
-    timers.push(setTimeout(() => setShowMessage(true), baseDelay + criteria.length * 600 + 1200));
-
     return () => timers.forEach(clearTimeout);
-  }, []);
+  }, [isCleared]);
 
   const handleNext = () => {
     router.push('/register/result-detail');
   };
 
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <div className="min-h-screen bg-white flex flex-col items-center justify-center px-4 relative">
       {/* 紙吹雪（クリア時のみ） */}
       {showConfetti && isCleared && <Confetti />}
 
-      {/* Main Content */}
-      <main className="flex-1 flex flex-col items-center justify-center px-4 pb-32">
-        {/* Speech Bubble */}
-        <div className={`mb-2 transition-all duration-500 ${showMessage ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
-          <div className="relative">
-            <div className="bg-white border-2 border-gray-200 rounded-2xl px-5 py-4 shadow-sm">
-              <p className="text-lg md:text-xl font-bold text-center text-gray-800">
-                {isCleared ? 'クリアだよ！おめでとう！' : '惜しい！もう一度挑戦しよう！'}
-              </p>
-            </div>
-            {/* Bubble Arrow (pointing down) */}
-            <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-2">
-              <div className="w-3 h-3 bg-white border-r-2 border-b-2 border-gray-200 transform rotate-45"></div>
-            </div>
-          </div>
-        </div>
-
+      {/* メインコンテンツ */}
+      <div className="flex flex-col items-center">
         {/* Mascot */}
-        <div className="mb-4 w-36 h-36 md:w-40 md:h-40">
+        <div className="w-64 h-64 md:w-72 md:h-72 mb-4">
           <video
             src="/β版　アニメーション (5).mp4"
             autoPlay
@@ -169,70 +184,60 @@ export default function CompletePage() {
         </div>
 
         {/* タイトル */}
-        <h1 className="text-2xl md:text-3xl font-bold text-[#58CC02] mb-4">
+        <h1 className="text-3xl md:text-4xl font-bold text-[#58CC02] mb-6">
           レッスンコンプリート！
         </h1>
 
         {/* スコア＆ランクカード */}
-        <div className="flex gap-4 mb-6">
+        <div className="flex gap-6">
           {/* スコアカード */}
-          <div className="bg-white border-2 border-[#1CB0F6] rounded-2xl px-6 py-4 min-w-[120px]">
-            <p className="text-xs font-bold text-[#1CB0F6] mb-1 text-center">スコア</p>
+          <div className="bg-white border-2 border-[#1CB0F6] rounded-2xl px-8 py-4 min-w-[140px]">
+            <p className="text-sm font-bold text-[#1CB0F6] mb-1 text-center">スコア</p>
             <div className="flex items-center justify-center">
-              <span className="text-2xl font-black text-[#1CB0F6]">
-                {showTotal ? <AnimatedNumber value={totalScore} duration={800} /> : '??'}
+              <span className="text-3xl font-black text-[#1CB0F6]">
+                {showScore ? <AnimatedNumber value={totalScore} duration={800} /> : '??'}
               </span>
-              <span className="text-sm text-gray-400 ml-1">pt</span>
+              <span className="text-base text-gray-400 ml-1">pt</span>
             </div>
           </div>
 
           {/* ランクカード */}
-          <div className="bg-white border-2 rounded-2xl px-6 py-4 min-w-[120px]" style={{ borderColor: rankColor }}>
-            <p className="text-xs font-bold mb-1 text-center" style={{ color: rankColor }}>ランク</p>
+          <div
+            className="bg-white border-2 rounded-2xl px-8 py-4 min-w-[140px] transition-colors duration-300"
+            style={{ borderColor: showRank ? rankColor : '#E5E7EB' }}
+          >
+            <p
+              className="text-sm font-bold mb-1 text-center transition-colors duration-300"
+              style={{ color: showRank ? rankColor : '#9CA3AF' }}
+            >
+              ランク
+            </p>
             <div className="flex items-center justify-center">
-              <span className="text-3xl font-black" style={{ color: rankColor }}>
-                {showTotal ? rank : '?'}
+              <span className="text-3xl font-black">
+                {showRank ? (
+                  <AnimatedRank targetRank={rank} color={rankColor} duration={600} />
+                ) : (
+                  <span className="text-gray-400">?</span>
+                )}
               </span>
             </div>
           </div>
         </div>
-
-        {/* 評価項目 */}
-        <div className="w-full max-w-sm space-y-3">
-          {criteria.map((item, index) => {
-            const isActive = currentStep >= index;
-            return (
-              <div
-                key={item.name}
-                className={`flex items-center justify-between px-4 py-3 bg-gray-50 rounded-xl transition-all duration-300 ${
-                  isActive ? 'opacity-100' : 'opacity-30'
-                }`}
-              >
-                <span className="text-sm font-medium text-gray-700">{item.name}</span>
-                <span className={`text-lg font-bold ${isActive ? 'text-gray-900' : 'text-gray-400'}`}>
-                  {isActive ? <AnimatedNumber value={item.score} /> : '??'}
-                  <span className="text-sm text-gray-400 ml-1">pt</span>
-                </span>
-              </div>
-            );
-          })}
-        </div>
-      </main>
+      </div>
 
       {/* Bottom Bar */}
       <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 py-12 px-8">
         <div className="max-w-4xl mx-auto flex justify-end pr-4 md:pr-8">
-          {/* 次へボタン */}
           <button
             onClick={handleNext}
-            disabled={!showTotal}
+            disabled={!showNextButton}
             className={`font-bold py-3 px-8 rounded-2xl transition-all flex items-center gap-2 ${
-              showTotal
+              showNextButton
                 ? 'bg-[#4D5CEC] hover:bg-[#3949AB] text-white shadow-[0_4px_0_0_#3949AB] hover:shadow-[0_2px_0_0_#3949AB] hover:translate-y-[2px] active:shadow-none active:translate-y-[4px]'
                 : 'bg-gray-200 text-gray-400 cursor-not-allowed shadow-[0_4px_0_0_#d1d5db]'
             }`}
           >
-            次へ
+            詳細を見る
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>

@@ -20,13 +20,13 @@ export default function LineLoginPage() {
     completeStep('line-login');
     // 登録完了後はデータをクリア（必要に応じて）
     // clearRegistrationData();
-    // LINEログイン後、DMMコース画面へ
-    router.push('/demo/dmm');
+    // LINEログイン後、デモ誘導画面へ
+    router.push('/register/demo-intro');
   };
 
   const handleOtherAccount = () => {
-    // 別のアカウントでログイン（今はDMMへ）
-    router.push('/demo/dmm');
+    // 別のアカウントでログイン（今はデモ誘導画面へ）
+    router.push('/register/demo-intro');
   };
 
   return (
@@ -63,15 +63,9 @@ export default function LineLoginPage() {
             {/* Profile Image */}
             <div className="w-20 h-20 rounded-full overflow-hidden mb-4 border-2 border-[#06C755]">
               <img
-                src="/profile-placeholder.png"
+                src="/スクリーンショット 2025-12-23 15.29.56.png"
                 alt="プロフィール"
                 className="w-full h-full object-cover bg-gray-200"
-                onError={(e) => {
-                  // フォールバック: プレースホルダー表示
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                  target.parentElement!.innerHTML = '<div class="w-full h-full bg-gray-300 flex items-center justify-center"><svg class="w-10 h-10 text-gray-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>';
-                }}
               />
             </div>
 
