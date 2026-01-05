@@ -16,17 +16,10 @@ export default function CongratsPage() {
       setShowMascot(true);
     }, 100);
 
-    // 3秒後に自動遷移
-    const autoNextTimer = setTimeout(() => {
-      completeStep('congrats');
-      router.push('/register/scout-intro');
-    }, 3000);
-
     return () => {
       clearTimeout(showTimer);
-      clearTimeout(autoNextTimer);
     };
-  }, [router]);
+  }, []);
 
   const handleNext = () => {
     completeStep('congrats');

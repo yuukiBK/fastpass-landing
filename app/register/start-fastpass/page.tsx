@@ -16,17 +16,10 @@ export default function StartFastPassPage() {
       setShowMascot(true);
     }, 100);
 
-    // 3秒後に自動遷移
-    const autoNextTimer = setTimeout(() => {
-      completeStep('start-fastpass');
-      router.push('/demo/dmm?from=register');
-    }, 3000);
-
     return () => {
       clearTimeout(showTimer);
-      clearTimeout(autoNextTimer);
     };
-  }, [router]);
+  }, []);
 
   const handleNext = () => {
     completeStep('start-fastpass');

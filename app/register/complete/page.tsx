@@ -150,7 +150,6 @@ export default function CompletePage() {
     const rankAnimationDuration = 600; // ランクのスロットアニメーション時間（短縮）
     const clearedDelay = rankDelay + rankAnimationDuration + 400; // ランクアニメーション完了後
     const nextButtonDelay = clearedDelay + 600; // クリア表示後
-    const autoNextDelay = nextButtonDelay + 2000; // ボタン表示後2秒で自動遷移
 
     timers.push(setTimeout(() => setShowScore(true), scoreDelay));
     timers.push(setTimeout(() => setShowRank(true), rankDelay));
@@ -162,13 +161,8 @@ export default function CompletePage() {
 
     timers.push(setTimeout(() => setShowNextButton(true), nextButtonDelay));
 
-    // 自動遷移
-    timers.push(setTimeout(() => {
-      router.push('/register/result-detail');
-    }, autoNextDelay));
-
     return () => timers.forEach(clearTimeout);
-  }, [isCleared, router]);
+  }, [isCleared]);
 
   const handleNext = () => {
     router.push('/register/result-detail');

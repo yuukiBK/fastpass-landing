@@ -16,17 +16,10 @@ export default function ScoutIntroPage() {
       setShowMascot(true);
     }, 100);
 
-    // 5秒後に自動遷移（文章が長いため）
-    const autoNextTimer = setTimeout(() => {
-      completeStep('scout-intro');
-      router.push('/register/start-fastpass');
-    }, 5000);
-
     return () => {
       clearTimeout(showTimer);
-      clearTimeout(autoNextTimer);
     };
-  }, [router]);
+  }, []);
 
   const handleNext = () => {
     completeStep('scout-intro');

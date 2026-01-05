@@ -624,10 +624,6 @@ function WelcomeContent() {
             {/* ヘッダー部分 */}
             <div className="mb-6 text-center">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">あなたについて教えてください</h2>
-              <p className="text-sm text-gray-500">
-                全て必須項目となっております<br />
-                入力内容が虚偽と判断された場合、アカウントは停止されます
-              </p>
             </div>
 
             {/* 学種選択 */}
