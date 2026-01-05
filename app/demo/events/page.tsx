@@ -91,7 +91,7 @@ function Sidebar({ activePage = 'home' }: { activePage?: 'home' | 'courses' | 'e
         >
           <div className="w-6 h-6 rounded-full bg-gray-200 overflow-hidden">
             <img
-              src="/β版　アニメーション.png"
+              src="/スクリーンショット 2025-12-23 15.29.56.png"
               alt="プロフィール画像"
               className="w-full h-full object-cover"
             />

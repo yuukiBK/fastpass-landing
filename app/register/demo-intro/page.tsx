@@ -186,8 +186,8 @@ function DemoIntroContent() {
           <div className="relative mb-4">
             <div className="bg-white border-2 border-gray-200 rounded-2xl px-6 py-4 shadow-sm">
               <p className="text-xl md:text-2xl font-bold text-gray-800 text-center">
-                まずは、どこの企業の<br />
-                <span>過去問から練習したい？</span>
+                どの企業の過去問から<br />
+                <span>練習したい？</span>
               </p>
             </div>
             <div className="absolute -bottom-2 left-1/2 -translate-x-1/2">
@@ -265,7 +265,7 @@ function DemoIntroContent() {
               <div className={`bg-white border-2 border-gray-200 rounded-2xl px-6 py-4 shadow-sm transition-opacity duration-300 ${isBubbleTransitioning ? 'opacity-0' : 'opacity-100'}`}>
                 {step === 'message3' ? (
                   <p className="text-xl md:text-2xl font-bold text-gray-800 text-center">
-                    {selectedCompany}だね！OK！
+                    {selectedCompany}か！いいね！<br />一緒に頑張ろう！
                   </p>
                 ) : (
                   <p className="text-xl md:text-2xl font-bold text-gray-800 text-center">

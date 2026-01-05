@@ -92,7 +92,7 @@ function Sidebar({ activePage = 'home' }: { activePage?: 'home' | 'courses' | 'e
         >
           <div className="w-6 h-6 rounded-full bg-gray-200 overflow-hidden">
             <img
-              src="/β版　アニメーション.png"
+              src="/スクリーンショット 2025-12-23 15.29.56.png"
               alt="プロフィール画像"
               className="w-full h-full object-cover"
             />
@@ -107,11 +107,11 @@ function Sidebar({ activePage = 'home' }: { activePage?: 'home' | 'courses' | 'e
 export default function ProfilePage() {
   const [isEditing, setIsEditing] = useState(false);
   const [showAvatarPicker, setShowAvatarPicker] = useState(false);
-  const [selectedAvatar, setSelectedAvatar] = useState('/β版　アニメーション.png');
+  const [selectedAvatar, setSelectedAvatar] = useState('/スクリーンショット 2025-12-23 15.29.56.png');
 
   // 選択可能なアバター一覧
   const avatarOptions = [
-    '/β版　アニメーション.png',
+    '/スクリーンショット 2025-12-23 15.29.56.png',
     '/S__222806024.jpg',
     '/【β版】FastPass素材 (1).png',
   ];

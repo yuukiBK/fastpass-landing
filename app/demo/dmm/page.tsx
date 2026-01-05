@@ -35,33 +35,30 @@ function WelcomeModal({ onClose }: { onClose: () => void }) {
             ようこそ、FastPassへ！
           </h2>
           <p className="text-base text-gray-700">
-            ES不要で、有名・難関企業の面接へ。
-          </p>
-          <p className="text-base text-gray-700">
-            内定への近道、ここにある。
+            有名・難関企業への最速内定を目指そう！
           </p>
         </div>
 
         {/* 3 Features */}
         <div className="grid grid-cols-3 gap-3 mb-6">
-          {/* AI面接 */}
+          {/* AI面接練習 */}
           <div className="bg-[#FFF4E5] rounded-xl p-3 text-center">
             <div className="w-10 h-10 bg-[#FF9600] rounded-full flex items-center justify-center mx-auto mb-2">
               <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
               </svg>
             </div>
-            <p className="text-xs font-bold text-gray-700">AI面接</p>
+            <p className="text-xs font-bold text-gray-700">AI面接練習</p>
           </div>
 
-          {/* 企業と出会うイベント */}
+          {/* 限定イベント */}
           <div className="bg-[#E8F5FF] rounded-xl p-3 text-center">
             <div className="w-10 h-10 bg-[#1CB0F6] rounded-full flex items-center justify-center mx-auto mb-2">
               <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
             </div>
-            <p className="text-xs font-bold text-gray-700">企業イベント</p>
+            <p className="text-xs font-bold text-gray-700">限定イベント</p>
           </div>
 
           {/* 特別スカウト */}
@@ -325,7 +322,7 @@ function Sidebar({ activePage = 'home' }: { activePage?: 'home' | 'courses' | 'e
         >
           <div className="w-6 h-6 rounded-full bg-gray-200 overflow-hidden">
             <img
-              src="/β版　アニメーション.png"
+              src="/スクリーンショット 2025-12-23 15.29.56.png"
               alt="プロフィール画像"
               className="w-full h-full object-cover"
             />
