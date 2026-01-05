@@ -1,7 +1,91 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
+import { useState, useEffect, Suspense } from 'react';
+
+// Welcome Modal Component
+function WelcomeModal({ onClose }: { onClose: () => void }) {
+  return (
+    <div className="fixed inset-0 bg-black/40 z-[200] flex items-center justify-center px-4 animate-[fadeIn_0.3s_ease-out]">
+      <style jsx>{`
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        @keyframes slideUp {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
+      <div className="bg-white rounded-3xl p-6 md:p-8 w-full max-w-lg shadow-xl border border-gray-200 animate-[slideUp_0.4s_ease-out] relative">
+        {/* Close button */}
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        {/* Header */}
+        <div className="text-center mb-6">
+          <h2 className="text-xl md:text-2xl font-bold text-gray-800 mb-3">
+            ようこそ、FastPassへ！
+          </h2>
+          <p className="text-base text-gray-700">
+            ES不要で、有名・難関企業の面接へ。
+          </p>
+          <p className="text-base text-gray-700">
+            内定への近道、ここにある。
+          </p>
+        </div>
+
+        {/* 3 Features */}
+        <div className="grid grid-cols-3 gap-3 mb-6">
+          {/* AI面接 */}
+          <div className="bg-[#FFF4E5] rounded-xl p-3 text-center">
+            <div className="w-10 h-10 bg-[#FF9600] rounded-full flex items-center justify-center mx-auto mb-2">
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <p className="text-xs font-bold text-gray-700">AI面接</p>
+          </div>
+
+          {/* 企業と出会うイベント */}
+          <div className="bg-[#E8F5FF] rounded-xl p-3 text-center">
+            <div className="w-10 h-10 bg-[#1CB0F6] rounded-full flex items-center justify-center mx-auto mb-2">
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <p className="text-xs font-bold text-gray-700">企業イベント</p>
+          </div>
+
+          {/* 特別スカウト */}
+          <div className="bg-[#F0FDF4] rounded-xl p-3 text-center">
+            <div className="w-10 h-10 bg-[#58CC02] rounded-full flex items-center justify-center mx-auto mb-2">
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+              </svg>
+            </div>
+            <p className="text-xs font-bold text-gray-700">特別スカウト</p>
+          </div>
+        </div>
+
+        {/* CTA Button */}
+        <button
+          onClick={onClose}
+          className="w-full bg-[#4D5CEC] hover:bg-[#3949AB] text-white font-bold py-3 px-6 rounded-2xl transition-all shadow-[0_4px_0_0_#3949AB] hover:shadow-[0_2px_0_0_#3949AB] hover:translate-y-[2px] active:shadow-none active:translate-y-[4px]"
+        >
+          さっそく始める
+        </button>
+      </div>
+    </div>
+  );
+}
 
 // Video Modal Component (Full Screen)
 function VideoModal({
@@ -823,10 +907,19 @@ const bossUnit = {
   color: "#FF9600", // オレンジ
 };
 
-export default function DMMDungeonPage() {
+function DMMDungeonContent() {
+  const searchParams = useSearchParams();
+  const isFromRegister = searchParams.get('from') === 'register';
+  const [showWelcomeModal, setShowWelcomeModal] = useState(false);
   const [bossPopupOpen, setBossPopupOpen] = useState(false);
   const [bossVideoOpen, setBossVideoOpen] = useState(false);
   const bossQuest = questDetails[8]?.[0];
+
+  useEffect(() => {
+    if (isFromRegister) {
+      setShowWelcomeModal(true);
+    }
+  }, [isFromRegister]);
 
   const handleBossStartVideo = () => {
     setBossPopupOpen(false);
@@ -835,6 +928,9 @@ export default function DMMDungeonPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Welcome Modal */}
+      {showWelcomeModal && <WelcomeModal onClose={() => setShowWelcomeModal(false)} />}
+
       {/* Sidebar */}
       <Sidebar />
 
@@ -925,5 +1021,13 @@ export default function DMMDungeonPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function DMMDungeonPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-white" />}>
+      <DMMDungeonContent />
+    </Suspense>
   );
 }

@@ -138,6 +138,7 @@ export default function CompletePage() {
   // アニメーション状態
   const [showScore, setShowScore] = useState(false);
   const [showRank, setShowRank] = useState(false);
+  const [showCleared, setShowCleared] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
   const [showNextButton, setShowNextButton] = useState(false);
 
@@ -147,18 +148,27 @@ export default function CompletePage() {
     const scoreDelay = 600;
     const rankDelay = scoreDelay + 1000; // スコア表示後1秒後にランク
     const rankAnimationDuration = 600; // ランクのスロットアニメーション時間（短縮）
-    const nextButtonDelay = rankDelay + rankAnimationDuration + 200; // ランクアニメーション完了後
+    const clearedDelay = rankDelay + rankAnimationDuration + 400; // ランクアニメーション完了後
+    const nextButtonDelay = clearedDelay + 600; // クリア表示後
+    const autoNextDelay = nextButtonDelay + 2000; // ボタン表示後2秒で自動遷移
 
     timers.push(setTimeout(() => setShowScore(true), scoreDelay));
     timers.push(setTimeout(() => setShowRank(true), rankDelay));
-    timers.push(setTimeout(() => setShowNextButton(true), nextButtonDelay));
 
     if (isCleared) {
-      timers.push(setTimeout(() => setShowConfetti(true), rankDelay + rankAnimationDuration + 200)); // ランクアニメーション後
+      timers.push(setTimeout(() => setShowCleared(true), clearedDelay));
+      timers.push(setTimeout(() => setShowConfetti(true), clearedDelay)); // クリア表示と同時に紙吹雪
     }
 
+    timers.push(setTimeout(() => setShowNextButton(true), nextButtonDelay));
+
+    // 自動遷移
+    timers.push(setTimeout(() => {
+      router.push('/register/result-detail');
+    }, autoNextDelay));
+
     return () => timers.forEach(clearTimeout);
-  }, [isCleared]);
+  }, [isCleared, router]);
 
   const handleNext = () => {
     router.push('/register/result-detail');
@@ -171,6 +181,15 @@ export default function CompletePage() {
 
       {/* メインコンテンツ */}
       <div className="flex flex-col items-center">
+        {/* 結果発表リボン */}
+        <div className="mb-2 -mt-8 md:-mt-12">
+          <img
+            src="/ダウンロード (39).png"
+            alt="結果発表"
+            className="w-80 md:w-[400px] lg:w-[480px] h-auto"
+          />
+        </div>
+
         {/* Mascot */}
         <div className="w-64 h-64 md:w-72 md:h-72 mb-4">
           <video
@@ -183,10 +202,16 @@ export default function CompletePage() {
           />
         </div>
 
-        {/* タイトル */}
-        <h1 className="text-3xl md:text-4xl font-bold text-[#58CC02] mb-6">
-          レッスンコンプリート！
-        </h1>
+        {/* ステージクリア表示 */}
+        {isCleared && (
+          <p
+            className={`text-xl md:text-2xl font-bold text-[#58CC02] -mt-2 mb-5 transition-opacity duration-500 ${
+              showCleared ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            ステージクリア！
+          </p>
+        )}
 
         {/* スコア＆ランクカード */}
         <div className="flex gap-6">

@@ -48,6 +48,8 @@ function DemoIntroContent() {
 
   // 企業選択カード表示用state
   const [showCompanyCard, setShowCompanyCard] = useState(false);
+  // 企業一覧モーダル表示用state
+  const [showCompanyListModal, setShowCompanyListModal] = useState(false);
 
   // メッセージ1 → 企業選択カードへ直接遷移
   const handleMessage1Next = () => {
@@ -118,9 +120,19 @@ function DemoIntroContent() {
 
   // メッセージ4は自動遷移しない（ユーザーがボタンをクリックして進む）
 
-  // 他の企業も見る
+  // 他の企業も見る（モーダルを表示）
   const handleViewMoreCompanies = () => {
-    router.push('/demo/courses?from=register');
+    setShowCompanyListModal(true);
+  };
+
+  // 企業一覧から選択して戻る
+  const handleCompanyListSelect = (companyName: string) => {
+    setShowCompanyListModal(false);
+    setShowCompanyCard(false);
+    setSelectedCompany(companyName);
+    setTimeout(() => {
+      setStep('message3');
+    }, 300);
   };
 
   return (
@@ -327,6 +339,73 @@ function DemoIntroContent() {
               className="w-full cursor-pointer rounded-xl"
               onClick={() => router.push('/register/demo')}
             />
+          </div>
+        </div>
+      )}
+
+      {/* 企業一覧モーダル */}
+      {showCompanyListModal && (
+        <div className="fixed inset-0 bg-black/30 z-[60] flex items-center justify-center px-4 animate-[fadeIn_0.3s_ease-out]">
+          <div className="bg-white rounded-3xl p-6 md:p-8 w-full max-w-4xl shadow-xl border-2 border-gray-200 max-h-[90vh] overflow-y-auto animate-[slideUp_0.4s_ease-out] relative">
+            {/* 閉じるボタン */}
+            <button
+              onClick={() => setShowCompanyListModal(false)}
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            {/* ヘッダー部分 */}
+            <div className="text-center mb-6">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">
+                面接対策したい企業は？
+              </h2>
+              <p className="text-gray-500">
+                後から追加・変更もできます
+              </p>
+            </div>
+
+            {/* 企業グリッド画像 */}
+            <img
+              src="/見出しを追加 (1626 x 877 px).png"
+              alt="コースを選択"
+              className="w-full rounded-lg cursor-pointer"
+              onClick={() => handleCompanyListSelect('モルガン・スタンレー')}
+            />
+            <img
+              src="/見出しを追加 (1626 x 869 px).png"
+              alt="コースを選択2"
+              className="w-full mt-4 rounded-lg"
+            />
+            <img
+              src="/見出しを追加 (1626 x 869 px) (1).png"
+              alt="コースを選択3"
+              className="w-full mt-4 rounded-lg"
+            />
+
+            {/* 順次追加予定セクション */}
+            <div className="mt-8 mb-4 text-center">
+              <p className="text-lg font-bold text-gray-800 mb-3">
+                他の企業も順次追加予定
+              </p>
+              <p className="text-gray-500 mb-4 text-sm">
+                追加してほしい企業や機能があれば教えてください！<br />
+                優先度高く準備します！
+              </p>
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfZxkC7VNM2tD877YWQPE6zgRFApGmn8Wyye8DfjplsIMzVYA/viewform?usp=dialog"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-[#4D5CEC] hover:text-[#395BE5] font-medium transition-colors"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+                リクエストを送る
+              </a>
+            </div>
           </div>
         </div>
       )}

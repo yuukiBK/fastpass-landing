@@ -154,12 +154,8 @@ export default function ResultDetailPage() {
   const isPassed = scoreData.score >= scoreData.passScore;
   const rank = getRank(scoreData.score);
 
-  const handleBack = () => {
-    router.push('/register/complete');
-  };
-
   const handleNext = () => {
-    router.push('/register/level-result');
+    router.push('/register/congrats');
   };
 
   return (
@@ -430,17 +426,7 @@ export default function ResultDetailPage() {
 
       {/* Bottom Bar */}
       <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 py-12 px-8">
-        <div className="max-w-4xl mx-auto flex justify-between px-4 md:px-8">
-          {/* 戻るボタン */}
-          <button
-            onClick={handleBack}
-            className="font-bold py-3 px-8 rounded-2xl transition-all flex items-center gap-2 border-2 border-gray-200 text-gray-600 hover:bg-gray-50 shadow-[0_4px_0_0_#e5e7eb] hover:shadow-[0_2px_0_0_#e5e7eb] hover:translate-y-[2px] active:shadow-none active:translate-y-[4px]"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            戻る
-          </button>
+        <div className="max-w-4xl mx-auto flex justify-end pr-4 md:pr-8">
           {/* 次へボタン */}
           <button
             onClick={handleNext}
