@@ -727,7 +727,7 @@ function UnitSection({ unit }: { unit: typeof units[0] }) {
             onClick={handleQuestClick}
           >
             <img
-              src="/β版　アニメーション (7).png"
+              src="/β版　アニメーション (4).png"
               alt="ステップ4"
               className="w-24 h-24"
             />
