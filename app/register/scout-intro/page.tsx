@@ -48,7 +48,7 @@ export default function ScoutIntroPage() {
           <div className={`transition-opacity duration-300 ${showBubble ? 'opacity-100' : 'opacity-0'}`}>
             <div className="bg-white border-2 border-gray-200 rounded-2xl px-6 py-4 shadow-sm">
               <p className="text-lg md:text-xl font-bold text-gray-800 text-center">
-                AI面接をやればやるほど、
+                FastPassでは、面接練習をやればやるほど
               </p>
               <p className="text-lg md:text-xl font-bold text-gray-800 text-center">
                 <span className="text-[#FF9600]">有名・難関企業からのスカウト</span>も届くよ！

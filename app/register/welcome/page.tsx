@@ -28,11 +28,12 @@ function WelcomeContent() {
   // 学歴入力用のstate
   const [bunriType, setBunriType] = useState<'文系' | '理系' | null>(null);
   const [schoolType, setSchoolType] = useState<string | null>(null);
+  const [graduateCourse, setGraduateCourse] = useState<'masters' | 'doctorate' | null>(null);
   const [schoolName, setSchoolName] = useState('');
   const [faculty, setFaculty] = useState('');
   const [department, setDepartment] = useState('');
   const [graduationYear, setGraduationYear] = useState<string | null>(null);
-  const [jobType, setJobType] = useState<string | null>(null);
+  const [universityEmail, setUniversityEmail] = useState('');
 
   // 現在のステップを取得
   const getCurrentStep = useCallback(() => {
@@ -131,20 +132,57 @@ function WelcomeContent() {
   // 学種データ
   const schoolTypes = [
     { id: 'university', title: '大学' },
-    { id: 'masters', title: '大学院（修士）' },
-    { id: 'doctorate', title: '大学院（博士）' },
+    { id: 'graduate', title: '大学院' },
     { id: 'kosen', title: '高等専門学校' },
   ];
 
-  // 卒業見込み年データ
-  const graduationYears = ['2026年', '2027年', '2028年', '2029年'];
-
-  // 職種の方向性データ
-  const jobTypes = [
-    { id: 'business', title: 'ビジネス職' },
-    { id: 'engineer', title: 'エンジニア職' },
-    { id: 'both', title: 'どちらも検討している' },
+  // 卒業見込み時期データ（年+月）
+  const graduationYears = [
+    '2025年3月', '2025年9月',
+    '2026年3月', '2026年9月',
+    '2027年3月', '2027年9月',
+    '2028年3月', '2028年9月',
+    '2029年3月', '2029年9月',
+    '2030年3月', '2030年9月',
+    '2031年3月', '2031年9月',
   ];
+
+
+  // 学校種別に応じたラベルとプレースホルダーを取得
+  const getSchoolLabels = () => {
+    switch (schoolType) {
+      case 'graduate':
+        return {
+          schoolLabel: '大学院を選択',
+          schoolPlaceholder: '例：ファストパス大学大学院',
+          facultyLabel: '研究科を選択',
+          facultyPlaceholder: '例：未来創造研究科',
+          departmentLabel: '専攻を選択',
+          departmentPlaceholder: '例：イノベーション専攻',
+        };
+      case 'kosen':
+        return {
+          schoolLabel: '高専を選択',
+          schoolPlaceholder: '例：ファストパス工業高等専門学校',
+          facultyLabel: '学科を選択',
+          facultyPlaceholder: '例：情報工学科',
+          departmentLabel: null,
+          departmentPlaceholder: null,
+        };
+      case 'university':
+      default:
+        return {
+          schoolLabel: '大学を選択',
+          schoolPlaceholder: '例：ファストパス大学',
+          facultyLabel: '学部を選択',
+          facultyPlaceholder: '例：未来創造学部',
+          departmentLabel: '学科を選択',
+          departmentPlaceholder: '例：キャリアデザイン学科',
+        };
+    }
+  };
+
+  const schoolLabels = getSchoolLabels();
 
   const messages = [
     { text: 'やあ！僕はファスト！', subText: 'これからよろしくね！', animation: '/β版　アニメーション (9).gif' },
@@ -152,44 +190,34 @@ function WelcomeContent() {
     { text: 'まずは、君の名前を教えてね！', subText: '', animation: '/手を振る.mp4' },
   ];
 
-  // メッセージを切り替える（アニメーションが変わる時のみ全体フェード）
-  useEffect(() => {
+  // 次へボタンでメッセージを切り替える
+  const handleIntroNext = () => {
     if (messageIndex < messages.length - 1) {
-      const timer = setTimeout(() => {
-        const currentAnimation = messages[messageIndex].animation;
-        const nextAnimation = messages[messageIndex + 1].animation;
-        const animationChanges = currentAnimation !== nextAnimation;
+      const currentAnimation = messages[messageIndex].animation;
+      const nextAnimation = messages[messageIndex + 1].animation;
+      const animationChanges = currentAnimation !== nextAnimation;
 
-        if (animationChanges) {
-          // アニメーションが変わる場合は全体をフェード
-          setIsTransitioning(true);
-          setTimeout(() => {
-            setMessageIndex(messageIndex + 1);
-            setIsTransitioning(false);
-          }, 300);
-        } else {
-          // アニメーションが同じ場合は吹き出しのみフェード
-          setIsBubbleTransitioning(true);
-          setTimeout(() => {
-            setMessageIndex(messageIndex + 1);
-            setIsBubbleTransitioning(false);
-          }, 300);
-        }
-      }, 2000);
-      return () => clearTimeout(timer);
+      if (animationChanges) {
+        // アニメーションが変わる場合は全体をフェード
+        setIsTransitioning(true);
+        setTimeout(() => {
+          setMessageIndex(messageIndex + 1);
+          setIsTransitioning(false);
+        }, 300);
+      } else {
+        // アニメーションが同じ場合は吹き出しのみフェード
+        setIsBubbleTransitioning(true);
+        setTimeout(() => {
+          setMessageIndex(messageIndex + 1);
+          setIsBubbleTransitioning(false);
+        }, 300);
+      }
+    } else {
+      // 最後のメッセージの場合は名前入力を表示
+      setShowNameInput(true);
+      pushHistoryState('name-input');
     }
-  }, [messageIndex, messages.length]);
-
-  // 最後のメッセージの後に名前入力を表示
-  useEffect(() => {
-    if (messageIndex === messages.length - 1) {
-      const timer = setTimeout(() => {
-        setShowNameInput(true);
-        pushHistoryState('name-input');
-      }, 1500);
-      return () => clearTimeout(timer);
-    }
-  }, [messageIndex, messages.length, pushHistoryState]);
+  };
 
   const handleSubmitName = () => {
     if (lastName && firstName) {
@@ -212,36 +240,20 @@ function WelcomeContent() {
     { text: 'じゃあ次は、興味のある', subText: '業界を教えてね！', animation: '/β版　アニメーション (11).gif' },
   ];
 
-  // 挨拶画面のメッセージを自動で切り替える（いい名前だねは長めに表示）
-  useEffect(() => {
-    if (showGreeting && greetingStep < greetingMessages.length - 1) {
-      const timer = setTimeout(() => {
-        setIsGreetingTransitioning(true);
-        setTimeout(() => {
-          setGreetingStep(greetingStep + 1);
-          setIsGreetingTransitioning(false);
-        }, 300);
-      }, 2500); // 2.5秒
-      return () => clearTimeout(timer);
-    }
-  }, [showGreeting, greetingStep, greetingMessages.length]);
-
-  // 「業界を教えてね」が表示された後に業界選択カードを自動表示
-  useEffect(() => {
-    if (showGreeting && greetingStep === greetingMessages.length - 1 && !showIndustryPicker) {
-      const timer = setTimeout(() => {
-        setShowIndustryPicker(true);
-        pushHistoryState('industry-picker');
-      }, 2500); // 2.5秒後に自動でフェードイン
-      return () => clearTimeout(timer);
-    }
-  }, [showGreeting, greetingStep, greetingMessages.length, showIndustryPicker, pushHistoryState]);
-
-  // 挨拶画面で「次へ」を押した時の処理（業界選択カードまでスキップ）
+  // 挨拶画面で「次へ」を押した時の処理（1つずつ進む）
   const handleGreetingNext = () => {
-    // どのステップでも業界選択カードを直接表示
-    setShowIndustryPicker(true);
-    pushHistoryState('industry-picker');
+    if (greetingStep < greetingMessages.length - 1) {
+      // まだ次のメッセージがある場合は次へ進む
+      setIsGreetingTransitioning(true);
+      setTimeout(() => {
+        setGreetingStep(greetingStep + 1);
+        setIsGreetingTransitioning(false);
+      }, 300);
+    } else {
+      // 最後のメッセージの場合は業界選択カードを表示
+      setShowIndustryPicker(true);
+      pushHistoryState('industry-picker');
+    }
   };
 
   // 業界の選択を切り替える
@@ -285,32 +297,7 @@ function WelcomeContent() {
     }, 400);
   };
 
-  // 業界選択後の挨拶メッセージを自動で切り替える
-  useEffect(() => {
-    if (showPostIndustryGreeting && postIndustryStep < postIndustryMessages.length - 1) {
-      const timer = setTimeout(() => {
-        setIsPostIndustryTransitioning(true);
-        setTimeout(() => {
-          setPostIndustryStep(postIndustryStep + 1);
-          setIsPostIndustryTransitioning(false);
-        }, 300);
-      }, 2500); // 2.5秒
-      return () => clearTimeout(timer);
-    }
-  }, [showPostIndustryGreeting, postIndustryStep, postIndustryMessages.length]);
-
-  // 「就活状況を教えてね」が表示された後に就活状況選択カードを自動表示
-  useEffect(() => {
-    if (showPostIndustryGreeting && postIndustryStep === postIndustryMessages.length - 1 && !showStatusPicker) {
-      const timer = setTimeout(() => {
-        setShowStatusPicker(true);
-        pushHistoryState('status-picker');
-      }, 2500); // 2.5秒後に自動でフェードイン
-      return () => clearTimeout(timer);
-    }
-  }, [showPostIndustryGreeting, postIndustryStep, postIndustryMessages.length, showStatusPicker, pushHistoryState]);
-
-  // 業界選択後の挨拶画面で「次へ」を押した時の処理（自動遷移をスキップ）
+  // 業界選択後の挨拶画面で「次へ」を押した時の処理（1つずつ進む）
   const handlePostIndustryNext = () => {
     if (postIndustryStep < postIndustryMessages.length - 1) {
       // まだ次のメッセージがある場合は次へ進む
@@ -320,7 +307,7 @@ function WelcomeContent() {
         setIsPostIndustryTransitioning(false);
       }, 300);
     } else {
-      // 最後のメッセージの場合は就活状況選択カードを表示
+      // 最後のメッセージの場合は学歴入力カードを表示
       setShowStatusPicker(true);
       pushHistoryState('status-picker');
     }
@@ -333,7 +320,15 @@ function WelcomeContent() {
   };
 
   // 学歴入力が完了しているかチェック
-  const isEducationComplete = bunriType && schoolType && schoolName && faculty && department && graduationYear && jobType;
+  const needsDepartment = schoolType === 'university' || schoolType === 'graduate';
+  const needsGraduateCourse = schoolType === 'graduate';
+  const needsUniversityEmail = schoolType === 'university' || schoolType === 'graduate' || schoolType === 'kosen';
+  const needsBunriType = schoolType !== 'kosen'; // 高専は理系のみなので文理選択不要
+  const isEducationComplete = schoolType && schoolName && faculty && graduationYear
+    && (!needsBunriType || bunriType)
+    && (!needsDepartment || department)
+    && (!needsGraduateCourse || graduateCourse)
+    && (!needsUniversityEmail || universityEmail);
 
   return (
     <div className="min-h-screen bg-white flex flex-col items-center justify-center px-4 relative">
@@ -633,7 +628,7 @@ function WelcomeContent() {
                 {schoolTypes.map((type) => (
                   <button
                     key={type.id}
-                    onClick={() => setSchoolType(type.id)}
+                    onClick={() => setSchoolType(schoolType === type.id ? null : type.id)}
                     className={`py-3 px-4 rounded-xl border-2 font-bold transition-all ${
                       schoolType === type.id
                         ? 'border-[#1CB0F6] bg-[#DDF4FF] text-[#1CB0F6]'
@@ -646,99 +641,131 @@ function WelcomeContent() {
               </div>
             </div>
 
-            {/* 学校名入力 */}
-            <div className="mb-5">
-              <label className="text-sm font-medium text-gray-600 mb-2 block">大学を選択</label>
-              <input
-                type="text"
-                value={schoolName}
-                onChange={(e) => setSchoolName(e.target.value)}
-                placeholder="例：東京大学"
-                className="w-full px-4 py-3 text-lg bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-[#4D5CEC] focus:bg-white focus:outline-none transition-colors"
-              />
-            </div>
-
-            {/* 学部入力 */}
-            <div className="mb-5">
-              <label className="text-sm font-medium text-gray-600 mb-2 block">学部を選択</label>
-              <input
-                type="text"
-                value={faculty}
-                onChange={(e) => setFaculty(e.target.value)}
-                placeholder="例：経済学部"
-                className="w-full px-4 py-3 text-lg bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-[#4D5CEC] focus:bg-white focus:outline-none transition-colors"
-              />
-            </div>
-
-            {/* 学科入力 */}
-            <div className="mb-5">
-              <label className="text-sm font-medium text-gray-600 mb-2 block">学科を選択</label>
-              <input
-                type="text"
-                value={department}
-                onChange={(e) => setDepartment(e.target.value)}
-                placeholder="例：経済学科"
-                className="w-full px-4 py-3 text-lg bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-[#4D5CEC] focus:bg-white focus:outline-none transition-colors"
-              />
-            </div>
-
-            {/* 文理選択 */}
-            <div className="mb-5">
-              <label className="text-sm font-medium text-gray-600 mb-2 block">文系 / 理系</label>
-              <div className="flex gap-3">
-                {(['文系', '理系'] as const).map((type) => (
-                  <button
-                    key={type}
-                    onClick={() => setBunriType(type)}
-                    className={`flex-1 py-3 px-4 rounded-xl border-2 font-bold transition-all ${
-                      bunriType === type
-                        ? 'border-[#1CB0F6] bg-[#DDF4FF] text-[#1CB0F6]'
-                        : 'border-gray-200 text-gray-600 hover:bg-gray-50'
-                    }`}
-                  >
-                    {type}
-                  </button>
-                ))}
+            {/* 大学院の場合は修士/博士課程を選択 */}
+            {schoolType === 'graduate' && (
+              <div className="mb-5 animate-[fadeIn_0.3s_ease-out]">
+                <label className="text-sm font-medium text-gray-600 mb-2 block">課程</label>
+                <div className="flex gap-3">
+                  {([{ id: 'masters', title: '修士課程' }, { id: 'doctorate', title: '博士課程' }] as const).map((course) => (
+                    <button
+                      key={course.id}
+                      onClick={() => setGraduateCourse(graduateCourse === course.id ? null : course.id)}
+                      className={`flex-1 py-3 px-4 rounded-xl border-2 font-bold transition-all ${
+                        graduateCourse === course.id
+                          ? 'border-[#1CB0F6] bg-[#DDF4FF] text-[#1CB0F6]'
+                          : 'border-gray-200 text-gray-600 hover:bg-gray-50'
+                      }`}
+                    >
+                      {course.title}
+                    </button>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
-            {/* 卒業見込み年選択 */}
-            <div className="mb-5">
-              <label className="text-sm font-medium text-gray-600 mb-2 block">卒業見込み年</label>
-              <div className="flex flex-wrap gap-2">
-                {graduationYears.map((year) => (
-                  <button
-                    key={year}
-                    onClick={() => setGraduationYear(year)}
-                    className={`py-3 px-5 rounded-xl border-2 font-bold transition-all ${
-                      graduationYear === year
-                        ? 'border-[#1CB0F6] bg-[#DDF4FF] text-[#1CB0F6]'
-                        : 'border-gray-200 text-gray-600 hover:bg-gray-50'
-                    }`}
-                  >
-                    {year}
-                  </button>
-                ))}
+            {/* 学校種別選択後に表示されるフィールド（学校名・学部・学科） */}
+            {schoolType && (
+              <>
+                {/* 学校名入力 */}
+                <div className="mb-5 animate-[fadeIn_0.3s_ease-out]">
+                  <label className="text-sm font-medium text-gray-600 mb-2 block">{schoolLabels.schoolLabel}</label>
+                  <input
+                    type="text"
+                    value={schoolName}
+                    onChange={(e) => setSchoolName(e.target.value)}
+                    placeholder={schoolLabels.schoolPlaceholder}
+                    className="w-full px-4 py-3 text-lg bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-[#4D5CEC] focus:bg-white focus:outline-none transition-colors"
+                  />
+                </div>
+
+                {/* 学部/研究科入力 */}
+                <div className="mb-5 animate-[fadeIn_0.3s_ease-out]">
+                  <label className="text-sm font-medium text-gray-600 mb-2 block">{schoolLabels.facultyLabel}</label>
+                  <input
+                    type="text"
+                    value={faculty}
+                    onChange={(e) => setFaculty(e.target.value)}
+                    placeholder={schoolLabels.facultyPlaceholder}
+                    className="w-full px-4 py-3 text-lg bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-[#4D5CEC] focus:bg-white focus:outline-none transition-colors"
+                  />
+                </div>
+
+                {/* 学科/専攻入力 - 必要な学校種別のみ表示 */}
+                {schoolLabels.departmentLabel && (
+                  <div className="mb-5 animate-[fadeIn_0.3s_ease-out]">
+                    <label className="text-sm font-medium text-gray-600 mb-2 block">{schoolLabels.departmentLabel}</label>
+                    <input
+                      type="text"
+                      value={department}
+                      onChange={(e) => setDepartment(e.target.value)}
+                      placeholder={schoolLabels.departmentPlaceholder || ''}
+                      className="w-full px-4 py-3 text-lg bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-[#4D5CEC] focus:bg-white focus:outline-none transition-colors"
+                    />
+                  </div>
+                )}
+
+                {/* 大学メールアドレス入力 - 大学・大学院・高専のみ表示 */}
+                <div className="mb-5 animate-[fadeIn_0.3s_ease-out]">
+                  <label className="text-sm font-medium text-gray-600 mb-2 block">大学メールアドレス</label>
+                  <input
+                    type="email"
+                    value={universityEmail}
+                    onChange={(e) => setUniversityEmail(e.target.value)}
+                    placeholder="例：fastpass@ac.jp"
+                    className="w-full px-4 py-3 text-lg bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-[#4D5CEC] focus:bg-white focus:outline-none transition-colors"
+                  />
+                </div>
+              </>
+            )}
+
+            {/* 文理選択（大学・大学院のみ表示） */}
+            {(schoolType === 'university' || schoolType === 'graduate') && (
+              <div className="mb-5 animate-[fadeIn_0.3s_ease-out]">
+                <label className="text-sm font-medium text-gray-600 mb-2 block">文系 / 理系</label>
+                <div className="flex gap-3">
+                  {(['文系', '理系'] as const).map((type) => (
+                    <button
+                      key={type}
+                      onClick={() => setBunriType(bunriType === type ? null : type)}
+                      className={`flex-1 py-3 px-4 rounded-xl border-2 font-bold transition-all ${
+                        bunriType === type
+                          ? 'border-[#1CB0F6] bg-[#DDF4FF] text-[#1CB0F6]'
+                          : 'border-gray-200 text-gray-600 hover:bg-gray-50'
+                      }`}
+                    >
+                      {type}
+                    </button>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
-            {/* 職種の方向性選択 */}
-            <div className="mb-6">
-              <label className="text-sm font-medium text-gray-600 mb-2 block">志望する職種の方向性</label>
-              <div className="flex flex-col gap-3">
-                {jobTypes.map((type) => (
-                  <button
-                    key={type.id}
-                    onClick={() => setJobType(type.id)}
-                    className={`w-full py-4 px-6 rounded-xl border-2 font-bold transition-all text-left ${
-                      jobType === type.id
-                        ? 'border-[#1CB0F6] bg-[#DDF4FF] text-[#1CB0F6]'
-                        : 'border-gray-200 text-gray-600 hover:bg-gray-50'
-                    }`}
-                  >
-                    {type.title}
-                  </button>
-                ))}
+            {/* 卒業見込み時期選択 - スクロール式（常に表示） */}
+            <div className="mb-5">
+              <label className="text-sm font-medium text-gray-600 mb-2 block">卒業見込み時期</label>
+              <div className="relative">
+                <select
+                  value={graduationYear || ''}
+                  onChange={(e) => setGraduationYear(e.target.value || null)}
+                  className={`w-full px-4 py-3 text-lg bg-gray-50 border-2 rounded-xl focus:border-[#4D5CEC] focus:bg-white focus:outline-none transition-colors appearance-none cursor-pointer ${
+                    graduationYear
+                      ? 'border-[#1CB0F6] bg-[#DDF4FF] text-[#1CB0F6] font-bold'
+                      : 'border-gray-200 text-gray-600'
+                  }`}
+                >
+                  <option value="">選択してください</option>
+                  {graduationYears.map((year) => (
+                    <option key={year} value={year}>
+                      {year}
+                    </option>
+                  ))}
+                </select>
+                {/* ドロップダウン矢印 */}
+                <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+                  <svg className={`w-5 h-5 ${graduationYear ? 'text-[#1CB0F6]' : 'text-gray-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
               </div>
             </div>
 
@@ -757,7 +784,7 @@ function WelcomeContent() {
 
             {/* 利用規約・プライバシーポリシー */}
             <p className="text-center text-sm text-gray-500 mt-4">
-              登録するとFastPassの<a href="/terms" className="text-[#4D5CEC] hover:underline">利用規約</a>と<a href="/privacy" className="text-[#4D5CEC] hover:underline">プライバシーポリシー</a>に同意したことになります。
+              登録するとFastPassの<a href="/terms" className="text-[#4D5CEC] hover:underline">利用規約</a>と<a href="/privacy" className="text-[#4D5CEC] hover:underline">プライバシーポリシー</a>に同意したものとみなします。
             </p>
           </div>
         </div>
@@ -784,12 +811,12 @@ function WelcomeContent() {
         }
       `}</style>
 
-      {/* Bottom Bar with Line and Button - 名前入力・業界選択カードが表示されていない時のみ表示 */}
-      {!showNameInput && !showIndustryPicker && (
+      {/* Bottom Bar with Line and Button - イントロ画面でのみ表示 */}
+      {!showNameInput && !showGreeting && (
         <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 py-12 px-8">
           <div className="max-w-4xl mx-auto flex justify-end pr-4 md:pr-8">
             <button
-              onClick={() => setShowNameInput(true)}
+              onClick={handleIntroNext}
               className="bg-[#4D5CEC] hover:bg-[#395BE5] text-white font-bold py-3 px-8 rounded-2xl transition-all flex items-center gap-2 shadow-[0_4px_0_0_#3949AB] hover:shadow-[0_2px_0_0_#3949AB] hover:translate-y-[2px] active:shadow-none active:translate-y-[4px]"
             >
               次へ

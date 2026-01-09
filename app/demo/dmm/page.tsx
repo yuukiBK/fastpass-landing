@@ -336,14 +336,14 @@ function Sidebar({ activePage = 'home' }: { activePage?: 'home' | 'courses' | 'e
 
 // Unit Card Component (Duolingo style)
 function UnitCard({ unitNumber, title, color }: { unitNumber: number; title: string; color: string }) {
-  // レベルとラベルを決定
-  const getLevelInfo = (unit: number) => {
-    if (unit <= 3) return { level: 1, label: 'インターン面接' };
-    if (unit <= 7) return { level: 2, label: '本選考面接' };
-    return { level: 3, label: '最終面接' };
+  // ラベルを決定
+  const getLabel = (unit: number) => {
+    if (unit <= 3) return 'インターン面接';
+    if (unit <= 7) return '本選考面接';
+    return '最終面接';
   };
 
-  const { level, label } = getLevelInfo(unitNumber);
+  const label = getLabel(unitNumber);
 
   return (
     <div
@@ -352,12 +352,12 @@ function UnitCard({ unitNumber, title, color }: { unitNumber: number; title: str
     >
       <div>
         <p className="text-white/80 text-sm font-medium mb-1">
-          ← セクション 1・ユニット {unitNumber}
+          ← Level 1・ユニット {unitNumber}
         </p>
         <h2 className="text-white text-xl font-bold">{title}</h2>
       </div>
       <div className="bg-white/20 text-white px-4 py-2.5 rounded-xl font-bold text-sm border-2 border-white/30">
-        <p className="text-white/70 text-xs mb-0.5">Level {level}</p>
+        <p className="text-white/70 text-xs mb-0.5">Level 1</p>
         <p className="text-white font-bold">{label}</p>
       </div>
     </div>
@@ -523,7 +523,7 @@ function UnitSection({ unit }: { unit: typeof units[0] }) {
     setVideoOpen(true);
   };
 
-  // ユニット1は画像をそのまま使用
+  // ユニット1はすごろく風コース
   if (unit.unitNumber === 1) {
     return (
       <div className="mb-8">
@@ -532,14 +532,55 @@ function UnitSection({ unit }: { unit: typeof units[0] }) {
           <UnitCard unitNumber={unit.unitNumber} title={unit.title} color={unit.color} />
         </div>
 
-        {/* Unit 1 Quest Image */}
-        <div className="flex justify-center">
-          <img
-            src="/スクリーンショット 2025-12-20 9.06.48.png"
-            alt="ユニット1クエスト"
-            className="max-w-[200px] cursor-pointer hover:scale-105 transition-transform"
+        {/* すごろく風コース */}
+        <div className="relative flex flex-col items-center gap-3">
+          {/* ステップ1: 星3つ（クリア済み） */}
+          <div
+            className="relative cursor-pointer transform hover:scale-105 transition-transform"
             onClick={handleQuestClick}
-          />
+          >
+            <img
+              src="/Gemini_Generated_Image_j6vf82j6vf82j6vf.png"
+              alt="ステップ1"
+              className="w-24 h-24 brightness-105 saturate-110"
+            />
+          </div>
+
+          {/* ステップ2: 星3つ（クリア済み） */}
+          <div
+            className="relative cursor-pointer transform hover:scale-105 transition-transform translate-x-10"
+            onClick={handleQuestClick}
+          >
+            <img
+              src="/Gemini_Generated_Image_j6vf82j6vf82j6vf.png"
+              alt="ステップ2"
+              className="w-24 h-24 brightness-105 saturate-110"
+            />
+          </div>
+
+          {/* ステップ3: 星2つ（クリア済み） */}
+          <div
+            className="relative cursor-pointer transform hover:scale-105 transition-transform -translate-x-6"
+            onClick={handleQuestClick}
+          >
+            <img
+              src="/Gemini_Generated_Image_y5ns5zy5ns5zy5ns.png"
+              alt="ステップ3"
+              className="w-24 h-24 brightness-105 saturate-110"
+            />
+          </div>
+
+          {/* ステップ4: 星2つ（クリア済み） */}
+          <div
+            className="relative cursor-pointer transform hover:scale-105 transition-transform"
+            onClick={handleQuestClick}
+          >
+            <img
+              src="/Gemini_Generated_Image_y5ns5zy5ns5zy5ns.png"
+              alt="ステップ4"
+              className="w-24 h-24 brightness-105 saturate-110"
+            />
+          </div>
         </div>
 
         {/* Quest Popup */}
@@ -563,7 +604,7 @@ function UnitSection({ unit }: { unit: typeof units[0] }) {
     );
   }
 
-  // ユニット2は画像をそのまま使用
+  // ユニット2はすごろく風コース（紫）
   if (unit.unitNumber === 2) {
     return (
       <div className="mb-8">
@@ -572,14 +613,55 @@ function UnitSection({ unit }: { unit: typeof units[0] }) {
           <UnitCard unitNumber={unit.unitNumber} title={unit.title} color={unit.color} />
         </div>
 
-        {/* Unit 2 Quest Image */}
-        <div className="flex justify-center">
-          <img
-            src="/スクリーンショット 2025-12-20 9.08.10.png"
-            alt="ユニット2クエスト"
-            className="max-w-[200px] cursor-pointer hover:scale-105 transition-transform"
+        {/* すごろく風コース */}
+        <div className="relative flex flex-col items-center gap-3">
+          {/* ステップ1: 星3つ（クリア済み） */}
+          <div
+            className="relative cursor-pointer transform hover:scale-105 transition-transform"
             onClick={handleQuestClick}
-          />
+          >
+            <img
+              src="/β版　アニメーション (5).png"
+              alt="ステップ1"
+              className="w-24 h-24 brightness-105 saturate-110"
+            />
+          </div>
+
+          {/* ステップ2: 星3つ（クリア済み） - 左側に配置 */}
+          <div
+            className="relative cursor-pointer transform hover:scale-105 transition-transform -translate-x-10"
+            onClick={handleQuestClick}
+          >
+            <img
+              src="/β版　アニメーション (5).png"
+              alt="ステップ2"
+              className="w-24 h-24 brightness-105 saturate-110"
+            />
+          </div>
+
+          {/* ステップ3: 星2つ（クリア済み） - 右側に配置 */}
+          <div
+            className="relative cursor-pointer transform hover:scale-105 transition-transform translate-x-6"
+            onClick={handleQuestClick}
+          >
+            <img
+              src="/β版　アニメーション (6).png"
+              alt="ステップ3"
+              className="w-24 h-24 brightness-105 saturate-110"
+            />
+          </div>
+
+          {/* ステップ4: 星1つ（クリア済み） - 中央に配置 */}
+          <div
+            className="relative cursor-pointer transform hover:scale-105 transition-transform"
+            onClick={handleQuestClick}
+          >
+            <img
+              src="/β版　アニメーション (7).png"
+              alt="ステップ4"
+              className="w-24 h-24 brightness-105 saturate-110"
+            />
+          </div>
         </div>
 
         {/* Quest Popup */}
@@ -830,7 +912,7 @@ const units = [
   {
     unitNumber: 1,
     title: "自己紹介をマスターする",
-    color: "#58CC02", // 緑
+    color: "#1CB0F6", // シアン（星アイコンに合わせて）
     questions: [
       { id: 1, question: "自己紹介をしてください", completed: true, score: 92 },
       { id: 2, question: "趣味や特技について教えてください", completed: true, score: 88 },
@@ -983,28 +1065,28 @@ function DMMDungeonContent() {
         <div className="hidden xl:block w-[480px] bg-white pl-10 pr-24 py-6 space-y-6 sticky top-0 h-screen overflow-y-auto">
           {/* Status Bar (DMM style) */}
           <img
-            src="/右サイドバー_DMM (2).png"
+            src="/右サイドバー_1.gif"
             alt="DMM Status Bar"
-            className="w-full"
+            className="w-3/4"
           />
 
-          {/* Ranking Card */}
+          {/* Boss Interview Card */}
           <img
-            src="/名称未設定のデザイン (89).png"
-            alt="ランキングに参加しよう"
+            src="/社長面接に挑戦！.png"
+            alt="社長面接に挑戦"
             className="w-full rounded-2xl"
           />
 
-          {/* Daily Quest Card */}
+          {/* Event Card */}
           <img
-            src="/右サイドバー_DMM (3).png"
-            alt="デイリークエスト"
+            src="/イベント告知.png"
+            alt="イベント告知"
             className="w-full rounded-2xl"
           />
 
           {/* Friends Card */}
           <img
-            src="/フレンド.png"
+            src="/フレンド (2).png"
             alt="フレンド"
             className="w-full rounded-2xl"
           />

@@ -51,9 +51,13 @@ function DemoIntroContent() {
   // 企業一覧モーダル表示用state
   const [showCompanyListModal, setShowCompanyListModal] = useState(false);
 
-  // メッセージ1 → 企業選択カードへ直接遷移
+  // メッセージ1 → メッセージ2へ遷移
   const handleMessage1Next = () => {
-    setShowCompanyCard(true);
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setStep('message2');
+      setIsTransitioning(false);
+    }, 300);
   };
 
   // メッセージ2 → 企業選択カードを表示
@@ -70,53 +74,7 @@ function DemoIntroContent() {
     }, 300);
   };
 
-  // メッセージ1 → 自動遷移（2.5秒後にメッセージ2へ）
-  useEffect(() => {
-    if (step === 'message1' && !showCompanyCard && !isTransitioning) {
-      const timer = setTimeout(() => {
-        setIsTransitioning(true);
-        setTimeout(() => {
-          setStep('message2');
-          setIsTransitioning(false);
-        }, 300);
-      }, 2500);
-      return () => clearTimeout(timer);
-    }
-  }, [step, showCompanyCard, isTransitioning]);
-
-  // メッセージ2 → 自動で企業選択カードを表示（2.5秒後）
-  useEffect(() => {
-    if (step === 'message2' && !showCompanyCard) {
-      const timer = setTimeout(() => {
-        setShowCompanyCard(true);
-      }, 2500);
-      return () => clearTimeout(timer);
-    }
-  }, [step, showCompanyCard]);
-
-  // メッセージ3 → メッセージ4への自動遷移（吹き出しのみフェード、同じアニメーション）
-  useEffect(() => {
-    if (step === 'message3') {
-      const timer = setTimeout(() => {
-        setIsBubbleTransitioning(true);
-        setTimeout(() => {
-          setStep('message4');
-          setIsBubbleTransitioning(false);
-        }, 300);
-      }, 2500);
-      return () => clearTimeout(timer);
-    }
-  }, [step]);
-
-  // メッセージ4 → カード表示への自動遷移
-  useEffect(() => {
-    if (step === 'message4') {
-      const timer = setTimeout(() => {
-        setShowStartCard(true);
-      }, 2000);
-      return () => clearTimeout(timer);
-    }
-  }, [step]);
+  // 自動遷移は削除 - すべて「次へ」ボタンで進む
 
   // メッセージ4は自動遷移しない（ユーザーがボタンをクリックして進む）
 
@@ -390,21 +348,10 @@ function DemoIntroContent() {
               <p className="text-lg font-bold text-gray-800 mb-3">
                 他の企業も順次追加予定
               </p>
-              <p className="text-gray-500 mb-4 text-sm">
+              <p className="text-gray-500 text-sm">
                 追加してほしい企業や機能があれば教えてください！<br />
                 優先度高く準備します！
               </p>
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSfZxkC7VNM2tD877YWQPE6zgRFApGmn8Wyye8DfjplsIMzVYA/viewform?usp=dialog"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-[#4D5CEC] hover:text-[#395BE5] font-medium transition-colors"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                </svg>
-                リクエストを送る
-              </a>
             </div>
           </div>
         </div>
