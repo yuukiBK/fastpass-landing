@@ -1207,7 +1207,7 @@ function DMMDungeonContent() {
                   onClick={handleBossClick}
                 >
                   <img
-                    src="/β版　アニメーション (24).png"
+                    src="/β版　アニメーション (26).png"
                     alt="ステップ5"
                     className="w-24 h-24"
                   />
