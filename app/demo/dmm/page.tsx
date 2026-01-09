@@ -212,7 +212,7 @@ function QuestPopup({
               boxShadow: '0 4px 0 rgba(0,0,0,0.1)'
             }}
           >
-            練習 +5XP
+            練習(タイピング)
           </button>
 
           {/* 本番モード Button */}
@@ -225,7 +225,7 @@ function QuestPopup({
               boxShadow: '0 4px 0 #CC9F00'
             }}
           >
-            本番モード +40XP
+            本番モード(音声)
           </button>
         </div>
       </div>
@@ -336,14 +336,14 @@ function Sidebar({ activePage = 'home' }: { activePage?: 'home' | 'courses' | 'e
 
 // Unit Card Component (Duolingo style)
 function UnitCard({ unitNumber, title, color }: { unitNumber: number; title: string; color: string }) {
-  // ラベルを決定
-  const getLabel = (unit: number) => {
-    if (unit <= 3) return 'インターン面接';
-    if (unit <= 7) return '本選考面接';
-    return '最終面接';
+  // レベルとラベルを決定
+  const getLevelInfo = (unit: number) => {
+    if (unit <= 3) return { level: 1, label: 'インターン面接' };
+    if (unit <= 5) return { level: 2, label: '本選考面接' };
+    return { level: 3, label: '最終面接' };
   };
 
-  const label = getLabel(unitNumber);
+  const { level, label } = getLevelInfo(unitNumber);
 
   return (
     <div
@@ -352,12 +352,12 @@ function UnitCard({ unitNumber, title, color }: { unitNumber: number; title: str
     >
       <div>
         <p className="text-white/80 text-sm font-medium mb-1">
-          ← Level 1・ユニット {unitNumber}
+          ← Level {level}・ユニット {unitNumber}
         </p>
         <h2 className="text-white text-xl font-bold">{title}</h2>
       </div>
       <div className="bg-white/20 text-white px-4 py-2.5 rounded-xl font-bold text-sm border-2 border-white/30">
-        <p className="text-white/70 text-xs mb-0.5">Level 1</p>
+        <p className="text-white/70 text-xs mb-0.5">Level {level}</p>
         <p className="text-white font-bold">{label}</p>
       </div>
     </div>
@@ -460,7 +460,7 @@ function BossNode() {
 const interviewers = {
   level1: { image: "/AI面接官画像 (2).png", name: "田中 采配（人事担当）" },
   level2: { image: "/AI面接官画像 (3).png", name: "佐藤 厳格（事業部部長）" },
-  level3: { image: "/名称未設定のデザイン (88).png", name: "亀山 敬司（会長）" },
+  level3: { image: "/名称未設定のデザイン (88).png", name: "亀山 敬司（DMM会長）" },
 };
 
 // Quest data for popups
@@ -542,7 +542,7 @@ function UnitSection({ unit }: { unit: typeof units[0] }) {
             <img
               src="/Gemini_Generated_Image_j6vf82j6vf82j6vf.png"
               alt="ステップ1"
-              className="w-24 h-24 brightness-105 saturate-110"
+              className="w-24 h-24"
             />
           </div>
 
@@ -554,7 +554,7 @@ function UnitSection({ unit }: { unit: typeof units[0] }) {
             <img
               src="/Gemini_Generated_Image_j6vf82j6vf82j6vf.png"
               alt="ステップ2"
-              className="w-24 h-24 brightness-105 saturate-110"
+              className="w-24 h-24"
             />
           </div>
 
@@ -566,7 +566,7 @@ function UnitSection({ unit }: { unit: typeof units[0] }) {
             <img
               src="/Gemini_Generated_Image_y5ns5zy5ns5zy5ns.png"
               alt="ステップ3"
-              className="w-24 h-24 brightness-105 saturate-110"
+              className="w-24 h-24"
             />
           </div>
 
@@ -578,7 +578,7 @@ function UnitSection({ unit }: { unit: typeof units[0] }) {
             <img
               src="/Gemini_Generated_Image_y5ns5zy5ns5zy5ns.png"
               alt="ステップ4"
-              className="w-24 h-24 brightness-105 saturate-110"
+              className="w-24 h-24"
             />
           </div>
         </div>
@@ -623,7 +623,7 @@ function UnitSection({ unit }: { unit: typeof units[0] }) {
             <img
               src="/β版　アニメーション (5).png"
               alt="ステップ1"
-              className="w-24 h-24 brightness-105 saturate-110"
+              className="w-24 h-24"
             />
           </div>
 
@@ -635,7 +635,7 @@ function UnitSection({ unit }: { unit: typeof units[0] }) {
             <img
               src="/β版　アニメーション (5).png"
               alt="ステップ2"
-              className="w-24 h-24 brightness-105 saturate-110"
+              className="w-24 h-24"
             />
           </div>
 
@@ -647,7 +647,7 @@ function UnitSection({ unit }: { unit: typeof units[0] }) {
             <img
               src="/β版　アニメーション (6).png"
               alt="ステップ3"
-              className="w-24 h-24 brightness-105 saturate-110"
+              className="w-24 h-24"
             />
           </div>
 
@@ -659,7 +659,7 @@ function UnitSection({ unit }: { unit: typeof units[0] }) {
             <img
               src="/β版　アニメーション (7).png"
               alt="ステップ4"
-              className="w-24 h-24 brightness-105 saturate-110"
+              className="w-24 h-24"
             />
           </div>
         </div>
@@ -685,7 +685,7 @@ function UnitSection({ unit }: { unit: typeof units[0] }) {
     );
   }
 
-  // ユニット3は画像をそのまま使用
+  // ユニット3はすごろく風コース（ターコイズ）
   if (unit.unitNumber === 3) {
     return (
       <div className="mb-8">
@@ -694,14 +694,43 @@ function UnitSection({ unit }: { unit: typeof units[0] }) {
           <UnitCard unitNumber={unit.unitNumber} title={unit.title} color={unit.color} />
         </div>
 
-        {/* Unit 3 Quest Image */}
-        <div className="flex justify-center">
-          <img
-            src="/スクリーンショット 2025-12-20 9.08.55.png"
-            alt="ユニット3クエスト"
-            className="max-w-[200px] cursor-pointer hover:scale-105 transition-transform"
+        {/* すごろく風コース */}
+        <div className="relative flex flex-col items-center gap-3">
+          {/* ステップ1: 星3つ（クリア済み） */}
+          <div
+            className="relative cursor-pointer transform hover:scale-105 transition-transform"
             onClick={handleQuestClick}
-          />
+          >
+            <img
+              src="/β版　アニメーション (8).png"
+              alt="ステップ1"
+              className="w-24 h-24"
+            />
+          </div>
+
+          {/* ステップ2: 星2つ（クリア済み） - 右側に配置 */}
+          <div
+            className="relative cursor-pointer transform hover:scale-105 transition-transform translate-x-10"
+            onClick={handleQuestClick}
+          >
+            <img
+              src="/β版　アニメーション (9).png"
+              alt="ステップ2"
+              className="w-24 h-24"
+            />
+          </div>
+
+          {/* ステップ3: 星1つ（クリア済み） - 中央に配置 */}
+          <div
+            className="relative cursor-pointer transform hover:scale-105 transition-transform -translate-x-6"
+            onClick={handleQuestClick}
+          >
+            <img
+              src="/β版　アニメーション (11).png"
+              alt="ステップ3"
+              className="w-24 h-24"
+            />
+          </div>
         </div>
 
         {/* Quest Popup */}
@@ -725,7 +754,7 @@ function UnitSection({ unit }: { unit: typeof units[0] }) {
     );
   }
 
-  // ユニット4は画像をそのまま使用（縦長）
+  // ユニット4はすごろく風コース（緑）- 5ステップ
   if (unit.unitNumber === 4) {
     return (
       <div className="mb-8">
@@ -734,14 +763,67 @@ function UnitSection({ unit }: { unit: typeof units[0] }) {
           <UnitCard unitNumber={unit.unitNumber} title={unit.title} color={unit.color} />
         </div>
 
-        {/* Unit 4 Quest Image */}
-        <div className="flex justify-center">
-          <img
-            src="/名称未設定のデザイン (81).png"
-            alt="ユニット4クエスト"
-            className="max-w-[280px] cursor-pointer hover:scale-105 transition-transform"
+        {/* すごろく風コース */}
+        <div className="relative flex flex-col items-center gap-3">
+          {/* ステップ1: 星3つ */}
+          <div
+            className="relative cursor-pointer transform hover:scale-105 transition-transform"
             onClick={handleQuestClick}
-          />
+          >
+            <img
+              src="/β版　アニメーション (18).png"
+              alt="ステップ1"
+              className="w-24 h-24"
+            />
+          </div>
+
+          {/* ステップ2: 星3つ - 右側 */}
+          <div
+            className="relative cursor-pointer transform hover:scale-105 transition-transform translate-x-10"
+            onClick={handleQuestClick}
+          >
+            <img
+              src="/β版　アニメーション (18).png"
+              alt="ステップ2"
+              className="w-24 h-24"
+            />
+          </div>
+
+          {/* ステップ3: 星2つ - 左側 */}
+          <div
+            className="relative cursor-pointer transform hover:scale-105 transition-transform -translate-x-6"
+            onClick={handleQuestClick}
+          >
+            <img
+              src="/β版　アニメーション (19).png"
+              alt="ステップ3"
+              className="w-24 h-24"
+            />
+          </div>
+
+          {/* ステップ4: 星2つ - 中央 */}
+          <div
+            className="relative cursor-pointer transform hover:scale-105 transition-transform"
+            onClick={handleQuestClick}
+          >
+            <img
+              src="/β版　アニメーション (19).png"
+              alt="ステップ4"
+              className="w-24 h-24"
+            />
+          </div>
+
+          {/* ステップ5: 星1つ - 右側 */}
+          <div
+            className="relative cursor-pointer transform hover:scale-105 transition-transform translate-x-10"
+            onClick={handleQuestClick}
+          >
+            <img
+              src="/β版　アニメーション (20).png"
+              alt="ステップ5"
+              className="w-24 h-24"
+            />
+          </div>
         </div>
 
         {/* Quest Popup */}
@@ -765,7 +847,7 @@ function UnitSection({ unit }: { unit: typeof units[0] }) {
     );
   }
 
-  // ユニット5は画像をそのまま使用（縦長）
+  // ユニット5はすごろく風コース（青）- 5ステップ
   if (unit.unitNumber === 5) {
     return (
       <div className="mb-8">
@@ -774,94 +856,67 @@ function UnitSection({ unit }: { unit: typeof units[0] }) {
           <UnitCard unitNumber={unit.unitNumber} title={unit.title} color={unit.color} />
         </div>
 
-        {/* Unit 5 Quest Image */}
-        <div className="flex justify-center">
-          <img
-            src="/名称未設定のデザイン (82).png"
-            alt="ユニット5クエスト"
-            className="max-w-[250px] cursor-pointer hover:scale-105 transition-transform"
+        {/* すごろく風コース */}
+        <div className="relative flex flex-col items-center gap-3">
+          {/* ステップ1: 星3つ */}
+          <div
+            className="relative cursor-pointer transform hover:scale-105 transition-transform"
             onClick={handleQuestClick}
-          />
-        </div>
+          >
+            <img
+              src="/β版　アニメーション (15).png"
+              alt="ステップ1"
+              className="w-24 h-24"
+            />
+          </div>
 
-        {/* Quest Popup */}
-        {selectedQuest && (
-          <QuestPopup
-            isOpen={popupOpen}
-            onClose={() => setPopupOpen(false)}
-            title={selectedQuest.title}
-            description={selectedQuest.description}
-            year={selectedQuest.year}
-            color={unit.color}
-            interviewerImage={selectedQuest.interviewerImage}
-            interviewerName={selectedQuest.interviewerName}
-            onStartVideo={handleStartVideo}
-          />
-        )}
-
-        {/* Video Modal */}
-        <VideoModal isOpen={videoOpen} onClose={() => setVideoOpen(false)} />
-      </div>
-    );
-  }
-
-  // ユニット6は画像をそのまま使用（縦長）
-  if (unit.unitNumber === 6) {
-    return (
-      <div className="mb-8">
-        {/* Unit Card */}
-        <div className="mb-6">
-          <UnitCard unitNumber={unit.unitNumber} title={unit.title} color={unit.color} />
-        </div>
-
-        {/* Unit 6 Quest Image */}
-        <div className="flex justify-center">
-          <img
-            src="/名称未設定のデザイン (83).png"
-            alt="ユニット6クエスト"
-            className="max-w-[250px] cursor-pointer hover:scale-105 transition-transform"
+          {/* ステップ2: 星3つ - 左側 */}
+          <div
+            className="relative cursor-pointer transform hover:scale-105 transition-transform -translate-x-10"
             onClick={handleQuestClick}
-          />
-        </div>
+          >
+            <img
+              src="/β版　アニメーション (15).png"
+              alt="ステップ2"
+              className="w-24 h-24"
+            />
+          </div>
 
-        {/* Quest Popup */}
-        {selectedQuest && (
-          <QuestPopup
-            isOpen={popupOpen}
-            onClose={() => setPopupOpen(false)}
-            title={selectedQuest.title}
-            description={selectedQuest.description}
-            year={selectedQuest.year}
-            color={unit.color}
-            interviewerImage={selectedQuest.interviewerImage}
-            interviewerName={selectedQuest.interviewerName}
-            onStartVideo={handleStartVideo}
-          />
-        )}
-
-        {/* Video Modal */}
-        <VideoModal isOpen={videoOpen} onClose={() => setVideoOpen(false)} />
-      </div>
-    );
-  }
-
-  // ユニット7は画像をそのまま使用（縦長）
-  if (unit.unitNumber === 7) {
-    return (
-      <div className="mb-8">
-        {/* Unit Card */}
-        <div className="mb-6">
-          <UnitCard unitNumber={unit.unitNumber} title={unit.title} color={unit.color} />
-        </div>
-
-        {/* Unit 7 Quest Image */}
-        <div className="flex justify-center">
-          <img
-            src="/名称未設定 (361 x 1504 px).png"
-            alt="ユニット7クエスト"
-            className="max-w-[250px] cursor-pointer hover:scale-105 transition-transform"
+          {/* ステップ3: 星2つ - 右側 */}
+          <div
+            className="relative cursor-pointer transform hover:scale-105 transition-transform translate-x-6"
             onClick={handleQuestClick}
-          />
+          >
+            <img
+              src="/β版　アニメーション (16).png"
+              alt="ステップ3"
+              className="w-24 h-24"
+            />
+          </div>
+
+          {/* ステップ4: 星2つ - 中央 */}
+          <div
+            className="relative cursor-pointer transform hover:scale-105 transition-transform"
+            onClick={handleQuestClick}
+          >
+            <img
+              src="/β版　アニメーション (16).png"
+              alt="ステップ4"
+              className="w-24 h-24"
+            />
+          </div>
+
+          {/* ステップ5: 星1つ - 左側 */}
+          <div
+            className="relative cursor-pointer transform hover:scale-105 transition-transform -translate-x-10"
+            onClick={handleQuestClick}
+          >
+            <img
+              src="/β版　アニメーション (17).png"
+              alt="ステップ5"
+              className="w-24 h-24"
+            />
+          </div>
         </div>
 
         {/* Quest Popup */}
@@ -959,29 +1014,10 @@ const units = [
       { id: 15, question: "意見が対立したときどう対処した？", completed: true, score: 85 },
     ]
   },
-  {
-    unitNumber: 6,
-    title: "将来のビジョンを描く",
-    color: "#F472B6", // ピンク
-    questions: [
-      { id: 16, question: "5年後にやりたいことは？", completed: true, score: 87 },
-      { id: 17, question: "DMMで具体的に何を成し遂げたい？", completed: true, score: 84 },
-      { id: 18, question: "入社後、最初に取り組みたいことは？", completed: true, score: 81 },
-    ]
-  },
-  {
-    unitNumber: 7,
-    title: "新規事業を提案する",
-    color: "#58CC02", // 緑
-    questions: [
-      { id: 19, question: "新規事業を立ち上げるとしたら何をする？", completed: true, score: 89 },
-      { id: 20, question: "DMMの新しい収益源を提案してください", completed: true, score: 86 },
-    ]
-  },
 ];
 
 const bossUnit = {
-  unitNumber: 8,
+  unitNumber: 6,
   title: "最終面接に挑戦",
   color: "#FF9600", // オレンジ
 };
@@ -1030,14 +1066,68 @@ function DMMDungeonContent() {
               <div className="mb-6">
                 <UnitCard unitNumber={bossUnit.unitNumber} title={bossUnit.title} color={bossUnit.color} />
               </div>
-              {/* Unit 8 Quest Image */}
-              <div className="flex justify-center">
-                <img
-                  src="/名称未設定のデザイン (87).png"
-                  alt="ユニット8クエスト"
-                  className="max-w-[250px] cursor-pointer hover:scale-105 transition-transform"
+
+              {/* すごろく風コース */}
+              <div className="relative flex flex-col items-center gap-3">
+                {/* ステップ1: 星3つ */}
+                <div
+                  className="relative cursor-pointer transform hover:scale-105 transition-transform"
                   onClick={() => setBossPopupOpen(true)}
-                />
+                >
+                  <img
+                    src="/β版　アニメーション (21).png"
+                    alt="ステップ1"
+                    className="w-24 h-24"
+                  />
+                </div>
+
+                {/* ステップ2: 星3つ - 右側 */}
+                <div
+                  className="relative cursor-pointer transform hover:scale-105 transition-transform translate-x-10"
+                  onClick={() => setBossPopupOpen(true)}
+                >
+                  <img
+                    src="/β版　アニメーション (21).png"
+                    alt="ステップ2"
+                    className="w-24 h-24"
+                  />
+                </div>
+
+                {/* ステップ3: 星2つ - 左側 */}
+                <div
+                  className="relative cursor-pointer transform hover:scale-105 transition-transform -translate-x-10"
+                  onClick={() => setBossPopupOpen(true)}
+                >
+                  <img
+                    src="/β版　アニメーション (22).png"
+                    alt="ステップ3"
+                    className="w-24 h-24"
+                  />
+                </div>
+
+                {/* ステップ4: 星1つ - 中央 */}
+                <div
+                  className="relative cursor-pointer transform hover:scale-105 transition-transform"
+                  onClick={() => setBossPopupOpen(true)}
+                >
+                  <img
+                    src="/β版　アニメーション (23).png"
+                    alt="ステップ4"
+                    className="w-24 h-24"
+                  />
+                </div>
+
+                {/* ステップ5: ゴール - 右側 */}
+                <div
+                  className="relative cursor-pointer transform hover:scale-105 transition-transform translate-x-10"
+                  onClick={() => setBossPopupOpen(true)}
+                >
+                  <img
+                    src="/β版　アニメーション (24).png"
+                    alt="ステップ5"
+                    className="w-24 h-24"
+                  />
+                </div>
               </div>
 
               {/* Boss Quest Popup */}
@@ -1072,7 +1162,7 @@ function DMMDungeonContent() {
 
           {/* Boss Interview Card */}
           <img
-            src="/社長面接に挑戦！.png"
+            src="/所長面接に挑戦var2.png"
             alt="社長面接に挑戦"
             className="w-full rounded-2xl"
           />
