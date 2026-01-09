@@ -143,7 +143,8 @@ function QuestPopup({
   color,
   interviewerImage,
   interviewerName,
-  onStartVideo
+  onStartVideo,
+  anchorPosition
 }: {
   isOpen: boolean;
   onClose: () => void;
@@ -154,7 +155,22 @@ function QuestPopup({
   interviewerImage?: string;
   interviewerName?: string;
   onStartVideo?: () => void;
+  anchorPosition?: { x: number; y: number };
 }) {
+  // スクロール時にポップアップを閉じる
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleScroll = () => {
+      onClose();
+    };
+
+    window.addEventListener('scroll', handleScroll, true);
+    return () => {
+      window.removeEventListener('scroll', handleScroll, true);
+    };
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   const handleButtonClick = () => {
@@ -162,6 +178,51 @@ function QuestPopup({
       onStartVideo();
     }
   };
+
+  // ポップアップの位置を計算（画面内に収まるように上か下に表示）
+  const popupHeight = 350; // ポップアップの推定高さ
+  const margin = 20; // 画面端からの余白
+
+  const shouldShowAbove = anchorPosition
+    ? anchorPosition.y + popupHeight + margin > window.innerHeight // 下に表示すると画面外に出る
+    : false;
+
+  const getPopupStyle = () => {
+    if (!anchorPosition) {
+      return {
+        position: 'fixed' as const,
+        left: '50%',
+        top: '50%',
+        transform: 'translate(-50%, -50%)',
+        zIndex: 50,
+        width: '340px',
+      };
+    }
+
+    if (shouldShowAbove) {
+      // ボタンの上に表示
+      return {
+        position: 'fixed' as const,
+        left: `${anchorPosition.x}px`,
+        bottom: `${window.innerHeight - anchorPosition.y + 70}px`,
+        transform: 'translateX(-50%)',
+        zIndex: 50,
+        width: '340px',
+      };
+    } else {
+      // ボタンの下に表示
+      return {
+        position: 'fixed' as const,
+        left: `${anchorPosition.x}px`,
+        top: `${anchorPosition.y + 20}px`,
+        transform: 'translateX(-50%)',
+        zIndex: 50,
+        width: '340px',
+      };
+    }
+  };
+
+  const popupStyle = getPopupStyle();
 
   return (
     <>
@@ -171,14 +232,16 @@ function QuestPopup({
         onClick={onClose}
       />
       {/* Popup */}
-      <div className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-[340px]">
+      <div style={popupStyle}>
         <div
           className="rounded-2xl p-6 shadow-xl relative"
           style={{ backgroundColor: color }}
         >
-          {/* Arrow pointing up */}
+          {/* Arrow - 上に表示する場合は下向き、下に表示する場合は上向き */}
           <div
-            className="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rotate-45"
+            className={`absolute left-1/2 -translate-x-1/2 w-6 h-6 rotate-45 ${
+              shouldShowAbove ? '-bottom-3' : '-top-3'
+            }`}
             style={{ backgroundColor: color }}
           />
 
@@ -509,8 +572,14 @@ function UnitSection({ unit }: { unit: typeof units[0] }) {
   const [popupOpen, setPopupOpen] = useState(false);
   const [selectedQuest, setSelectedQuest] = useState<{ title: string; description: string; year: string; interviewerImage: string; interviewerName: string } | null>(null);
   const [videoOpen, setVideoOpen] = useState(false);
+  const [anchorPosition, setAnchorPosition] = useState<{ x: number; y: number } | null>(null);
 
-  const handleQuestClick = () => {
+  const handleQuestClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setAnchorPosition({
+      x: rect.left + rect.width / 2,
+      y: rect.bottom
+    });
     const quests = questDetails[unit.unitNumber];
     if (quests && quests.length > 0) {
       setSelectedQuest(quests[0]);
@@ -595,6 +664,7 @@ function UnitSection({ unit }: { unit: typeof units[0] }) {
             interviewerImage={selectedQuest.interviewerImage}
             interviewerName={selectedQuest.interviewerName}
             onStartVideo={handleStartVideo}
+            anchorPosition={anchorPosition || undefined}
           />
         )}
 
@@ -676,6 +746,7 @@ function UnitSection({ unit }: { unit: typeof units[0] }) {
             interviewerImage={selectedQuest.interviewerImage}
             interviewerName={selectedQuest.interviewerName}
             onStartVideo={handleStartVideo}
+            anchorPosition={anchorPosition || undefined}
           />
         )}
 
@@ -745,6 +816,7 @@ function UnitSection({ unit }: { unit: typeof units[0] }) {
             interviewerImage={selectedQuest.interviewerImage}
             interviewerName={selectedQuest.interviewerName}
             onStartVideo={handleStartVideo}
+            anchorPosition={anchorPosition || undefined}
           />
         )}
 
@@ -838,6 +910,7 @@ function UnitSection({ unit }: { unit: typeof units[0] }) {
             interviewerImage={selectedQuest.interviewerImage}
             interviewerName={selectedQuest.interviewerName}
             onStartVideo={handleStartVideo}
+            anchorPosition={anchorPosition || undefined}
           />
         )}
 
@@ -931,6 +1004,7 @@ function UnitSection({ unit }: { unit: typeof units[0] }) {
             interviewerImage={selectedQuest.interviewerImage}
             interviewerName={selectedQuest.interviewerName}
             onStartVideo={handleStartVideo}
+            anchorPosition={anchorPosition || undefined}
           />
         )}
 
@@ -1028,6 +1102,7 @@ function DMMDungeonContent() {
   const [showWelcomeModal, setShowWelcomeModal] = useState(false);
   const [bossPopupOpen, setBossPopupOpen] = useState(false);
   const [bossVideoOpen, setBossVideoOpen] = useState(false);
+  const [bossAnchorPosition, setBossAnchorPosition] = useState<{ x: number; y: number } | null>(null);
   const bossQuest = questDetails[8]?.[0];
 
   useEffect(() => {
@@ -1039,6 +1114,15 @@ function DMMDungeonContent() {
   const handleBossStartVideo = () => {
     setBossPopupOpen(false);
     setBossVideoOpen(true);
+  };
+
+  const handleBossClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setBossAnchorPosition({
+      x: rect.left + rect.width / 2,
+      y: rect.bottom
+    });
+    setBossPopupOpen(true);
   };
 
   return (
@@ -1072,7 +1156,7 @@ function DMMDungeonContent() {
                 {/* ステップ1: 星3つ */}
                 <div
                   className="relative cursor-pointer transform hover:scale-105 transition-transform"
-                  onClick={() => setBossPopupOpen(true)}
+                  onClick={handleBossClick}
                 >
                   <img
                     src="/β版　アニメーション (21).png"
@@ -1084,7 +1168,7 @@ function DMMDungeonContent() {
                 {/* ステップ2: 星3つ - 右側 */}
                 <div
                   className="relative cursor-pointer transform hover:scale-105 transition-transform translate-x-10"
-                  onClick={() => setBossPopupOpen(true)}
+                  onClick={handleBossClick}
                 >
                   <img
                     src="/β版　アニメーション (21).png"
@@ -1096,7 +1180,7 @@ function DMMDungeonContent() {
                 {/* ステップ3: 星2つ - 左側 */}
                 <div
                   className="relative cursor-pointer transform hover:scale-105 transition-transform -translate-x-10"
-                  onClick={() => setBossPopupOpen(true)}
+                  onClick={handleBossClick}
                 >
                   <img
                     src="/β版　アニメーション (22).png"
@@ -1108,7 +1192,7 @@ function DMMDungeonContent() {
                 {/* ステップ4: 星1つ - 中央 */}
                 <div
                   className="relative cursor-pointer transform hover:scale-105 transition-transform"
-                  onClick={() => setBossPopupOpen(true)}
+                  onClick={handleBossClick}
                 >
                   <img
                     src="/β版　アニメーション (23).png"
@@ -1120,7 +1204,7 @@ function DMMDungeonContent() {
                 {/* ステップ5: ゴール - 右側 */}
                 <div
                   className="relative cursor-pointer transform hover:scale-105 transition-transform translate-x-10"
-                  onClick={() => setBossPopupOpen(true)}
+                  onClick={handleBossClick}
                 >
                   <img
                     src="/β版　アニメーション (24).png"
@@ -1142,6 +1226,7 @@ function DMMDungeonContent() {
                   interviewerImage={bossQuest.interviewerImage}
                   interviewerName={bossQuest.interviewerName}
                   onStartVideo={handleBossStartVideo}
+                  anchorPosition={bossAnchorPosition || undefined}
                 />
               )}
 
